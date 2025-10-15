@@ -1,0 +1,18 @@
+{
+  "scheme": "acme",
+  "userInterfaceStyle": "automatic",
+  "orientation": "default",
+  "web": {
+    "output": "static"
+  },
+  "plugins": [
+    [
+      "expo-router",
+      {
+        "origin": "https://n"
+      }
+    ]
+  ],
+  "name": "NUV-ITDI110-Grading",
+  "slug": "NUV-ITDI110-Grading"
+}
