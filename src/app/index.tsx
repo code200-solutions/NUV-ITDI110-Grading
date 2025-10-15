@@ -26,7 +26,7 @@ function Content() {
               Welcome to Grading Project
             </Text>
             <View style={styles.container} className=" mt-12 w-full">
-            <View style={{marginBottom: 10, width: '50%', alignSelf: 'center'}}>
+            <View style={{marginBottom: 10, width: '30%', alignSelf: 'center'}}>
             <Button 
               title="Login"
               onPress={() => {
@@ -37,7 +37,7 @@ function Content() {
             <View style={{ alignSelf: 'center', marginBottom: 10}}>
              <Text>Or</Text>
             </View>
-            <View style={{marginBottom: 10, width: '50%', alignSelf: 'center', }}>
+            <View style={{marginBottom: 10, width: '30%', alignSelf: 'center', }}>
             <Button
               title="Sign In"
               onPress={() => {

@@ -33,7 +33,6 @@ export default function LoginScreen() {
             onSubmitEditing={() => passwordRef.current?.focus()}
             className="border border-gray-300 rounded px-3 py-2 mb-4"
           />
-
           <Text className="mb-2">Password</Text>
           <RNTextInput
             ref={passwordRef}
@@ -44,7 +43,6 @@ export default function LoginScreen() {
             returnKeyType="done"
             className="border border-gray-300 rounded px-3 py-2 mb-6"
           />
-
           <Pressable
             onPress={submit}
             className="bg-blue-600 rounded py-3 items-center"
