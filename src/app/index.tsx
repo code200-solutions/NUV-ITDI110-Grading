@@ -1,6 +1,6 @@
-import { Link } from 'expo-router';
+import { Link, router } from 'expo-router';
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Button, Text, View, StyleSheet } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 export default function Page() {
@@ -25,6 +25,27 @@ function Content() {
             >
               Welcome to Grading Project
             </Text>
+            <View style={styles.container} className=" mt-12 w-full">
+            <View style={{marginBottom: 10, width: '50%', alignSelf: 'center'}}>
+            <Button 
+              title="Login"
+              onPress={() => {
+                router.push('/loginScreen');
+              }}
+            />
+            </View>
+            <View style={{ alignSelf: 'center', marginBottom: 10}}>
+             <Text>Or</Text>
+            </View>
+            <View style={{marginBottom: 10, width: '50%', alignSelf: 'center', }}>
+            <Button
+              title="Sign In"
+              onPress={() => {
+                router.push('/loginScreen');
+              }}
+            />
+            </View>
+            </View>
           </View>
         </View>
       </View>
@@ -60,3 +81,19 @@ function Footer() {
     </View>
   );
 }
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: '#fff',
+    borderRadius: 8,
+
+    // iOS shadow
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+
+    // Android shadow
+    elevation: 5,
+    padding: 12,
+  },
+});
