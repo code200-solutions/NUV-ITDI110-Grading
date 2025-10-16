@@ -1,10 +1,8 @@
 //Type of exercises for test
 export type ExerciseType = 'listening' | 'reading';
 
-
 // Define the content of the Test class
 export class Sequence {
-  // ...
   sequenceNum: number;
   exercises: Exercise[];
 
@@ -16,15 +14,27 @@ export class Sequence {
 
 export class Exercise {
  question: number;
+ type?: ExerciseType;
+ questionPomt: string;
+ answerChoices?: AnswerChoices[]
  answer: string;
 
- constructor(question: number, answer: string){
+ constructor(
+  question: number, 
+  type: ExerciseType,
+  questionPromt: string, 
+  answerChoices: AnswerChoices[], 
+  answer: string
+){
   this.question = question;
+  this.type = type;
+  this.questionPomt = questionPromt;
+  this.answerChoices = answerChoices;
   this.answer = answer;
  }
 }
 
-export class AnswerChoice{
+export class AnswerChoices{
   id: string;
   text?: string;
   imageUri?: string;
@@ -33,6 +43,16 @@ export class AnswerChoice{
     this.id = id;
     this.text = text;
     this.imageUri = imageUri;
+  }
+}
+
+export class StudentAnswer{
+  exerciseId: number;
+  answer: string;
+  
+  constructor(exerciseId: number, answer: string){
+    this.exerciseId = exerciseId;
+    this.answer = answer;
   }
 }
 
