@@ -1,10 +1,14 @@
+//Type of exercises for test
+export type ExerciseType = 'listening' | 'reading';
+
+
 // Define the content of the Test class
 export class Sequence {
   // ...
   sequenceNum: number;
   exercises: Exercise[];
 
-  constructor(sequenceNum: number, exercices: Exercise[]){
+  constructor(sequenceNum: number, exercices: Exercise[]) {
    this.sequenceNum = sequenceNum;
    this.exercises = exercices;
   }
@@ -57,5 +61,3 @@ const reperes3: Exercise[] = [
   new Exercise(8, "Answer 8"),
   new Exercise(9, "Answer 9"),
 ];
-
-
