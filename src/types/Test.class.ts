@@ -4,7 +4,7 @@ export class Sequence {
   sequenceNum: number;
   exercises: Exercise[];
 
-  constructor(sequenceNum: number, exercices: Exercise[]) {
+  constructor(sequenceNum: number, exercices: Exercise[]){
    this.sequenceNum = sequenceNum;
    this.exercises = exercices;
   }
