@@ -54,6 +54,10 @@ export class StudentAnswer{
     this.exerciseId = exerciseId;
     this.answer = answer;
   }
+
+  isCorrect(correctAnswerId: string): boolean{
+    return this.answer === correctAnswerId;
+  }
 }
 
 //creating some exercises for the sequences 
