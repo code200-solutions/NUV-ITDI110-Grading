@@ -24,6 +24,18 @@ export class Exercise {
  }
 }
 
+export class AnswerChoice{
+  id: string;
+  text?: string;
+  imageUri?: string;
+
+  constructor(id: string, text?: string, imageUri?: string){
+    this.id = id;
+    this.text = text;
+    this.imageUri = imageUri;
+  }
+}
+
 //creating some exercises for the sequences 
 const reperes1: Exercise[] = [
   new Exercise(1, "Answer 1"),
