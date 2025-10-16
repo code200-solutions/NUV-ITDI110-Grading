@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import {
   Alert,
+  Platform,
   Pressable,
   ScrollView,
   Text,
@@ -8,15 +9,25 @@ import {
   View,
 } from 'react-native';
 
+import { isValidPassword } from '@/utils/isValidPassword';
+import { isValidUsername } from '@/utils/isValidUsername';
+
 export default function LoginScreen() {
-  const [password, setPassword] = useState('');
   const [username, setUsername] = useState('');
+  const [usernameHelper, setUsernameHelper] = useState('');
+  const [password, setPassword] = useState('');
+  const [passwordHelper, setPasswordHelper] = useState('');
 
   const usernameRef = useRef<TextInput>(null);
   const passwordRef = useRef<TextInput>(null);
 
   function submit() {
-    Alert.alert('Login', `Username: ${username}\nPassword: ${password}`);
+    if (Platform.OS === 'web') {
+      alert(`Username: ${username}\nPassword: ${password}`);
+    } else {
+      // Native platforms
+      Alert.alert('Login', `Username: ${username}\nPassword: ${password}`);
+    }
   }
 
   return (
@@ -29,7 +40,10 @@ export default function LoginScreen() {
           <TextInput
             ref={usernameRef}
             value={username}
-            onChangeText={setUsername}
+            onChangeText={(text) => {
+              setUsername(text);
+              if (!isValidUsername(text)) setUsernameHelper('Invalid username');
+            }}
             placeholder='Enter username'
             returnKeyLabel={username && password ? 'login' : 'next'}
             onSubmitEditing={() =>
@@ -41,11 +55,18 @@ export default function LoginScreen() {
             }
             className='border border-gray-300 rounded px-3 py-2 mb-4'
           />
+          {usernameHelper && (
+            <Text className='-mt-2 mb-6 text-red-600'>{usernameHelper}</Text>
+          )}
+
           <Text className='mb-2'>Password</Text>
           <TextInput
             ref={passwordRef}
             value={password}
-            onChangeText={setPassword}
+            onChangeText={(text) => {
+              setPassword(text);
+              if (!isValidPassword(text)) setPasswordHelper('Invalid password');
+            }}
             placeholder='Enter password'
             secureTextEntry
             returnKeyLabel={username && password ? 'login' : 'next'}
@@ -58,6 +79,10 @@ export default function LoginScreen() {
             }
             className='border border-gray-300 rounded px-3 py-2 mb-6'
           />
+          {passwordHelper && (
+            <Text className='-mt-4 mb-6 text-red-600'>{passwordHelper}</Text>
+          )}
+
           <Pressable
             onPress={submit}
             style={({ pressed }) => ({
