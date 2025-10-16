@@ -6,7 +6,7 @@ export class Sequence {
 
   constructor(sequenceNum: number, exercices: Exercise[]) {
    this.sequenceNum = sequenceNum;
-   this.exercises = [];
+   this.exercises = exercices;
   }
 }
 
@@ -14,7 +14,7 @@ export class Exercise {
  question: number;
  answer: string;
 
- constructor(question, answer ){
+ constructor(question: number, answer: string){
   this.question = question;
   this.answer = answer;
  }
