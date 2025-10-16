@@ -14,7 +14,6 @@ export default function LoginScreen() {
   const passwordRef = useRef<RNTextInput>(null);
 
   function submit() {
-    // quick demo action
     Alert.alert('Login', `Username: ${username}\nPassword: ${password}`);
   }
 
