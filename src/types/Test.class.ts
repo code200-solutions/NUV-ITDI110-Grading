@@ -24,13 +24,13 @@ export class Exercise {
  constructor(
   question: number, 
   type: ExerciseType,
-  questionPromt: string, 
+  questionPrompt: string, 
   answerChoices: AnswerChoices[], 
   answer: string
 ){
   this.question = question;
   this.type = type;
-  this.questionPrompt = questionPromt;
+  this.questionPrompt = questionPrompt;
   this.answerChoices = answerChoices;
   this.answer = answer;
  }
