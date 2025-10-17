@@ -88,22 +88,22 @@ export class StudentSubmission{
     this.answers = answers;
   }
 
-  calculateScore(exercises: Exercise[]): number{
+  calculateMark(exercises: Exercise[]): number{
     let correctAnswerId = 0;
-    let score = 0;
+    let mark = 0;
    
     for (const sequence of Test.sequences) {
       for (const exercise of sequence.exercises) {
         const studentAnswer = this.answers.find(ans => ans.exerciseId === exercise.questionId);
         if (studentAnswer) {
-          score++;
+          mark++;
           if (studentAnswer.isCorrect(exercise.answer)) {
             correctAnswerId++;
           }
         }
       }
     }
-    return (correctAnswerId / score) * 100;
+    return (correctAnswerId / mark) * 100;
   }
 }
 
