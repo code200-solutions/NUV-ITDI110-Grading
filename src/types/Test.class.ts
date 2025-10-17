@@ -5,12 +5,15 @@ export type ExerciseType = 'listening' | 'reading';
 export class Test {
   testId: string;
   sequences: Sequence[];
+  static sequences: any;
 
   constructor(testId: string, sequences: Sequence[]) {
     this.testId = testId;
     this.sequences = sequences;
   }
 }
+
+//answer choices for exercises
 export class AnswerChoices{
   id: string;
   text?: string;
@@ -23,6 +26,7 @@ export class AnswerChoices{
   }
 }
 
+//Exercise class representing each question in the test
 export class Exercise {
  questionId: string; //Using that for unique identification of exercises 
  type?: ExerciseType;
@@ -45,9 +49,11 @@ export class Exercise {
  }
 }
 
+//Sequence class representing a sequence of exercises
 export class Sequence {
   sequenceNum: number;
   exercises: Exercise[];
+  static exercises: any;
 
   constructor(sequenceNum: number, exercises: Exercise[]) {
    this.sequenceNum = sequenceNum;
@@ -55,17 +61,50 @@ export class Sequence {
   }
 }
 
+//StudentAnswer class representing a student's answer to an exercise
 export class StudentAnswer{
-  exerciseId: number;
+  exerciseId: string;
   answer: string;
   
-  constructor(exerciseId: number, answer: string){
+  constructor(exerciseId: string, answer: string){
     this.exerciseId = exerciseId;
     this.answer = answer;
   }
 
   isCorrect(correctAnswerId: string): boolean{
     return this.answer === correctAnswerId;
+  }
+}
+
+//Student submission class
+export class StudentSubmission{
+  studentId: string;
+  testId: string;
+  answers: StudentAnswer[];
+
+  constructor(studentId: string, testId: string, answers: StudentAnswer[]){
+    this.studentId = studentId;
+    this.testId = testId;
+    this.answers = answers;
+  }
+
+  calculateScore(exercises: Exercise[]): number{
+    let correctAnswerId = 0;
+    let score = 0;
+   
+    for (const sequence of Test.sequences) {
+      for (const exercise of sequence.exercises) {
+        const studentAnswer = this.answers.find(ans => ans.exerciseId === exercise.questionId);
+        if (studentAnswer) {
+          score++;
+          if (studentAnswer.isCorrect(exercise.answer)) {
+            correctAnswerId++;
+          }
+        }
+      }
+    }
+
+    return (correctAnswerId / score) * 100;
   }
 }
 
