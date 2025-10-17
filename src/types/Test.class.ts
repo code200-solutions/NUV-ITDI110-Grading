@@ -103,28 +103,28 @@ const reperes1: Exercise[] = [
   new Exercise("rep1-seq3-ex8", 'listening', "Question 8", answerChoices1, "D"),
 ];
 
-/*
 const reperes2a: Exercise[] = [
   new Exercise("rep2a-seq1-ex1", 'reading', "Question 1", answerChoices2, "A"),
-  new Exercise(2, 'reading', "Question 2", answerChoices2, "B"),
-  new Exercise(3, 'reading', "Question 3", answerChoices2, "C"),
-  new Exercise(4, 'reading', "Question 4", answerChoices2, "D"),  
-  new Exercise(5, 'reading', "Question 5", answerChoices2, "A"),
-  new Exercise(6, 'reading', "Question 6", answerChoices2, "B"),
-  new Exercise(7, 'reading', "Question 7", answerChoices2, "C"),
-  new Exercise(8, 'reading', "Question 8", answerChoices2, "D"),
-  new Exercise(9, 'reading', "Question 9", answerChoices2, "A"),
+  new Exercise("rep2a-seq1-ex2", 'reading', "Question 2", answerChoices2, "B"),
+  new Exercise("rep2a-seq1-ex3", 'reading', "Question 3", answerChoices2, "C"),
+  new Exercise("rep2a-seq1-ex4", 'reading', "Question 4", answerChoices2, "D"),  
+  new Exercise("rep2a-seq2-ex5", 'reading', "Question 5", answerChoices2, "A"),
+  new Exercise("rep2a-seq2-ex6", 'reading', "Question 6", answerChoices2, "B"),
+  new Exercise("rep2a-seq2-ex7", 'reading', "Question 7", answerChoices2, "C"),
+  new Exercise("rep2a-seq3-ex8", 'reading', "Question 8", answerChoices2, "D"),
+  new Exercise("rep2a-seq3-ex9", 'reading', "Question 9", answerChoices2, "A"),
+  new Exercise("rep2a-seq3-ex10", 'reading', "Question 10", answerChoices2, "B"),
+  new Exercise("rep2a-seq3-ex11", 'reading', "Question 11", answerChoices2, "C"),
 ];
 
 const reperes3: Exercise[] = [
-  new Exercise(1, 'reading', "Question 1", answerChoices3, "A"),
-  new Exercise(2, 'reading', "Question 2", answerChoices3, "B"),
-  new Exercise(3, 'reading', "Question 3", answerChoices3, "C"),
-  new Exercise(4, 'reading', "Question 4", answerChoices3, "D"),
-  new Exercise(5, 'reading', "Question 5", answerChoices3, "A"),
-  new Exercise(6, 'reading', "Question 6", answerChoices3, "B"),
-  new Exercise(7, 'reading', "Question 7", answerChoices3, "C"),
-  new Exercise(8, 'reading', "Question 8", answerChoices3, "D"),
-  new Exercise(9, 'reading', "Question 9", answerChoices3, "A"),
+  new Exercise("rep3-seq1-ex1", 'reading', "Question 1", answerChoices3, "A"),
+  new Exercise("rep3-seq1-ex2", 'reading', "Question 2", answerChoices3, "B"),
+  new Exercise("rep3-seq1-ex3", 'reading', "Question 3", answerChoices3, "C"),
+  new Exercise("rep3-seq1-ex4", 'reading', "Question 4", answerChoices3, "D"),
+  new Exercise("rep3-seq2-ex5", 'reading', "Question 5", answerChoices3, "A"),
+  new Exercise("rep3-seq2-ex6", 'reading', "Question 6", answerChoices3, "B"),
+  new Exercise("rep3-seq2-ex7", 'reading', "Question 7", answerChoices3, "C"),
+  new Exercise("rep3-seq3-ex8", 'reading', "Question 8", answerChoices3, "D"),
+  new Exercise("rep3-seq3-ex9", 'reading', "Question 9", answerChoices3, "A"),
 ];
-*/
