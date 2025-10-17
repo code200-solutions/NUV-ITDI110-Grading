@@ -15,20 +15,20 @@ export class AnswerChoices{
 }
 
 export class Exercise {
- question: number;
+ questionId: string; //Using that for unique identification of exercises 
  type?: ExerciseType;
  questionPrompt: string;
  answerChoices?: AnswerChoices[]
  answer: string;
 
  constructor(
-  question: number, 
+  questionId: string, 
   type: ExerciseType,
   questionPrompt: string, 
   answerChoices: AnswerChoices[], 
   answer: string
 ){
-  this.question = question;
+  this.questionId = questionId;
   this.type = type;
   this.questionPrompt = questionPrompt;
   this.answerChoices = answerChoices;
