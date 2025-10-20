@@ -16,45 +16,61 @@ export class Test {
 //answer choices for exercises
   export class AnswerChoice {
   constructor(
-    private readonly id: string,
-    private readonly text?: string,
-    private readonly imageUri?: string
+    private id: string,
+    private text?: string,
+    private imageUri?: string
   ) {}
 
-  public getId(): string {
+  getId(): string {
     return this.id;
   }
-
-  public getText(): string | undefined {
+  getText(): string | undefined {
     return this.text;
   }
-
-  public getImageUri(): string | undefined {
+  getImageUri(): string | undefined {
     return this.imageUri;
   }
 }
 
 //Exercise class representing each question in the test
 export class Exercise {
- questionId: string; //Using that for unique identification of exercises 
- type?: ExerciseType;
- questionPrompt: string;
- answerChoices?: AnswerChoice[]
- answer: string;
+ private questionId: string; //Using that for unique identification of exercises 
+ private type?: ExerciseType;
+ private questionPrompt: string;
+ private answerChoice?: AnswerChoice[]
+ private answer: string;
 
  constructor(
   questionId: string, 
   type: ExerciseType,
   questionPrompt: string, 
-  answerChoices: AnswerChoice[], 
+  answerChoice: AnswerChoice[], 
   answer: string
 ){
   this.questionId = questionId;
   this.type = type;
   this.questionPrompt = questionPrompt;
-  this.answerChoices = answerChoices;
+  this.answerChoice = answerChoice;
   this.answer = answer;
  }
+  getQuestionId(): string {
+    return this.questionId;
+  }
+  getType(): ExerciseType | undefined {
+    return this.type;
+  }
+  getQuestionPrompt(): string {
+    return this.questionPrompt;
+  }
+  getAnswerChoices(): AnswerChoice[]{
+    return this.answerChoice;
+  }
+  getAnswer(): string {
+    return this.answer;
+  }
+  isCorrect(answerId: string): boolean{
+    return this.answer === answerId;
+  }
 }
 
 //Sequence class representing a sequence of exercises
