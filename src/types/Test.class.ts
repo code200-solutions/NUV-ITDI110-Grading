@@ -3,32 +3,63 @@ export type ExerciseType = 'listening' | 'reading';
 
 // Define the content of the Test class
 export class Test {
-  testId: string;
-  sequences: Sequence[];
-  static sequences: any;
+  private testId: string;
+  private sequences: Sequence[];
+  private answer: string[];
+  exercises: any;
 
   constructor(testId: string, sequences: Sequence[]) {
     this.testId = testId;
     this.sequences = sequences;
   }
+  getTestId(): string {
+    return this.testId;
+  }
+  getAllExercises(): Exercise[] {
+    return this.sequences.flatMap(sequence => sequence.getExercises());
+  }
+  calculateMark(exercises: Exercise[]): number{
+    let correctAnswerId = 0;
+    let mark = 0;
+   
+    for (const sequence of this.sequences) {
+      for (const exercise of this.exercises) {
+        const studentAnswer = this.answer.find(ans => ans.exerciseId === exercise.questionId);
+        if (studentAnswer) {
+          mark++;
+          if (studentAnswer.isCorrect(exercise.answer)) {
+            correctAnswerId++;
+          }
+        }
+      }
+    }
+    return (correctAnswerId / mark) * 100;
+  }
 }
 
 //answer choices for exercises
-  export class AnswerChoice {
-  constructor(
-    private id: string,
-    private text?: string,
-    private imageUri?: string
-  ) {}
+export class AnswerChoice {
+  private answerChoiceId: string;
 
-  getId(): string {
-    return this.id;
+  constructor(answerChoiceId: string){
+    this.answerChoiceId = answerChoiceId;
   }
-  getText(): string | undefined {
-    return this.text;
+}
+//child classes of AnswerChoice for different types of answer choices
+class TextAnswerChoice extends AnswerChoice {
+  private text: string;
+
+  constructor(id: string, text: string){
+    super(id);
+    this.text = text;
   }
-  getImageUri(): string | undefined {
-    return this.imageUri;
+}
+class ImageAnswerChoice extends AnswerChoice {
+  private imageUrl: string;
+
+  constructor(id: string, imageUrl: string){
+    super(id);
+    this.imageUrl = imageUrl;
   }
 }
 
@@ -38,20 +69,20 @@ export class Exercise {
  private type?: ExerciseType;
  private questionPrompt: string;
  private answerChoice?: AnswerChoice[]
- private answer: string;
+ private goodAnswerId: string;
 
  constructor(
   questionId: string, 
   type: ExerciseType,
   questionPrompt: string, 
   answerChoice: AnswerChoice[], 
-  answer: string
+  goodAnswerId: string
 ){
   this.questionId = questionId;
   this.type = type;
   this.questionPrompt = questionPrompt;
   this.answerChoice = answerChoice;
-  this.answer = answer;
+  this.goodAnswerId = goodAnswerId;
  }
   getQuestionId(): string {
     return this.questionId;
@@ -66,37 +97,35 @@ export class Exercise {
     return this.answerChoice;
   }
   getAnswer(): string {
-    return this.answer;
+    return this.goodAnswerId;
   }
   isCorrect(answerId: string): boolean{
-    return this.answer === answerId;
+    return this.goodAnswerId === answerId;
   }
 }
 
 //Sequence class representing a sequence of exercises
 export class Sequence {
-  sequenceNum: number;
-  exercises: Exercise[];
-  static exercises: any;
+  private sequenceNum: number;
+  private exercises: Exercise[];
+
 
   constructor(sequenceNum: number, exercises: Exercise[]) {
    this.sequenceNum = sequenceNum;
    this.exercises = exercises;
   }
+  getExercises(): Exercise[] {
+    return this.exercises;
+  }
 }
-
 //StudentAnswer class representing a student's answer to an exercise
 export class StudentAnswer{
-  exerciseId: string;
-  answer: string;
+  private exerciseId: string;
+  private answerId: string;
   
-  constructor(exerciseId: string, answer: string){
+  constructor(exerciseId: string, answerId: string){
     this.exerciseId = exerciseId;
-    this.answer = answer;
-  }
-
-  isCorrect(correctAnswerId: string): boolean{
-    return this.answer === correctAnswerId;
+    this.answerId = answerId;
   }
 }
 
@@ -111,46 +140,28 @@ export class StudentSubmission{
     this.testId = testId;
     this.answers = answers;
   }
-
-  calculateMark(exercises: Exercise[]): number{
-    let correctAnswerId = 0;
-    let mark = 0;
-   
-    for (const sequence of Test.sequences) {
-      for (const exercise of sequence.exercises) {
-        const studentAnswer = this.answers.find(ans => ans.exerciseId === exercise.questionId);
-        if (studentAnswer) {
-          mark++;
-          if (studentAnswer.isCorrect(exercise.answer)) {
-            correctAnswerId++;
-          }
-        }
-      }
-    }
-    return (correctAnswerId / mark) * 100;
-  }
 }
 
 //answer choices for exercises
 const answerChoices1: AnswerChoice[] = [
-  new AnswerChoice('A', 'Choice A'),
-  new AnswerChoice('B', 'Choice B'),
-  new AnswerChoice('C', 'Choice C'),
-  new AnswerChoice('D', 'Choice D'),
+  new AnswerChoice('A'),
+  new AnswerChoice('B'),
+  new AnswerChoice('C'),
+  new AnswerChoice('D'),
 ];
 
 const answerChoices2: AnswerChoice[] = [
-  new AnswerChoice('A', 'Choice A'),
-  new AnswerChoice('B', 'Choice B'),
-  new AnswerChoice('C', 'Choice C'),
-  new AnswerChoice('D', 'Choice D'),
+  new AnswerChoice('A'),
+  new AnswerChoice('B'),
+  new AnswerChoice('C'),
+  new AnswerChoice('D'),
 ]; 
 
 const answerChoices3: AnswerChoice[] = [
-  new AnswerChoice('A', 'Choice A'),
-  new AnswerChoice('B', 'Choice B'),
-  new AnswerChoice('C', 'Choice C'),
-  new AnswerChoice('D', 'Choice D'),
+  new AnswerChoice('A'),
+  new AnswerChoice('B'),
+  new AnswerChoice('C'),
+  new AnswerChoice('D'),
 ];
 
 //creating some exercises for the sequences 
