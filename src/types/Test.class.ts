@@ -14,15 +14,23 @@ export class Test {
 }
 
 //answer choices for exercises
-export class AnswerChoices{
-  id: string;
-  text?: string;
-  imageUri?: string;
+  export class AnswerChoice {
+  constructor(
+    private readonly id: string,
+    private readonly text?: string,
+    private readonly imageUri?: string
+  ) {}
 
-  constructor(id: string, text?: string, imageUri?: string){
-    this.id = id;
-    this.text = text;
-    this.imageUri = imageUri;
+  public getId(): string {
+    return this.id;
+  }
+
+  public getText(): string | undefined {
+    return this.text;
+  }
+
+  public getImageUri(): string | undefined {
+    return this.imageUri;
   }
 }
 
@@ -31,14 +39,14 @@ export class Exercise {
  questionId: string; //Using that for unique identification of exercises 
  type?: ExerciseType;
  questionPrompt: string;
- answerChoices?: AnswerChoices[]
+ answerChoices?: AnswerChoice[]
  answer: string;
 
  constructor(
   questionId: string, 
   type: ExerciseType,
   questionPrompt: string, 
-  answerChoices: AnswerChoices[], 
+  answerChoices: AnswerChoice[], 
   answer: string
 ){
   this.questionId = questionId;
@@ -108,25 +116,25 @@ export class StudentSubmission{
 }
 
 //answer choices for exercises
-const answerChoices1: AnswerChoices[] = [
-  new AnswerChoices('A', 'Choice A'),
-  new AnswerChoices('B', 'Choice B'),
-  new AnswerChoices('C', 'Choice C'),
-  new AnswerChoices('D', 'Choice D'),
+const answerChoices1: AnswerChoice[] = [
+  new AnswerChoice('A', 'Choice A'),
+  new AnswerChoice('B', 'Choice B'),
+  new AnswerChoice('C', 'Choice C'),
+  new AnswerChoice('D', 'Choice D'),
 ];
 
-const answerChoices2: AnswerChoices[] = [
-  new AnswerChoices('A', 'Choice A'),
-  new AnswerChoices('B', 'Choice B'),
-  new AnswerChoices('C', 'Choice C'),
-  new AnswerChoices('D', 'Choice D'),
+const answerChoices2: AnswerChoice[] = [
+  new AnswerChoice('A', 'Choice A'),
+  new AnswerChoice('B', 'Choice B'),
+  new AnswerChoice('C', 'Choice C'),
+  new AnswerChoice('D', 'Choice D'),
 ]; 
 
-const answerChoices3: AnswerChoices[] = [
-  new AnswerChoices('A', 'Choice A'),
-  new AnswerChoices('B', 'Choice B'),
-  new AnswerChoices('C', 'Choice C'),
-  new AnswerChoices('D', 'Choice D'),
+const answerChoices3: AnswerChoice[] = [
+  new AnswerChoice('A', 'Choice A'),
+  new AnswerChoice('B', 'Choice B'),
+  new AnswerChoice('C', 'Choice C'),
+  new AnswerChoice('D', 'Choice D'),
 ];
 
 //creating some exercises for the sequences 
