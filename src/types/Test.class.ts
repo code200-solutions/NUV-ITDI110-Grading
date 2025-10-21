@@ -65,7 +65,7 @@ class ImageAnswerChoice extends AnswerChoice {
 
 //Exercise class representing each question in the test
 export class Exercise {
- private questionId: string; //Using that for unique identification of exercises 
+ private questionId: string; //Using string for unique identification of exercises 
  private type?: ExerciseType;
  private questionPrompt: string;
  private answerChoice?: AnswerChoice[]
@@ -106,13 +106,15 @@ export class Exercise {
 
 //Sequence class representing a sequence of exercises
 export class Sequence {
-  private sequenceNum: number;
+  private sequenceId: Sequence[];
   private exercises: Exercise[];
 
-
-  constructor(sequenceNum: number, exercises: Exercise[]) {
-   this.sequenceNum = sequenceNum;
+  constructor(sequencId: number, exercises: Exercise[]) {
+   this.sequenceId = Sequence[sequencId];
    this.exercises = exercises;
+  }
+  getSequenceNum(): number {
+    return this.sequenceId.length;
   }
   getExercises(): Exercise[] {
     return this.exercises;
