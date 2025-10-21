@@ -113,8 +113,8 @@ export class Sequence {
    this.sequenceId = Sequence[sequencId];
    this.exercises = exercises;
   }
-  getSequenceNum(): number {
-    return this.sequenceId.length;
+  getSequenceNum(): Sequence[] {
+    return this.sequenceId;
   }
   getExercises(): Exercise[] {
     return this.exercises;
@@ -146,8 +146,8 @@ export class StudentSubmission{
 
 //answer choices for exercises
 const answerChoices1: AnswerChoice[] = [
-  new AnswerChoice('A'),
-  new AnswerChoice('B'),
+  new TextAnswerChoice('A', 'Option A'),
+  new ImageAnswerChoice('B', 'http://example.com/imageB.jpg'),
   new AnswerChoice('C'),
   new AnswerChoice('D'),
 ];
