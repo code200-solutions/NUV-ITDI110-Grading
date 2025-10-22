@@ -1,5 +1,11 @@
-//Type of exercises for test
-export type ExerciseType = 'listening' | 'reading';
+//Type of exercises and answers for test
+type MatchingAnswers = Array<{question: string; answer:string}>;
+type MultiChoiceAnswers = string[];
+type ShortAnswers = string[];
+
+export type AnswerType = MatchingAnswers | MultiChoiceAnswers | ShortAnswers;
+//export type ExerciseType = 'listening' | 'reading';
+//export type AnswerType = 'text' | 'image'|'matching'
 
 // Define the content of the Test class
 export class Test {
@@ -18,23 +24,7 @@ export class Test {
   getAllExercises(): Exercise[] {
     return this.sequences.flatMap(sequence => sequence.getExercises());
   }
-  calculateMark(exercises: Exercise[]): number{
-    let correctAnswerId = 0;
-    let mark = 0;
-   
-    for (const sequence of this.sequences) {
-      for (const exercise of this.exercises) {
-        const studentAnswer = this.answer.find(ans => ans.exerciseId === exercise.questionId);
-        if (studentAnswer) {
-          mark++;
-          if (studentAnswer.isCorrect(exercise.answer)) {
-            correctAnswerId++;
-          }
-        }
-      }
-    }
-    return (correctAnswerId / mark) * 100;
-  }
+
 }
 
 //answer choices for exercises
@@ -55,13 +45,17 @@ class TextAnswerChoice extends AnswerChoice {
   }
 }
 class ImageAnswerChoice extends AnswerChoice {
-  private imageUrl: string;
+  private imageUri: string;
 
-  constructor(id: string, imageUrl: string){
+  constructor(id: string, imageUri: string){
     super(id);
-    this.imageUrl = imageUrl;
+    this.imageUri = imageUri;
+  }
+  getImageUri(): string{
+    return this.imageUri;
   }
 }
+export 
 
 //Exercise class representing each question in the test
 export class Exercise {
