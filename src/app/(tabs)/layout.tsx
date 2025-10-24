@@ -31,7 +31,7 @@ export default function ProtectedTabLayout() {
           }}
         />
         <Tabs.Screen
-          name='tests'
+          name='testTabScreen'
           options={{
             title: 'Tests',
             tabBarIcon: ({ focused, color, size }: tabBarIconProps) => (
