@@ -14,6 +14,8 @@ export class Test {
   private sequences: Sequence[];
   private answer: string[] = [];
   exercises: any;
+  static sequences: any;
+  answers: any;
 
   constructor(testId: string, sequences: Sequence[]) {
     this.testId = testId;
@@ -24,6 +26,23 @@ export class Test {
   }
   getAllExercises(): Exercise[] {
     return this.sequences.flatMap(sequence => sequence.getExercises());
+  }
+  calculateMark(exercises: Exercise[]): number{
+    let correctAnswerId = 0;
+    let mark = 0;
+   
+    for (const sequence of Test.sequences) {
+      for (const exercise of sequence.exercises) {
+        const studentAnswer = this.answers.find(ans => ans.exerciseId === exercise.questionId);
+        if (studentAnswer) {
+          mark++;
+          if (studentAnswer.isCorrect(exercise.answer)) {
+            correctAnswerId++;
+          }
+        }
+      }
+    }
+    return (correctAnswerId / mark) * 100;
   }
 }
 
