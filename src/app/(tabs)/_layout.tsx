@@ -12,19 +12,6 @@ export default function ProtectedTabLayout() {
         tabBarInactiveTintColor: '#8e8e93',
       }}
     >
-      <Tabs.Screen
-        name="homeTabScreen"
-        options={{
-          title: 'Home',
-          tabBarIcon: ({ focused, color, size }) => (
-            <Icon
-              source={focused ? 'home' : 'home-outline'}
-              size={size}
-              color={color}
-            />
-          ),
-        }}
-      />
 
       <Tabs.Screen
         name="testTabScreen"
