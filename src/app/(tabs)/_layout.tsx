@@ -53,6 +53,19 @@ export default function ProtectedTabLayout() {
           ),
         }}
       /> 
+      <Tabs.Screen
+        name="profileTabScreen"
+        options={{
+          title: 'Profile',
+          tabBarIcon: ({ focused, color, size }) => (
+            <Icon
+              source={focused ? 'profile' : 'profile-outline'}
+              size={size}
+              color={color}
+            />
+          ),
+        }}
+      /> 
     </Tabs>
   );
 }
