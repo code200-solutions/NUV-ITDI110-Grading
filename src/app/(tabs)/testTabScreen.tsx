@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { View, Text, Pressable, StyleSheet } from "react-native";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 export default function HomeTabScreen(){
     const [timesPressed, setTimesPressed] = useState(0);
@@ -68,6 +69,6 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 1.0,
     shadowRadius: 3.84,
-    elevation: 2
+    elevation: 3
   }
 });
