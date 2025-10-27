@@ -9,7 +9,7 @@ export default function ProtectedTabLayout() {
         freezeOnBlur: true,
         headerShown: false,
         tabBarActiveTintColor: '#004ea1ff',
-        tabBarInactiveTintColor: '#8e8e93',
+        tabBarInactiveTintColor: '#004ea1ff',
       }}
     >
             <Tabs.Screen
@@ -52,7 +52,21 @@ export default function ProtectedTabLayout() {
             />
           ),
         }}
-      /> 
+      />
+
+       <Tabs.Screen
+        name="profileTabScreen"
+        options={{
+          title: 'Profile',
+          tabBarIcon: ({ focused, color, size }) => (
+            <Icon
+              source={focused ? 'account' : 'account-outline'}              
+              size={size}
+              color={color}
+            />
+          ),
+        }}
+      />  
     </Tabs>
   );
 }

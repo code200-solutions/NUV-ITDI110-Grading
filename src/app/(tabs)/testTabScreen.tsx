@@ -23,7 +23,6 @@ export default function TestsTabScreen(){
         </Pressable>
         </View>
     </View>
-
   );
 };
 
