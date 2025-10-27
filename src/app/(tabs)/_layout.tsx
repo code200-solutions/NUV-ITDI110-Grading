@@ -32,7 +32,7 @@ export default function ProtectedTabLayout() {
           title: 'Tests',
           tabBarIcon: ({ focused, color, size }) => (
             <Icon
-              source={focused ? 'file-edit' : 'file-edit-outline'}
+              source={focused ? 'school' : 'school-outline'}
               size={size}
               color={color}
             />
@@ -40,12 +40,10 @@ export default function ProtectedTabLayout() {
         }}
       />
 
-      {/* Example: Add more tabs easily */}
-      {/* 
       <Tabs.Screen
-        name="settings"
+        name="gradesTabScreen"
         options={{
-          title: 'Settings',
+          title: 'Grades',
           tabBarIcon: ({ focused, color, size }) => (
             <Icon
               source={focused ? 'cog' : 'cog-outline'}
@@ -55,7 +53,6 @@ export default function ProtectedTabLayout() {
           ),
         }}
       /> 
-      */}
     </Tabs>
   );
 }
