@@ -1,3 +1,4 @@
+import { router, useNavigation } from 'expo-router';
 import React, { useRef, useState } from 'react';
 import {
   Alert,
@@ -8,7 +9,12 @@ import {
   View,
 } from 'react-native';
 
+
 export default function LoginScreen() {
+  const navigaton = useNavigation() as any;
+  const handleTestPress = () => {
+        router.navigate('testTabScreen');
+      };
   const [password, setPassword] = useState('');
   const [username, setUsername] = useState('');
 
@@ -20,6 +26,7 @@ export default function LoginScreen() {
   }
 
   return (
+    <View>
     <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
       <View className='flex-1 items-center justify-center px-6 py-12'>
         <Text className='text-2xl font-bold mb-6'>Login Screen</Text>
@@ -59,7 +66,7 @@ export default function LoginScreen() {
             className='border border-gray-300 rounded px-3 py-2 mb-6'
           />
           <Pressable
-            onPress={submit}
+            onPress={() => router.replace('/(tabs)/testTabScreen')}
             style={({ pressed }) => ({
               alignItems: 'center',
               paddingTop: 12,
@@ -73,5 +80,6 @@ export default function LoginScreen() {
         </View>
       </View>
     </ScrollView>
+    </View>
   );
 }
