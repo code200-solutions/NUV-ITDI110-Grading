@@ -32,7 +32,7 @@ export default function ProtectedTabLayout() {
           title: 'Tests',
           tabBarIcon: ({ focused, color, size }) => (
             <Icon
-              source={focused ? 'school' : 'school-outline'}
+              source={focused ? 'file-edit' : 'file-edit-outline'}
               size={size}
               color={color}
             />
@@ -46,7 +46,7 @@ export default function ProtectedTabLayout() {
           title: 'Grades',
           tabBarIcon: ({ focused, color, size }) => (
             <Icon
-              source={focused ? 'cog' : 'cog-outline'}
+              source={focused ? 'school' : 'school-outline'}
               size={size}
               color={color}
             />
