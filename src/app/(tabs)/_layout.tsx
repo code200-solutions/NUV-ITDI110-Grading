@@ -9,7 +9,7 @@ export default function ProtectedTabLayout() {
         freezeOnBlur: true,
         headerShown: false,
         tabBarActiveTintColor: '#004ea1ff',
-        tabBarInactiveTintColor: '#8e8e93',
+        tabBarInactiveTintColor: '#004ea1ff',
       }}
     >
             <Tabs.Screen
