@@ -12,7 +12,7 @@ export default function ProtectedTabLayout() {
         tabBarInactiveTintColor: '#8e8e93',
       }}
     >
-            <Tabs.Screen
+    <Tabs.Screen
         name="homeTabScreen"
         options={{
           title: 'Home',
@@ -24,9 +24,9 @@ export default function ProtectedTabLayout() {
             />
           ),
         }}
-      />
+    />
 
-      <Tabs.Screen
+    <Tabs.Screen
         name="testTabScreen"
         options={{
           title: 'Tests',
@@ -38,7 +38,7 @@ export default function ProtectedTabLayout() {
             />
           ),
         }}
-      />
+    />
 
       {/* Example: Add more tabs easily */}
       {/* 
