@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, Pressable, StyleSheet } from "react-native";
 
-export default function HomeTabScreen(){
+export default function TestsTabScreen(){
     const [timesPressed, setTimesPressed] = useState(0);
 
   return (
