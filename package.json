@@ -6,6 +6,7 @@
     "start": "yarn expo start -c"
   },
   "dependencies": {
+    "@react-navigation/bottom-tabs": "^7.5.0",
     "expo": "^54.0.1",
     "expo-constants": "~18.0.8",
     "expo-linking": "~8.0.7",

@@ -3,7 +3,6 @@ import React from 'react';
 import { Icon } from 'react-native-paper';
 
 export default function ProtectedTabLayout() {
-
     type tabBarIconProps = {
     focused: boolean;
     color: string;
