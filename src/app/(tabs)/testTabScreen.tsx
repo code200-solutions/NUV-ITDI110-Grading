@@ -1,16 +1,8 @@
 import React, { useState } from "react";
 import { View, Text, Pressable, StyleSheet } from "react-native";
-import { SafeAreaProvider } from "react-native-safe-area-context";
 
 export default function HomeTabScreen(){
     const [timesPressed, setTimesPressed] = useState(0);
-
-  let textLog = '';
-  if (timesPressed > 1) {
-    textLog = timesPressed + 'x onPress';
-  } else if (timesPressed > 0) {
-    textLog = 'onPress';
-  }
 
   return (
     <View>
