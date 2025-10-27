@@ -8,7 +8,7 @@ export default function ProtectedTabLayout() {
       screenOptions={{
         freezeOnBlur: true,
         headerShown: false,
-        tabBarActiveTintColor: '#007AFF',
+        tabBarActiveTintColor: '#004ea1ff',
         tabBarInactiveTintColor: '#8e8e93',
       }}
     >
