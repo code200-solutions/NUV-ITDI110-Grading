@@ -32,7 +32,7 @@ export default function ProtectedTabLayout() {
           title: 'Tests',
           tabBarIcon: ({ focused, color, size }) => (
             <Icon
-              source={focused ? 'file' : 'file-outline'}
+              source={focused ? 'file-edit' : 'file-edit-outline'}
               size={size}
               color={color}
             />
