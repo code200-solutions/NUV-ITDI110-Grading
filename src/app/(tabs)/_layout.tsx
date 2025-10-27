@@ -12,7 +12,7 @@ export default function ProtectedTabLayout() {
         tabBarInactiveTintColor: '#004ea1ff',
       }}
     >
-            <Tabs.Screen
+      <Tabs.Screen
         name="homeTabScreen"
         options={{
           title: 'Home',
