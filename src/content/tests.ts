@@ -1,22 +1,20 @@
 import { AnswerChoice, Exercise, ImageAnswerChoice, Sequence, Test, TextAnswerChoice } from "@/types/Test.class";
-
-
 //answer choices for exercises
-const answerChoices1: AnswerChoice[] = [
+export const answerChoices1: AnswerChoice[] = [
   new TextAnswerChoice('A', 'Option A'),
   new ImageAnswerChoice('B', 'http://example.com/imageB.jpg'),
-  new AnswerChoice('C'),
+  new ImageAnswerChoice('C', 'http://example.com/imageC.jpg'),
   new AnswerChoice('D'),
 ];
 
-const answerChoices2: AnswerChoice[] = [
+export const answerChoices2: AnswerChoice[] = [
   new AnswerChoice('A'),
   new AnswerChoice('B'),
   new AnswerChoice('C'),
   new AnswerChoice('D'),
 ]; 
 
-const answerChoices3: AnswerChoice[] = [
+export const answerChoices3: AnswerChoice[] = [
   new AnswerChoice('A'),
   new AnswerChoice('B'),
   new AnswerChoice('C'),

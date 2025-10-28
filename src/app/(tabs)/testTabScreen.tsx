@@ -9,7 +9,6 @@ import { Tests } from "@/content/tests";
 import { router } from "expo-router";
 
 //@TODO: initialize with real tests reading from the file
-
 export default function TestsTabScreen() {
   const displayTest = useCallback((testId: string) => {
     router.push({
