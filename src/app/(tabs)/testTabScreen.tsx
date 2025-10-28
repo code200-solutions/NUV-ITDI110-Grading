@@ -1,65 +1,35 @@
-import React, { useState } from "react";
-import { View, Text, Pressable, StyleSheet } from "react-native";
+import React, { useCallback, useState } from "react";
+import {
+  View,
+  Text,
+  Pressable,
+  ScrollView,
+} from "react-native";
+import { Tests } from "@/content/tests";
+import { router } from "expo-router";
 
-export default function TestsTabScreen(){
-    const [timesPressed, setTimesPressed] = useState(0);
+//@TODO: initialize with real tests reading from the file
 
+export default function TestsTabScreen() {
+  const displayTest = useCallback((testId: string) => {
+    router.push({
+      pathname: "/(tabs)/testViewer/[testId]",
+      params: { testId: testId },
+    });
+  }, []);
   return (
-    <View>
-        <View style={styles.containerBox}>
-        <Pressable
-          onPress={() => {
-            setTimesPressed(current => current + 1);
-          }}
-          style={({pressed}) => [
-            {
-              backgroundColor: pressed ? 'rgb(210, 230, 255)' : 'white',
-            },
-            styles.containerBox,
-          ]}>
-          {({pressed}) => (
-            <Text style={styles.text}>{pressed ? 'Is Pressed' : 'Press To View Test'}</Text>
-          )}
-        </Pressable>
-        </View>
+    <View className="flex-1 flex-col w-full p-2">
+      <ScrollView>
+        {Tests.map((test, index) => (
+          <Pressable
+            className="py-2 border mb-1"
+            key={`test#${test.getTestId()}`}
+            onPress={() => displayTest(test.getTestId())}
+          >
+            <Text>* Waiting for a proper test name: {test.getTestId()}</Text>
+          </Pressable>
+        ))}
+      </ScrollView>
     </View>
   );
-};
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 20,
-    margin: 40,
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginBottom: 50,
-  },
-  text: {
-    fontSize: 16,
-    lineHeight: 30,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    color: 'black',
-  },
-  wrapperCustom: {
-    borderRadius: 8,
-    padding: 6,
-  },
-  containerBox: {
-    padding: 20,
-    margin: 10,
-    borderWidth: StyleSheet.hairlineWidth,
-    borderColor: '#ffffffff',
-    backgroundColor: '#ffffffff',
-    borderRadius: 12,
-    shadowColor: '#000',
-    shadowOffset: {
-        width: 2,
-        height: 2
-    },
-    shadowOpacity: 1.0,
-    shadowRadius: 3.84,
-    elevation: 3
-  }
-});
+}

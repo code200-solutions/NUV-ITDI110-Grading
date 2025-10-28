@@ -1,7 +1,7 @@
 import React from 'react';
 import '../global.css';
 import { Stack } from 'expo-router';
-import SafeAreaView from '../app/components/SafeAreaView';
+import SafeAreaView from '../components/SafeAreaView';
 
 export default function Layout() {
   return (
