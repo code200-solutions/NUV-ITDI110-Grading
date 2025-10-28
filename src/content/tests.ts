@@ -1,10 +1,10 @@
 import { AnswerChoice, Exercise, ImageAnswerChoice, Sequence, Test, TextAnswerChoice } from "@/types/Test.class";
 //answer choices for exercises
 export const answerChoices1: AnswerChoice[] = [
-  new TextAnswerChoice('A', 'Option A'),
-  new ImageAnswerChoice('B', 'http://example.com/imageB.jpg'),
-  new ImageAnswerChoice('C', 'http://example.com/imageC.jpg'),
-  new AnswerChoice('D'),
+  new ImageAnswerChoice('A', 'https://github.com/code200-solutions/NUV-ITDI110-Grading/blob/feat/dashboard-tests-screen/src/assets/images/reperes1/rep1-seq1-ex1-img5.png'),
+  new ImageAnswerChoice('B', 'https://github.com/code200-solutions/NUV-ITDI110-Grading/blob/feat/dashboard-tests-screen/src/assets/images/reperes1/rep1-seq1-ex1-img6.png'),
+  new ImageAnswerChoice('C', 'https://github.com/code200-solutions/NUV-ITDI110-Grading/blob/feat/dashboard-tests-screen/src/assets/images/reperes1/rep1-seq1-ex1-img7.png'),
+  new ImageAnswerChoice('D', 'https://github.com/code200-solutions/NUV-ITDI110-Grading/blob/feat/dashboard-tests-screen/src/assets/images/reperes1/rep1-seq1-ex1-img8.png'),
 ];
 
 export const answerChoices2: AnswerChoice[] = [

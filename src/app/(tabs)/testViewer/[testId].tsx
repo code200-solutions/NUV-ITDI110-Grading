@@ -1,20 +1,49 @@
 import { Tests } from "@/content/tests";
 import { useLocalSearchParams } from "expo-router";
 import React, { useMemo } from "react";
-import { View, Text } from "react-native";
+import { View, Text, ScrollView, Image } from "react-native";
 
 export default function TestViewerScreen() {
   const { testId } = useLocalSearchParams();
+  const test = useMemo(() => Tests.find((t) => t.getTestId() === testId), [testId]);
 
-  const test = useMemo(() => Tests.find((t) => t.getTestId() === testId), []);
+  if (!test) {
+    return (
+      <View style={{ padding: 16 }}>
+        <Text>Test {testId} not found</Text>
+      </View>
+    );
+  }
 
-  return !test ? (
-    <View>
-      <Text>Test {testId} not found</Text>
-    </View>
-  ) : (
-    <View>
+  const sequences = test.getAllExercises ? test.getAllExercises() : [];
+
+  return (
+    <ScrollView>
       <Text>{test.getTestId()}</Text>
-    </View>
+
+      {sequences.length === 0 ? (
+        <Text>No exercises available for this test.</Text>
+      ) : (
+        sequences.map((exercise: any, idx: number) => (
+          <View key={exercise.getQuestionId ? exercise.getQuestionId() : idx}>
+            <Text >{`${idx + 1}. ${exercise.getQuestionPrompt()}`}</Text>
+            <View style={{ marginTop: 8 }}>
+              {exercise.getAnswerChoices().map((choice: any) => (
+                <View key={choice.getId()}>
+    
+                  {/* Spos emi wan imgUri bah e render spos no bah e showem text */}
+                  {typeof (choice as any).getImageUri === "function" ? (
+                    <Image source={{ uri: (choice as any).getImageUri() }}/>
+                  ) : typeof (choice as any).getText === "function" ? (
+                    <Text >{choice.getText()}</Text>
+                  ) : null}
+                  <Text>{choice.getId()}</Text>
+                </View>
+              ))}
+            </View>
+          </View>
+        ))
+      )}
+    </ScrollView>
   );
 }
