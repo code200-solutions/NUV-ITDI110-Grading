@@ -27,20 +27,23 @@ export default function TestViewerScreen() {
         sequences.map((exercise: any, idx: number) => (
           <View key={exercise.getQuestionId ? exercise.getQuestionId() : idx}>
             <Text >{`${idx + 1}. ${exercise.getQuestionPrompt()}`}</Text>
-            <View style={{ marginTop: 8 }}>
-              {exercise.getAnswerChoices().map((choice: any) => (
-                <View key={choice.getId()}>
-    
-                  {/* Spos emi wan imgUri bah e render spos no bah e showem text */}
+          <View>
+            {exercise.getAnswerChoices().map((choice: any) => (
+              <View 
+              key={choice.getId()}
+              >
+                  {/* Render if its ImgUri or text */}
                   {typeof (choice as any).getImageUri === "function" ? (
-                    <Image source={{ uri: (choice as any).getImageUri() }}/>
+                    <Image 
+                    source={{ uri: (choice as any).getImageUri() }}
+                    />
                   ) : typeof (choice as any).getText === "function" ? (
                     <Text >{choice.getText()}</Text>
                   ) : null}
-                  <Text>{choice.getId()}</Text>
-                </View>
-              ))}
-            </View>
+                  <Text>{choice.getId()}</Text>   
+              </View>
+            ))}
+          </View>
           </View>
         ))
       )}
