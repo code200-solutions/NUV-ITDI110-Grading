@@ -4,10 +4,17 @@ import { AnswerChoice, Exercise, ImageAnswerChoice, Sequence, Test, TextAnswerCh
 const imgRep1Seq1Ex1Img6 = require('@/assets/images/reperes1/rep1-seq1-ex1-img6.png');
 //answer choices for exercises
 export const answerChoices1: AnswerChoice[] = [
-  new ImageAnswerChoice('A', { uri: 'https://raw.githubusercontent.com/code200-solutions/NUV-ITDI110-Grading/refs/heads/feat/dashboard-tests-screen/src/assets/images/reperes1/rep1-seq1-ex1-img5.png', width: 162, height: 94 }),
-  new ImageAnswerChoice('B', imgRep1Seq1Ex1Img6),
-  new ImageAnswerChoice('C', 'https://github.com/code200-solutions/NUV-ITDI110-Grading/blob/feat/dashboard-tests-screen/src/assets/images/reperes1/rep1-seq1-ex1-img7.png'),
-  new ImageAnswerChoice('D', 'https://github.com/code200-solutions/NUV-ITDI110-Grading/blob/feat/dashboard-tests-screen/src/assets/images/reperes1/rep1-seq1-ex1-img8.png'),
+  new ImageAnswerChoice(
+    'A', 
+    { uri: 'https://raw.githubusercontent.com/code200-solutions/NUV-ITDI110-Grading/refs/heads/feat/dashboard-tests-screen/src/assets/images/reperes1/rep1-seq1-ex1-img5.png', 
+      width: 162, height: 94 
+    }),
+  new ImageAnswerChoice(
+    'B', 
+    { uri: 'https://raw.githubusercontent.com/code200-solutions/NUV-ITDI110-Grading/39ee32b687c06a4e55add3eca7c40e7c4fb508ca/src/assets/images/reperes1/rep1-seq1-ex1-img2.png',
+     width: 162, height: 94}),
+  new ImageAnswerChoice('C', imgRep1Seq1Ex1Img6),
+  new ImageAnswerChoice('D', imgRep1Seq1Ex1Img6),
 ];
 
 export const answerChoices2: AnswerChoice[] = [

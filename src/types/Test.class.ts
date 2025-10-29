@@ -76,6 +76,7 @@ export class TextAnswerChoice extends AnswerChoice {
 
 export class ImageAnswerChoice extends AnswerChoice {
   private imageUri: ImageSourcePropType;
+  getText: any;
 
   constructor(id: string, imageUri: number | Required<Pick<ImageURISource, 'uri' | 'width' | 'height'>>){
     super(id);
