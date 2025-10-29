@@ -9,7 +9,6 @@ import {
   View,
 } from 'react-native';
 
-
 export default function LoginScreen() {
   const navigaton = useNavigation() as any;
   const handleTestPress = () => {

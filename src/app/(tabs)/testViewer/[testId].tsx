@@ -1,7 +1,7 @@
 import { Tests } from "@/content/tests";
-import { useLocalSearchParams } from "expo-router";
+import { useLocalSearchParams, useRouter } from "expo-router";
 import React, { useMemo } from "react";
-import { View, Text, ScrollView, Image, TouchableOpacity, Pressable } from "react-native";
+import { View, Text, ScrollView, Image, TouchableOpacity } from "react-native";
 import { AnswerChoice, Exercise, ImageAnswerChoice, TextAnswerChoice } from "@/types/Test.class";
 import { useRoute } from "@react-navigation/native"; 
 
@@ -9,7 +9,7 @@ import { useRoute } from "@react-navigation/native";
 export default function TestViewerScreen() {
   const { testId } = useLocalSearchParams();
   const { page } = useLocalSearchParams();
-  const router = useRoute();
+  const router = useRouter();
   const test = useMemo(() => Tests.find((t) => t.getTestId() === testId), [testId]);
   const route = useRoute();
 
@@ -23,6 +23,7 @@ export default function TestViewerScreen() {
 
   const sequences = test.getAllExercises ? test.getAllExercises() : [];
 
+  // flat array has all answer choice put into it
   const imageChoices = useMemo(() => {
     const imgs: { id: string; source: any; label?: string }[] = [];
     sequences.forEach((exercise: Exercise) => {
@@ -35,7 +36,6 @@ export default function TestViewerScreen() {
     return imgs;
   }, [sequences]);
 
-  //This is for the page number and seperation of answerChoices into pages
   const pageNum = Math.max(1, parseInt(String(page || '1'), 10) || 1);
   const perPage = 4;
   const totalPages = Math.max(1, Math.ceil(imageChoices.length / perPage));
@@ -46,7 +46,7 @@ export default function TestViewerScreen() {
     <View className= "h-full p-4">
       <Text className="mb-2">{test.getTestId()}</Text>
 
-      {/* If no image choices at all, go back to full listing */}
+      {/* If there are no image choices at all, fallback to original full listing */}
       {imageChoices.length === 0 ? (
         <ScrollView>
           {sequences.length === 0 ? (
@@ -72,8 +72,8 @@ export default function TestViewerScreen() {
           )}
         </ScrollView>
       ) : (
-        
-        //show 4 images per page and navigation buttons
+
+        // should show 4 images per page and navigation buttons, two image per row
         <View>
           <View className="flex-row flex-wrap justify-between">
             {currentImages.map((img) => (
@@ -85,7 +85,7 @@ export default function TestViewerScreen() {
           </View>
 
           <View className="flex-row justify-between mt-4">
-            <Pressable
+            <TouchableOpacity
               onPress={() => {
                 const prev = Math.max(1, pageNum - 1);
                 router.push(`/testViewer/${testId}?page=${prev}`);
@@ -94,11 +94,11 @@ export default function TestViewerScreen() {
               style={{ padding: 10, opacity: pageNum <= 1 ? 0.5 : 1 }}
             >
               <Text>Prev</Text>
-            </Pressable>
+            </TouchableOpacity>
 
             <Text style={{ alignSelf: 'center' }}>{`Page ${pageNum} / ${totalPages}`}</Text>
 
-            <Pressable
+            <TouchableOpacity
               onPress={() => {
                 const next = Math.min(totalPages, pageNum + 1);
                 if (next !== pageNum) {
@@ -109,7 +109,7 @@ export default function TestViewerScreen() {
               style={{ padding: 10, opacity: pageNum >= totalPages ? 0.5 : 1 }}
             >
               <Text>Next</Text>
-            </Pressable>
+            </TouchableOpacity>
           </View>
         </View>
       )}
