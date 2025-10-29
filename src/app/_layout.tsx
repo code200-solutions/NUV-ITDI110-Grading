@@ -10,7 +10,7 @@ export default function Layout() {
     screenOptions={{
         headerShown: false,
       }}>
-    <Stack.Screen name='(tabs)'/>
+    <Stack.Screen name='(tabs)/(mainTabs)'/>
   </Stack>
   </SafeAreaView>
   );

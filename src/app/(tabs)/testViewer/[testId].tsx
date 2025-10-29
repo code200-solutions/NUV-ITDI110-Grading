@@ -2,6 +2,9 @@ import { Tests } from "@/content/tests";
 import { useLocalSearchParams } from "expo-router";
 import React, { useMemo } from "react";
 import { View, Text, ScrollView, Image } from "react-native";
+import { AnswerChoice, ImageAnswerChoice, TextAnswerChoice } from "@/types/Test.class";
+import { useRoute } from "@react-navigation/native"; 
+
 
 export default function TestViewerScreen() {
   const { testId } = useLocalSearchParams();
@@ -18,9 +21,9 @@ export default function TestViewerScreen() {
   const sequences = test.getAllExercises ? test.getAllExercises() : [];
 
   return (
+    <View>
     <ScrollView>
       <Text>{test.getTestId()}</Text>
-
       {sequences.length === 0 ? (
         <Text>No exercises available for this test.</Text>
       ) : (
@@ -48,5 +51,6 @@ export default function TestViewerScreen() {
         ))
       )}
     </ScrollView>
+    </View>
   );
 }
