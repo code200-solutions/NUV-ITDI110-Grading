@@ -1,3 +1,5 @@
+import { ImageSourcePropType, ImageURISource } from "react-native";
+
 type ReadingExercise = string;
 type ListeningExercise = string;
 type MatchingAnswers = Array<{question: string; answer:string}>;
@@ -73,13 +75,13 @@ export class TextAnswerChoice extends AnswerChoice {
 }
 
 export class ImageAnswerChoice extends AnswerChoice {
-  private imageUri: string;
+  private imageUri: ImageSourcePropType;
 
-  constructor(id: string, imageUri: string){
+  constructor(id: string, imageUri: number | Required<Pick<ImageURISource, 'uri' | 'width' | 'height'>>){
     super(id);
     this.imageUri = imageUri;
   }
-  getImageUri(): string{
+  getImageUri(): ImageSourcePropType{
     return this.imageUri;
   }
 }

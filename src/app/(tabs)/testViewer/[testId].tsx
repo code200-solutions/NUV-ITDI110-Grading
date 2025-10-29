@@ -2,7 +2,7 @@ import { Tests } from "@/content/tests";
 import { useLocalSearchParams } from "expo-router";
 import React, { useMemo } from "react";
 import { View, Text, ScrollView, Image } from "react-native";
-import { AnswerChoice, ImageAnswerChoice, TextAnswerChoice } from "@/types/Test.class";
+import { AnswerChoice, Exercise, ImageAnswerChoice, TextAnswerChoice } from "@/types/Test.class";
 import { useRoute } from "@react-navigation/native"; 
 
 
@@ -28,20 +28,20 @@ export default function TestViewerScreen() {
       {sequences.length === 0 ? (
         <Text>No exercises available for this test.</Text>
       ) : (
-        sequences.map((exercise: any, idx: number) => (
+        sequences.map((exercise: Exercise, idx: number) => (
           <View key={exercise.getQuestionId ? exercise.getQuestionId() : idx}>
             <Text >{`${idx + 1}. ${exercise.getQuestionPrompt()}`}</Text>
           <View>
-            {exercise.getAnswerChoices().map((choice: any) => (
+            {exercise.getAnswerChoices().map((choice: AnswerChoice) => (
               <View 
               key={choice.getId()}
               >
                   {/* Render if its ImgUri or text */}
-                  {typeof (choice as any).getImageUri === "function" ? (
+                  {choice instanceof ImageAnswerChoice ? (
                     <Image 
-                    source={{ uri: (choice as any).getImageUri() }}
+                    source={choice.getImageUri()}
                     />
-                  ) : typeof (choice as any).getText === "function" ? (
+                  ) : choice instanceof TextAnswerChoice ? (
                     <Text >{choice.getText()}</Text>
                   ) : null}
                   <Text>{choice.getId()}</Text>   
