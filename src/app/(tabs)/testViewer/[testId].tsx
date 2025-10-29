@@ -9,10 +9,11 @@ import { useRoute } from "@react-navigation/native";
 export default function TestViewerScreen() {
   const { testId } = useLocalSearchParams();
   const test = useMemo(() => Tests.find((t) => t.getTestId() === testId), [testId]);
+  const route = useRoute();
 
   if (!test) {
     return (
-      <View style={{ padding: 16 }}>
+      <View>
         <Text>Test {testId} not found</Text>
       </View>
     );
