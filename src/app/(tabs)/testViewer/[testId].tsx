@@ -1,7 +1,7 @@
 import { Tests } from "@/content/tests";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import React, { useMemo } from "react";
-import { View, Text, ScrollView, Image, TouchableOpacity } from "react-native";
+import { View, Text, ScrollView, Image, TouchableOpacity, ImageSourcePropType } from "react-native";
 import { AnswerChoice, Exercise, ImageAnswerChoice, TextAnswerChoice } from "@/types/Test.class";
 import { useRoute } from "@react-navigation/native"; 
 
@@ -25,11 +25,15 @@ export default function TestViewerScreen() {
 
   // flat array has all answer choice put into it
   const imageChoices = useMemo(() => {
-    const imgs: { id: string; source: any; label?: string }[] = [];
+    const imgs: { id: string; source: ImageSourcePropType; label?: string }[] = [];
     sequences.forEach((exercise: Exercise) => {
       exercise.getAnswerChoices().forEach((choice: AnswerChoice) => {
         if (choice instanceof ImageAnswerChoice) {
-          imgs.push({ id: choice.getId(), source: choice.getImageUri(), label: (choice as ImageAnswerChoice).getText ? (choice as unknown as TextAnswerChoice).getText() : undefined });
+          imgs.push({
+            id: choice.getId(),
+            source: choice.getImageUri(),
+            label: typeof (choice as ImageAnswerChoice).getText === "function" ? (choice as unknown as TextAnswerChoice).getText() : undefined,
+          });
         }
       });
     });
