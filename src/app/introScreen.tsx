@@ -19,9 +19,9 @@ export default function FirstPage() {
               <View
                 style={{ marginBottom: 10, width: '30%', alignSelf: 'center' }}>
                 <Button
-                  title='./Login'
+                  title='Login'
                   onPress={() => {
-                    router.push('loginScreen');
+                    router.push('./onBoarding/loginScreen');
                   }}
                 />
               </View>
@@ -33,7 +33,7 @@ export default function FirstPage() {
                 <Button
                   title='Sign In'
                   onPress={() => {
-                    router.push('./loginScreen');
+                    router.push('./onBoarding/loginScreen');
                   }}
                 />
               </View>

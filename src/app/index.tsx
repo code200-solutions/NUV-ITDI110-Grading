@@ -3,7 +3,7 @@ import React from "react";
 
 const MainScreen = () => {
   return(
-    <Redirect href='../onBoarding/introScreen'/>
+    <Redirect href='introScreen'/>
   )
 };
 

@@ -1,3 +1,4 @@
+import { router } from 'expo-router';
 import React, { useRef, useState } from 'react';
 import {
   Alert,
@@ -59,7 +60,9 @@ export default function LoginScreen() {
             className='border border-gray-300 rounded px-3 py-2 mb-6'
           />
           <Pressable
-            onPress={submit}
+            onPress={() => {
+              router.push('./(tabs)/homeScreenTab.tsx');
+            }}
             style={({ pressed }) => ({
               alignItems: 'center',
               paddingTop: 12,
