@@ -2,7 +2,7 @@ import { router } from 'expo-router';
 import React from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
 
-export default function Page() {
+export default function FirstPage() {
   return (
     <View className='flex-1'>
       <View className='py-12 md:py-24 lg:py-32 xl:py-48'>
@@ -10,8 +10,8 @@ export default function Page() {
           <View className='flex flex-col items-center gap-4 text-center'>
             <Text
               role='heading'
-              className='text-3xl text-center native:text-5xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl'>
-              Welcome to Grading Project
+              className='text-3xl text-center native:text-5xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl font-'>
+              Smartify
             </Text>
             <View
               style={styles.container}
@@ -21,7 +21,7 @@ export default function Page() {
                 <Button
                   title='Login'
                   onPress={() => {
-                    router.push('/loginScreen');
+                    router.push('loginScreen');
                   }}
                 />
               </View>
@@ -33,7 +33,7 @@ export default function Page() {
                 <Button
                   title='Sign In'
                   onPress={() => {
-                    router.push('/loginScreen');
+                    router.push('loginScreen');
                   }}
                 />
               </View>
