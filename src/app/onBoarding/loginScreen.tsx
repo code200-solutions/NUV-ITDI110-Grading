@@ -1,4 +1,3 @@
-import { router } from 'expo-router';
 import React, { useRef, useState } from 'react';
 import {
   Alert,
@@ -9,9 +8,7 @@ import {
   View,
 } from 'react-native';
 
-
 export default function LoginScreen() {
-  // use the expo-router `router` for navigation
   const [password, setPassword] = useState('');
   const [username, setUsername] = useState('');
 
@@ -62,7 +59,7 @@ export default function LoginScreen() {
             className='border border-gray-300 rounded px-3 py-2 mb-6'
           />
           <Pressable
-            onPress={() => router.push('/testTabScreen')}
+            onPress={submit}
             style={({ pressed }) => ({
               alignItems: 'center',
               paddingTop: 12,

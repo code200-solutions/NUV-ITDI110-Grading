@@ -8,7 +8,7 @@ export const Theme = {
     "onSecondary": "rgb(255, 255, 255)",
     "secondaryContainer": "rgb(232, 221, 255)",
     "onSecondaryContainer": "rgb(32, 0, 94)",
-    "tertiary": "rgba(240, 152, 1, 1)",
+    "tertiary": "rgb(132, 84, 0)",
     "onTertiary": "rgb(255, 255, 255)",
     "tertiaryContainer": "rgb(255, 221, 182)",
     "onTertiaryContainer": "rgb(42, 24, 0)",
@@ -41,4 +41,4 @@ export const Theme = {
     "onSurfaceDisabled": "rgba(27, 27, 31, 0.38)",
     "backdrop": "rgba(48, 48, 56, 0.4)"
   }
-}
+}; 
