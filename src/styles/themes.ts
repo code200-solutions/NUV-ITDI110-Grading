@@ -39,11 +39,15 @@ export const LightTheme = {
     },
     "surfaceDisabled": "rgba(27, 27, 31, 0.12)",
     "onSurfaceDisabled": "rgba(27, 27, 31, 0.38)",
-    "backdrop": "rgba(48, 48, 56, 0.4)"
+    "backdrop": "rgba(48, 48, 56, 0.4)",
+    "success": 'rgb(16, 109, 32)',
+    "onSuccess": 'rgb(255, 255, 255)',
+    "successContainer": 'rgb(157, 248, 152)',
+    "onSuccessContainer": 'rgb(0, 34, 4)',
   }
 }; 
 
-const DarkColorTheme = {
+export const DarkColorTheme = {
   "colors": {
     "primary": "rgb(191, 193, 255)",
     "onPrimary": "rgb(7, 0, 171)",
@@ -84,6 +88,10 @@ const DarkColorTheme = {
     },
     "surfaceDisabled": "rgba(229, 225, 230, 0.12)",
     "onSurfaceDisabled": "rgba(229, 225, 230, 0.38)",
-    "backdrop": "rgba(48, 48, 56, 0.4)"
+    "backdrop": "rgba(48, 48, 56, 0.4)",
+    "success": 'rgb(130, 219, 126)',
+    "onSuccess": 'rgb(0, 57, 10)',
+    "successContainer": 'rgb(0, 83, 18)',
+    "onSuccessContainer": 'rgb(157, 248, 152)',
   }
-}
+};
