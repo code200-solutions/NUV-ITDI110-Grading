@@ -11,7 +11,7 @@ export default function Page() {
             <Text
               role='heading'
               className='text-3xl text-center native:text-5xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl'>
-              Welcome to Grading Project
+              Welcome to Test Sitting and Grading App
             </Text>
             <View
               style={styles.container}
