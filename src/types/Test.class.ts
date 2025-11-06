@@ -15,9 +15,9 @@ export class Test {
   private testId: string;
   private sequences: Sequence[];
   private answer: string[] = [];
-  exercises: any;
+  exercises: string;
   static sequences: any;
-  answers: any;
+  answers: StudentAnswer;
 
   constructor(testId: string, sequences: Sequence[]) {
     this.testId = testId;
@@ -153,6 +153,7 @@ export class Sequence {
 export class StudentAnswer{
   private exerciseId: string;
   private answerId: string;
+  find: any;
   
   constructor(exerciseId: string, answerId: string){
     this.exerciseId = exerciseId;
