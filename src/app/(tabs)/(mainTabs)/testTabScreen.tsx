@@ -19,13 +19,20 @@ export default function TestsTabScreen() {
   return (
     <View className="flex-1 flex-col w-full p-2">
       <ScrollView>
-        {Tests.map((test, index) => (
+        {Tests.map((test) => (
           <Pressable
-            className="py-2 border mb-1"
-            key={`test#${test.getTestId()}`}
+            key={test.getTestId()}
             onPress={() => displayTest(test.getTestId())}
+            className="p-4 mb-3 bg-white rounded-xl border border-gray-200 shadow-sm active:bg-gray-100"
           >
-            <Text>* Waiting for a proper test name: {test.getTestId()}</Text>
+            <Text className="text-lg font-semibold text-gray-800">
+              {test.getTestId()}
+            </Text>
+            <Text className="text-gray-600 mt-1">
+              {test.getDescription
+                ? test.getDescription()
+                : "No description available."}
+            </Text>
           </Pressable>
         ))}
       </ScrollView>

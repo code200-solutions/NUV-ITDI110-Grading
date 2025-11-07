@@ -2,6 +2,7 @@ import { AnswerChoice, Exercise, ImageAnswerChoice, Sequence, Test, TextAnswerCh
 
 // Image image assets
 const imgRep1Seq1Ex1Img6 = require('@/assets/images/reperes1/rep1-seq1-ex1-img6.png');
+const imgRep1Seq1Ex1Img4 = require('@/assets/images/reperes1/rep1-seq1-ex1-img4.png')
 //answer choices for exercises
 export const answerChoices1: AnswerChoice[] = [
   new ImageAnswerChoice(
@@ -13,7 +14,7 @@ export const answerChoices1: AnswerChoice[] = [
     'B', 
     { uri: 'https://raw.githubusercontent.com/code200-solutions/NUV-ITDI110-Grading/39ee32b687c06a4e55add3eca7c40e7c4fb508ca/src/assets/images/reperes1/rep1-seq1-ex1-img2.png',
      width: 162, height: 94}),
-  new ImageAnswerChoice('C', imgRep1Seq1Ex1Img6),
+  new ImageAnswerChoice('C', imgRep1Seq1Ex1Img4),
   new ImageAnswerChoice('D', imgRep1Seq1Ex1Img6),
 ];
 

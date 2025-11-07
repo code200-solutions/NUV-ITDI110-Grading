@@ -18,6 +18,7 @@ export class Test {
   exercises: string;
   static sequences: any;
   answers: StudentAnswer;
+  testDescription: string;
 
   constructor(testId: string, sequences: Sequence[]) {
     this.testId = testId;
@@ -28,6 +29,9 @@ export class Test {
   }
   getAllExercises(): Exercise[] {
     return this.sequences.flatMap(sequence => sequence.getExercises());
+  }
+  getDescription(): string{
+    return this.testDescription;
   }
   calculateMark(exercises: Exercise[]): number{
     let correctAnswerId = 0;

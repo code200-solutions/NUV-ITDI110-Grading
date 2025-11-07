@@ -125,7 +125,9 @@ export default function TestViewerScreen() {
                   key={img.id}
                   onPress={() => handleSelect(img.id)}
                   className={`w-[48%] mb-4 rounded-xl overflow-hidden shadow-sm bg-white relative ${
-                    isSelected ? "border-4 border-green-500" : "border border-gray-200"
+                    isSelected
+                      ? "border-4 border-blue-200"
+                      : "border border-gray-200"
                   }`}
                 >
                   <Image
@@ -134,9 +136,7 @@ export default function TestViewerScreen() {
                     resizeMode="cover"
                   />
                   {isSelected && (
-                    <View className="absolute top-2 right-2 bg-white/80 rounded-full p-1">
-                      <Text className="text-lg">✅</Text>
-                    </View>
+                    <View className="absolute top-2 right-2 bg-white/80 rounded-full p-1"></View>
                   )}
                   <Text className="text-center text-gray-800 py-2">
                     {img.label || img.id}
@@ -151,29 +151,23 @@ export default function TestViewerScreen() {
             <TouchableOpacity
               onPress={() => goToPage(Math.max(1, pageNum - 1))}
               disabled={pageNum <= 1}
-              className={`rounded-full py-2 px-4 ${
-                pageNum <= 1
-                  ? "bg-gray-400"
-                  : "bg-blue-600 active:bg-blue-700"
+              className={`rounded py-2 px-4 ${
+                pageNum <= 1 ? "bg-gray-400" : "bg-blue-600 active:bg-blue-700"
               }`}
             >
-              <Text className="text-white font-semibold">⬅ Previous</Text>
+              <Text className="text-white font-semibold">Previous</Text>
             </TouchableOpacity>
-
-            <Text className="text-gray-700 font-medium">
-              Page {pageNum} / {totalPages}
-            </Text>
 
             <TouchableOpacity
               onPress={() => goToPage(Math.min(totalPages, pageNum + 1))}
               disabled={pageNum >= totalPages}
-              className={`rounded-full py-2 px-4 ${
+              className={`rounded py-2 px-4 ${
                 pageNum >= totalPages
                   ? "bg-gray-400"
                   : "bg-blue-600 active:bg-blue-700"
               }`}
             >
-              <Text className="text-white font-semibold">Next ➡</Text>
+              <Text className="text-white font-semibold">Next</Text>
             </TouchableOpacity>
           </View>
         </>
