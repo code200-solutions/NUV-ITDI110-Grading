@@ -7,7 +7,6 @@ import {
   ScrollView,
   Image,
   TouchableOpacity,
-  ImageSourcePropType,
   Pressable,
 } from "react-native";
 import {
@@ -21,14 +20,13 @@ import { useRoute } from "@react-navigation/native";
 export default function TestViewerScreen() {
   const { testId, page } = useLocalSearchParams();
   const router = useRouter();
+  const route = useRoute();
 
-  //Important for testId
+  // Find the selected test
   const test = useMemo(
     () => Tests.find((t) => t.getTestId() === testId),
     [testId]
   );
-
-  const route = useRoute();
 
   if (!test) {
     return (
@@ -38,140 +36,118 @@ export default function TestViewerScreen() {
     );
   }
 
-  const sequences = test.getAllExercises ? test.getAllExercises() : [];
+  const exercises = test.getAllExercises ? test.getAllExercises() : [];
+  const totalQuestions = exercises.length;
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [selectedAnswers, setSelectedAnswers] = useState<{ [key: string]: string }>({});
 
-  // Flatten all answer choices into one array of images
-  const imageChoices = useMemo(() => {
-    const imgs: { id: string; source: ImageSourcePropType; label?: string }[] =
-      [];
-    sequences.forEach((exercise: Exercise) => {
-      exercise.getAnswerChoices().forEach((choice: AnswerChoice) => {
-        if (choice instanceof ImageAnswerChoice) {
-          imgs.push({
-            id: choice.getId(),
-            source: choice.getImageUri(),
-            label:
-              typeof (choice as unknown as TextAnswerChoice).getText === "function"
-                ? (choice as unknown as TextAnswerChoice).getText()
-                : undefined,
-          });
-        }
-      });
-    });
-    return imgs;
-  }, [sequences]);
+  const question = exercises[currentQuestion];
 
-  const pageNum = Math.max(1, parseInt(String(page || "1"), 10) || 1);
-  const perPage = 4;
-  const totalPages = Math.max(1, Math.ceil(imageChoices.length / perPage));
-  const start = (pageNum - 1) * perPage;
-  const currentImages = imageChoices.slice(start, start + perPage);
-
-  // Keep track of which image is selected
-  const [selectedChoice, setSelectedChoice] = useState<string | null>(null);
-
-  const handleSelect = (id: string) => {
-    setSelectedChoice(id);
+  const handleSelect = (questionId: string, choiceId: string) => {
+    setSelectedAnswers((prev) => ({ ...prev, [questionId]: choiceId }));
   };
 
-  const goToPage = (newPage: number) => {
-    router.push(`/testViewer/${testId}?page=${newPage}`);
+  const goToNext = () => {
+    if (currentQuestion < totalQuestions - 1) setCurrentQuestion(currentQuestion + 1);
   };
+
+  const goToPrevious = () => {
+    if (currentQuestion > 0) setCurrentQuestion(currentQuestion - 1);
+  };
+
+  const selectedChoiceId = selectedAnswers[question.getQuestionId()] || null;
 
   return (
     <View className="flex-1 bg-gray-50 p-4">
-      <Text className="text-xl font-bold mb-4 text-gray-800">
+      {/* Test title */}
+      <Text className="text-xl font-bold mb-4 text-gray-800 text-center">
         {test.getTestId()}
       </Text>
 
-      {imageChoices.length === 0 ? (
-        <ScrollView>
-          {sequences.length === 0 ? (
-            <Text>No exercises available for this test.</Text>
-          ) : (
-            sequences.map((exercise: Exercise, idx: number) => (
-              <View key={exercise.getQuestionId() || idx}>
-                <Text>{`${idx + 1}. ${exercise.getQuestionPrompt()}`}</Text>
-                <View>
-                  {exercise.getAnswerChoices().map((choice: AnswerChoice) => (
-                    <View
-                      className="flex-row items-center mb-2"
-                      key={choice.getId()}
-                    >
-                      {choice instanceof ImageAnswerChoice ? (
-                        <Image
-                          source={choice.getImageUri()}
-                          className="w-40 h-24 mr-2 rounded-md"
-                        />
-                      ) : choice instanceof TextAnswerChoice ? (
-                        <Text>{choice.getText()}</Text>
-                      ) : null}
-                      <Text>{choice.getId()}</Text>
-                    </View>
-                  ))}
-                </View>
-              </View>
-            ))
-          )}
-        </ScrollView>
-      ) : (
-        <>
-          {/* Grid of images */}
-          <View className="flex-row flex-wrap justify-between">
-            {currentImages.map((img) => {
-              const isSelected = selectedChoice === img.id;
-              return (
-                <Pressable
-                  key={img.id}
-                  onPress={() => handleSelect(img.id)}
-                  className={`w-[48%] mb-4 rounded-xl overflow-hidden shadow-sm bg-white relative ${
-                    isSelected
-                      ? "border-4 border-blue-200"
-                      : "border border-gray-200"
+      <ScrollView>
+        {/* Question */}
+        <Text className="text-lg font-semibold mb-4 text-gray-900">
+          {`${currentQuestion + 1}. ${question.getQuestionPrompt()}`}
+        </Text>
+
+        {/* Choices */}
+        {question.getAnswerChoices().map((choice: AnswerChoice) => {
+          const isSelected = selectedChoiceId === choice.getId();
+
+          if (choice instanceof ImageAnswerChoice) {
+            return (
+              <Pressable
+                key={choice.getId()}
+                onPress={() =>
+                  handleSelect(question.getQuestionId(), choice.getId())
+                }
+                className={`mb-4 rounded-xl overflow-hidden border-2 ${
+                  isSelected ? "border-blue-500" : "border-gray-300"
+                }`}
+              >
+                <Image
+                  source={choice.getImageUri()}
+                  className="w-full h-40"
+                  resizeMode="cover"
+                />
+                <Text className="text-center py-2 text-gray-800">
+                  {choice.getId()}
+                </Text>
+              </Pressable>
+            );
+          } else if (choice instanceof TextAnswerChoice) {
+            return (
+              <Pressable
+                key={choice.getId()}
+                onPress={() =>
+                  handleSelect(question.getQuestionId(), choice.getId())
+                }
+                className={`flex-row items-center mb-3 border rounded-lg px-4 py-3 ${
+                  isSelected ? "border-blue-600 bg-blue-50" : "border-gray-300 bg-white"
+                }`}
+              >
+                <View
+                  className={`w-5 h-5 mr-3 rounded-full border-2 ${
+                    isSelected ? "border-blue-600 bg-blue-600" : "border-gray-400"
                   }`}
-                >
-                  <Image
-                    source={img.source}
-                    className="w-full h-36"
-                    resizeMode="cover"
-                  />
-                  {isSelected && (
-                    <View className="absolute top-2 right-2 bg-white/80 rounded-full p-1"></View>
-                  )}
-                  <Text className="text-center text-gray-800 py-2">
-                    {img.label || img.id}
-                  </Text>
-                </Pressable>
-              );
-            })}
-          </View>
+                />
+                <Text className="text-gray-900">{choice.getText()}</Text>
+              </Pressable>
+            );
+          }
 
-          {/* Navigation buttons */}
-          <View className="flex-row justify-between items-center mt-4">
-            <TouchableOpacity
-              onPress={() => goToPage(Math.max(1, pageNum - 1))}
-              disabled={pageNum <= 1}
-              className={`rounded py-2 px-4 ${
-                pageNum <= 1 ? "bg-gray-400" : "bg-blue-600 active:bg-blue-700"
-              }`}
-            >
-              <Text className="text-white font-semibold">Previous</Text>
-            </TouchableOpacity>
+          return null;
+        })}
+      </ScrollView>
 
-            <TouchableOpacity
-              onPress={() => goToPage(Math.min(totalPages, pageNum + 1))}
-              disabled={pageNum >= totalPages}
-              className={`rounded py-2 px-4 ${
-                pageNum >= totalPages
-                  ? "bg-gray-400"
-                  : "bg-blue-600 active:bg-blue-700"
-              }`}
-            >
-              <Text className="text-white font-semibold">Next</Text>
-            </TouchableOpacity>
-          </View>
-        </>
-      )}
+      {/* Navigation Buttons */}
+      <View className="flex-row justify-between items-center mt-6">
+        <TouchableOpacity
+          onPress={goToPrevious}
+          disabled={currentQuestion === 0}
+          className={`rounded py-2 px-4 ${
+            currentQuestion === 0 ? "bg-gray-400" : "bg-blue-600 active:bg-blue-700"
+          }`}
+        >
+          <Text className="text-white font-semibold">Previous</Text>
+        </TouchableOpacity>
+
+        <Text className="text-gray-700 font-medium">
+          {currentQuestion + 1} / {totalQuestions}
+        </Text>
+
+        <TouchableOpacity
+          onPress={goToNext}
+          disabled={currentQuestion >= totalQuestions - 1}
+          className={`rounded py-2 px-4 ${
+            currentQuestion >= totalQuestions - 1
+              ? "bg-gray-400"
+              : "bg-blue-600 active:bg-blue-700"
+          }`}
+        >
+          <Text className="text-white font-semibold">Next</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }

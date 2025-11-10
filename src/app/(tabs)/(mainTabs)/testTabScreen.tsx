@@ -8,7 +8,7 @@ import {
 import { Tests } from "@/content/tests";
 import { router } from "expo-router";
 
-//@TODO: initialize with real tests reading from the file
+//initialize with real tests reading from the file
 export default function TestsTabScreen() {
   const displayTest = useCallback((testId: string) => {
     router.push({
@@ -23,7 +23,7 @@ export default function TestsTabScreen() {
           <Pressable
             key={test.getTestId()}
             onPress={() => displayTest(test.getTestId())}
-            className="p-4 mb-3 bg-white rounded-xl border border-gray-200 shadow-sm active:bg-gray-100"
+            className="p-4 mb-3 bg-white rounded-xl border border-gray-200 active:bg-gray-100"
           >
             <Text className="text-lg font-semibold text-gray-800">
               {test.getTestId()}
