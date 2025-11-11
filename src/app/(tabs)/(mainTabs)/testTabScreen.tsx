@@ -7,6 +7,7 @@ import {
 } from "react-native";
 import { Tests } from "@/content/tests";
 import { router } from "expo-router";
+import AppBackground from "@/components/AppBackground/AppBackground";
 
 //initialize with real tests reading from the file
 export default function TestsTabScreen() {
@@ -17,7 +18,10 @@ export default function TestsTabScreen() {
     });
   }, []);
   return (
-    <View className="flex-1 flex-col w-full p-2">
+    <View>
+      <AppBackground />
+    <View className="flex-1 flex-col w-full p-4">
+      
       <ScrollView>
         {Tests.map((test) => (
           <Pressable
@@ -36,6 +40,7 @@ export default function TestsTabScreen() {
           </Pressable>
         ))}
       </ScrollView>
+    </View>
     </View>
   );
 }
