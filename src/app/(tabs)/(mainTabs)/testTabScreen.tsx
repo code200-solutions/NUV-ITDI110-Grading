@@ -19,7 +19,7 @@ export default function TestsTabScreen() {
   }, []);
   return (
     <View>
-      <AppBackground />
+      <AppBackground/>
     <View className="flex-1 flex-col w-full p-4">
       
       <ScrollView>

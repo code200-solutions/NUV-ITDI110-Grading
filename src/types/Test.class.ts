@@ -126,8 +126,8 @@ export class Exercise {
   getAnswerChoices(): AnswerChoice[] {
     return this.answerChoice;
   }
-  getAnswer(): string {
-    return this.goodAnswerId;
+  getAnswer() {
+    return this.answerChoice;
   }
   isCorrect(answerId: string): boolean{
     return this.goodAnswerId === answerId;
