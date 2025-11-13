@@ -5,7 +5,6 @@ import {
   ScrollView,
   Pressable,
   Image,
-  TouchableOpacity,
 } from "react-native";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { Tests } from "@/content/tests";
@@ -99,31 +98,26 @@ export default function TestViewerScreen() {
           })}
         </ScrollView>
 
-        <TouchableOpacity
+        <Pressable
           onPress={() => router.back()}
           className="mt-6 bg-blue-600 py-3 rounded-lg"
         >
           <Text className="text-white text-center font-semibold">Go Back</Text>
-        </TouchableOpacity>
+        </Pressable>
       </View>
     );
   }
 
   return (
-    <View className="flex-1 bg-gray-50 p-4">
-      {/* Progress Bar */}
+    <View className="flex-1 p-4">
+      {/*Progress Bar*/}
       <View className="w-full h-2 bg-gray-200 rounded-full mb-4">
         <View
           style={{ width: `${((currentQuestion + 1) / totalQuestions) * 100}%` }}
           className="h-full bg-blue-500 rounded-full"
         />
       </View>
-
-      {/* Question header */}
-      <Text className="text-center text-gray-600 mb-2">
-        Question {currentQuestion + 1} of {totalQuestions}
-      </Text>
-
+    <View className=" bg-white p-8 rounded-lg">
       {/* Question prompt */}
       <Text className="text-lg font-semibold mb-4 text-gray-900">
         {question.getQuestionPrompt()}
@@ -188,11 +182,16 @@ export default function TestViewerScreen() {
             })}
           </View>
         )}
-      </ScrollView>
+        {/* Question header */}
+      <Text className="text-center text-gray-600 p-4">
+        Question {currentQuestion + 1} of {totalQuestions}
+      </Text>
 
+      </ScrollView>
+    </View>
       {/* Navigation Buttons */}
       <View className="flex-row justify-between items-center mt-6">
-        <TouchableOpacity
+        <Pressable
           onPress={goToPrevious}
           disabled={currentQuestion === 0}
           className={`rounded py-2 px-4 ${
@@ -200,22 +199,22 @@ export default function TestViewerScreen() {
           }`}
         >
           <Text className="text-white font-semibold">Previous</Text>
-        </TouchableOpacity>
+        </Pressable>
 
         {currentQuestion === totalQuestions - 1 ? (
-          <TouchableOpacity
+          <Pressable
             onPress={handleSubmit}
             className="rounded py-2 px-4 bg-green-600"
           >
             <Text className="text-white font-semibold">Submit</Text>
-          </TouchableOpacity>
+          </Pressable>
         ) : (
-          <TouchableOpacity
+          <Pressable
             onPress={goToNext}
             className="rounded py-2 px-4 bg-blue-600"
           >
             <Text className="text-white font-semibold">Next</Text>
-          </TouchableOpacity>
+          </Pressable>
         )}
       </View>
     </View>

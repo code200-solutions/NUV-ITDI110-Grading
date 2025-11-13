@@ -14,32 +14,39 @@ export type ExerciseType = ReadingExercise | ListeningExercise;
 export class Test {
   private testId: string;
   private sequences: Sequence[];
+  private testDescription: string;
   private answer: string[] = [];
-  exercises: string;
   static sequences: any;
+  exercises: string;
   answers: StudentAnswer;
-  testDescription: string;
 
-  constructor(testId: string, sequences: Sequence[]) {
+  constructor(testId: string, sequences: Sequence[], description: string = "") {
     this.testId = testId;
     this.sequences = sequences;
+    this.testDescription = description;
   }
+
   getTestId(): string {
     return this.testId;
   }
+
   getAllExercises(): Exercise[] {
     return this.sequences.flatMap(sequence => sequence.getExercises());
   }
-  getDescription(): string{
+
+  getDescription(): string {
     return this.testDescription;
   }
-  calculateMark(exercises: Exercise[]): number{
+
+  calculateMark(exercises: Exercise[]): number {
     let correctAnswerId = 0;
     let mark = 0;
-   
+
     for (const sequence of Test.sequences) {
       for (const exercise of sequence.exercises) {
-        const studentAnswer = this.answers.find(ans => ans.exerciseId === exercise.questionId);
+        const studentAnswer = this.answers.find(
+          ans => ans.exerciseId === exercise.questionId
+        );
         if (studentAnswer) {
           mark++;
           if (studentAnswer.isCorrect(exercise.answer)) {
@@ -55,6 +62,7 @@ export class Test {
 // Base class for answer choices
 export class AnswerChoice {
   protected answerChoiceId: string;
+  private answerId: string;
 
   constructor(answerChoiceId: string){
     this.answerChoiceId = answerChoiceId;
@@ -62,6 +70,9 @@ export class AnswerChoice {
 
   getId(): string {
     return this.answerChoiceId;
+  }
+  getAnswerId(): string {
+    return this.answerId;
   }
 }
 
@@ -81,8 +92,7 @@ export class TextAnswerChoice extends AnswerChoice {
 
 export class ImageAnswerChoice extends AnswerChoice {
   private imageUri: ImageSourcePropType;
-  getText: any;
-
+ 
   constructor(id: string, imageUri: number | Required<Pick<ImageURISource, 'uri' | 'width' | 'height'>>){
     super(id);
     this.imageUri = imageUri;
@@ -90,6 +100,9 @@ export class ImageAnswerChoice extends AnswerChoice {
   getImageUri(): ImageSourcePropType{
     return this.imageUri;
   }
+   getText(): string{
+    return this.answerChoiceId;
+   }
 }
 
 // Exercise class representing each question in the test
@@ -98,7 +111,7 @@ export class Exercise {
   private type?: ExerciseType;
   private questionPrompt: string;
   private answerChoice: AnswerChoice[];
-  private goodAnswerId: string;
+  protected goodAnswerId: string;
 
   constructor(
     questionId: string, 

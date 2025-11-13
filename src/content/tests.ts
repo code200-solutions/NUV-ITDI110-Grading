@@ -1,47 +1,71 @@
 import { AnswerChoice, Exercise, ImageAnswerChoice, Sequence, Test, TextAnswerChoice } from "@/types/Test.class";
 
 // Image image assets
+const imgRep1Seq1Ex1Img1 = require('@/assets/images/reperes1/rep1-seq1-ex1-img1.png');
+const imgRep1Seq1Ex1Img2 = require('@/assets/images/reperes1/rep1-seq1-ex1-img2.png');
+const imgRep1Seq1Ex1Img3 = require('@/assets/images/reperes1/rep1-seq1-ex1-img3.png');
+const imgRep1Seq1Ex1Img4 = require('@/assets/images/reperes1/rep1-seq1-ex1-img4.png');
+const imgRep1Seq1Ex1Img5 = require('@/assets/images/reperes1/rep1-seq1-ex1-img5.png');
 const imgRep1Seq1Ex1Img6 = require('@/assets/images/reperes1/rep1-seq1-ex1-img6.png');
-const imgRep1Seq1Ex1Img4 = require('@/assets/images/reperes1/rep1-seq1-ex1-img4.png')
-//answer choices for exercises
+const imgRep1Seq1Ex1Img7 = require('@/assets/images/reperes1/rep1-seq1-ex1-img7.png');
+const imgRep1Seq1Ex1Img8 = require('@/assets/images/reperes1/rep1-seq1-ex1-img8.png');
+const imgRep1Seq1Ex1Img9 = require('@/assets/images/reperes1/rep1-seq1-ex1-img9.png');
+const imgRep1Seq1Ex1Img10 = require('@/assets/images/reperes1/rep1-seq1-ex1-img10.png');
+const imgRep1Seq1Ex1Img11 = require('@/assets/images/reperes1/rep1-seq1-ex1-img11.png');
+const imgRep1Seq1Ex1Img12 = require('@/assets/images/reperes1/rep1-seq1-ex1-img12.png');
+const imgRep1Seq1Ex1Img13 = require('@/assets/images/reperes1/rep1-seq1-ex1-img13.png');
+const imgRep1Seq1Ex1Img14 = require('@/assets/images/reperes1/rep1-seq1-ex1-img14.png');
+const imgRep1Seq1Ex1Img15 = require('@/assets/images/reperes1/rep1-seq1-ex1-img15.png');
+const imgRep1Seq1Ex1Img16 = require('@/assets/images/reperes1/rep1-seq1-ex1-img16.png');
+const imgRep1Seq1Ex1Img17 = require('@/assets/images/reperes1/rep1-seq1-ex1-img17.png');
+const imgRep1Seq1Ex1Img18 = require('@/assets/images/reperes1/rep1-seq1-ex1-img18.png');
+const imgRep1Seq1Ex1Img19 = require('@/assets/images/reperes1/rep1-seq1-ex1-img19.png');
+const imgRep1Seq1Ex1Img20 = require('@/assets/images/reperes1/rep1-seq1-ex1-img20.png');
+
+
+//answer choices for exercise 1 or Reperes - 1
 export const answerChoices1: AnswerChoice[] = [
-  new ImageAnswerChoice(
-    'A', 
-    { uri: 'https://raw.githubusercontent.com/code200-solutions/NUV-ITDI110-Grading/refs/heads/feat/dashboard-tests-screen/src/assets/images/reperes1/rep1-seq1-ex1-img5.png', 
-      width: 162, height: 94 
-    }),
-  new ImageAnswerChoice(
-    'B', 
-    { uri: 'https://raw.githubusercontent.com/code200-solutions/NUV-ITDI110-Grading/39ee32b687c06a4e55add3eca7c40e7c4fb508ca/src/assets/images/reperes1/rep1-seq1-ex1-img2.png',
-     width: 162, height: 94}),
-  new ImageAnswerChoice('C', imgRep1Seq1Ex1Img4),
-  new ImageAnswerChoice('D', imgRep1Seq1Ex1Img6),
+  new ImageAnswerChoice('A', imgRep1Seq1Ex1Img1),
+  new ImageAnswerChoice('B', imgRep1Seq1Ex1Img2),
+  new ImageAnswerChoice('C', imgRep1Seq1Ex1Img3),
+  new ImageAnswerChoice('D', imgRep1Seq1Ex1Img4),
 ];
 
 export const answerChoices2: AnswerChoice[] = [
-  new AnswerChoice('A'),
-  new AnswerChoice('B'),
-  new AnswerChoice('C'),
-  new AnswerChoice('D'),
+  new ImageAnswerChoice('A', imgRep1Seq1Ex1Img5),
+  new ImageAnswerChoice('B', imgRep1Seq1Ex1Img6),
+  new ImageAnswerChoice('C', imgRep1Seq1Ex1Img7),
+  new ImageAnswerChoice('D', imgRep1Seq1Ex1Img8),
 ]; 
 
 export const answerChoices3: AnswerChoice[] = [
-  new AnswerChoice('A'),
-  new AnswerChoice('B'),
-  new AnswerChoice('C'),
-  new AnswerChoice('D'),
+  new ImageAnswerChoice('A', imgRep1Seq1Ex1Img9),
+  new ImageAnswerChoice('B', imgRep1Seq1Ex1Img10),
+  new ImageAnswerChoice('C', imgRep1Seq1Ex1Img11),
+  new ImageAnswerChoice('D', imgRep1Seq1Ex1Img12),
+];
+
+export const answerChoices4: AnswerChoice[] = [
+  new ImageAnswerChoice('A', imgRep1Seq1Ex1Img13),
+  new ImageAnswerChoice('B', imgRep1Seq1Ex1Img14),
+  new ImageAnswerChoice('C', imgRep1Seq1Ex1Img15),
+  new ImageAnswerChoice('D', imgRep1Seq1Ex1Img16),
+];
+
+export const answerChoices5: AnswerChoice[] = [
+  new ImageAnswerChoice('A', imgRep1Seq1Ex1Img17),
+  new ImageAnswerChoice('B', imgRep1Seq1Ex1Img18),
+  new ImageAnswerChoice('C', imgRep1Seq1Ex1Img19),
+  new ImageAnswerChoice('D', imgRep1Seq1Ex1Img20),
 ];
 
 //creating some exercises for the sequences 
 export const reperes1: Exercise[] = [
   new Exercise("rep1-seq1-ex1", 'listening', "Question 1", answerChoices1, "A"),
-  new Exercise("rep1-seq1-ex2", 'listening', "Question 2", answerChoices1, "B"),
-  new Exercise("rep1-seq1-ex3", 'listening', "Question 3", answerChoices1, "C"),
-  new Exercise("rep1-seq2-ex4", 'listening', "Question 4", answerChoices1, "D"),
-  new Exercise("rep1-seq2-ex5", 'listening', "Question 5", answerChoices1, "A"),
-  new Exercise("rep1-seq3-ex6", 'listening', "Question 6", answerChoices1, "B"),
-  new Exercise("rep1-seq3-ex7", 'listening', "Question 7", answerChoices1, "C"),
-  new Exercise("rep1-seq3-ex8", 'listening', "Question 8", answerChoices1, "D"),
+  new Exercise("rep1-seq1-ex2", 'listening', "Question 2", answerChoices2, "B"),
+  new Exercise("rep1-seq1-ex3", 'listening', "Question 3", answerChoices3, "C"),
+  new Exercise("rep1-seq2-ex4", 'listening', "Question 4", answerChoices4, "D"),
+  new Exercise("rep1-seq2-ex5", 'listening', "Question 5", answerChoices5, "A"),
 ];
 
 export const reperes2a: Exercise[] = [
@@ -71,8 +95,10 @@ export const reperes3: Exercise[] = [
 ];
 
 export const Tests: Test[] = [
-  new Test('test.1', [new Sequence('test1.seq1', reperes1)]),
-  new Test('test.2', [new Sequence('test2.seq1', reperes2a)]),
-  new Test('test.3', [new Sequence('test3.seq1', reperes3)]),
+  new Test('Test 1', [new Sequence('test1.seq1', reperes1)],
+    'This test evaluates your understanding of basic listening exercises using image recognition.'
+  ),
+  new Test('Test 2', [new Sequence('test2.seq1', reperes2a)]),
+  new Test('Test 3', [new Sequence('test3.seq1', reperes3)]),
   // ... add more tests as needed
 ]
