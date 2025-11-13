@@ -22,7 +22,6 @@ const imgRep1Seq1Ex1Img18 = require('@/assets/images/reperes1/rep1-seq1-ex1-img1
 const imgRep1Seq1Ex1Img19 = require('@/assets/images/reperes1/rep1-seq1-ex1-img19.png');
 const imgRep1Seq1Ex1Img20 = require('@/assets/images/reperes1/rep1-seq1-ex1-img20.png');
 
-
 //answer choices for exercise 1 or Reperes - 1
 export const answerChoices1: AnswerChoice[] = [
   new ImageAnswerChoice('A', imgRep1Seq1Ex1Img1),

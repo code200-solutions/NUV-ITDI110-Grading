@@ -113,82 +113,97 @@ export default function TestViewerScreen() {
       {/*Progress Bar*/}
       <View className="w-full h-2 bg-gray-200 rounded-full mb-4">
         <View
-          style={{ width: `${((currentQuestion + 1) / totalQuestions) * 100}%` }}
+          style={{
+            width: `${((currentQuestion + 1) / totalQuestions) * 100}%`,
+          }}
           className="h-full bg-blue-500 rounded-full"
         />
       </View>
-    <View className=" bg-white p-8 rounded-lg">
-      {/* Question prompt */}
-      <Text className="text-lg font-semibold mb-4 text-gray-900">
-        {question.getQuestionPrompt()}
-      </Text>
-      <ScrollView className="flex-1">
-        {/* Text Answers */}
-        {question.getAnswerChoices().some((c) => c instanceof TextAnswerChoice) && (
-          <View className="mb-6">
-            {question.getAnswerChoices().map((choice: AnswerChoice) => {
-              if (choice instanceof TextAnswerChoice) {
-                const isSelected = selectedChoiceId === choice.getId();
-                return (
-                  <Pressable
-                    key={choice.getId()}
-                    onPress={() => handleSelect(question.getQuestionId(), choice.getId())}
-                    className={`flex-row items-center mb-3 border rounded-lg px-4 py-3 ${
-                      isSelected
-                        ? "border-blue-600 bg-blue-50"
-                        : "border-gray-300 bg-white"
-                    }`}
-                  >
-                    <View
-                      className={`w-5 h-5 mr-3 rounded-full border-2 ${
-                        isSelected ? "border-blue-600 bg-blue-600" : "border-gray-400"
+      <View className=" bg-white p-8 rounded-lg">
+        {/* Question prompt */}
+        <Text className="text-lg font-semibold mb-4 text-gray-900">
+          {question.getQuestionPrompt()}
+        </Text>
+        <ScrollView className="flex-1">
+          {/* Text Answers */}
+          {question
+            .getAnswerChoices()
+            .some((c) => c instanceof TextAnswerChoice) && (
+            <View className="mb-6">
+              {question.getAnswerChoices().map((choice: AnswerChoice) => {
+                if (choice instanceof TextAnswerChoice) {
+                  const isSelected = selectedChoiceId === choice.getId();
+                  return (
+                    <Pressable
+                      key={choice.getId()}
+                      onPress={() =>
+                        handleSelect(question.getQuestionId(), choice.getId())
+                      }
+                      className={`flex-row items-center mb-3 border rounded-lg px-4 py-3 ${
+                        isSelected
+                          ? "border-blue-600 bg-blue-50"
+                          : "border-gray-300 bg-white"
                       }`}
-                    />
-                    <Text className="text-gray-900">{choice.getText()}</Text>
-                  </Pressable>
-                );
-              }
-              return null;
-            })}
-          </View>
-        )}
+                    >
+                      <View
+                        className={`w-5 h-5 mr-3 rounded-full border-2 ${
+                          isSelected
+                            ? "border-blue-600 bg-blue-600"
+                            : "border-gray-400"
+                        }`}
+                      />
+                      <Text className="text-gray-900">{choice.getText()}</Text>
+                    </Pressable>
+                  );
+                }
+                return null;
+              })}
+            </View>
+          )}
 
-        {/* IMAGE ANSWERS — 2 per row */}
-        {question.getAnswerChoices().some((c) => c instanceof ImageAnswerChoice) && (
-          <View className="flex-row flex-wrap justify-between">
-            {question.getAnswerChoices().map((choice: AnswerChoice) => {
-              if (choice instanceof ImageAnswerChoice) {
-                const isSelected = selectedChoiceId === choice.getId();
-                return (
-                  <Pressable
-                    key={choice.getId()}
-                    onPress={() => handleSelect(question.getQuestionId(), choice.getId())}
-                    className={`w-[48%] mb-4 rounded-xl overflow-hidden border-2 ${
-                      isSelected ? "border-blue-500" : "border-gray-300"
-                    }`}
-                  >
-                    <Image
-                      source={choice.getImageUri()}
-                      className="w-full h-36"
-                      resizeMode="cover"
-                    />
-                    <Text className="text-center py-2 text-gray-800 font-medium">
-                      {choice.getId()}
-                    </Text>
-                  </Pressable>
-                );
-              }
-              return null;
-            })}
-          </View>
-        )}
-        {/* Question header */}
-      <Text className="text-center text-gray-600 p-4">
-        Question {currentQuestion + 1} of {totalQuestions}
-      </Text>
-
-      </ScrollView>
-    </View>
+          {/* IMAGE ANSWERS — 2 per row */}
+          {question
+            .getAnswerChoices()
+            .some((c) => c instanceof ImageAnswerChoice) && (
+            <View className="flex-row flex-wrap justify-between">
+              {question.getAnswerChoices().map((choice: AnswerChoice) => {
+                if (choice instanceof ImageAnswerChoice) {
+                  const isSelected = selectedChoiceId === choice.getId();
+                  return (
+                    <View
+                      key={choice.getId()}
+                      className="w-[48%] mb-4" 
+                    >
+                      <Text className="text-center py-2 text-gray-800 font-medium">
+                        {choice.getId()}
+                      </Text>
+                      <Pressable
+                        onPress={() =>
+                          handleSelect(question.getQuestionId(), choice.getId())
+                        }
+                        className={`rounded-xl overflow-hidden border-2 ${
+                          isSelected ? "border-blue-500" : "border-gray-300"
+                        }`}
+                      >
+                        <Image
+                          source={choice.getImageUri()}
+                          className="w-full h-36"
+                          resizeMode="cover"
+                        />
+                      </Pressable>
+                    </View>
+                  );
+                }
+                return null;
+              })}
+            </View>
+          )}
+          {/* Question header */}
+          <Text className="text-center text-gray-600 p-4">
+            Question {currentQuestion + 1} of {totalQuestions}
+          </Text>
+        </ScrollView>
+      </View>
       {/* Navigation Buttons */}
       <View className="flex-row justify-between items-center mt-6">
         <Pressable
