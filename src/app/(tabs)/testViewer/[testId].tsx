@@ -172,7 +172,7 @@ export default function TestViewerScreen() {
                   return (
                     <View
                       key={choice.getId()}
-                      className="w-[48%] mb-4" 
+                      className="mb-4" 
                     >
                       <Text className="text-center py-2 text-gray-800 font-medium">
                         {choice.getId()}
