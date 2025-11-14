@@ -181,8 +181,10 @@ export default function TestViewerScreen() {
                         onPress={() =>
                           handleSelect(question.getQuestionId(), choice.getId())
                         }
-                        className={`rounded-xl overflow-hidden border-2 ${
-                          isSelected ? "border-blue-500" : "border-gray-300"
+                        className={`flex-row items-center mb-3 border rounded-lg px-4 py-3 ${
+                          isSelected 
+                          ? "border-blue-600 bg-blue-100"
+                          : "border-gray-300 bg-white"
                         }`}
                       >
                         <Image
