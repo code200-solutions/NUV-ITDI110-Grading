@@ -112,19 +112,25 @@ export class Exercise {
   private questionPrompt: string;
   private answerChoice: AnswerChoice[];
   protected goodAnswerId: string;
+  private instructionText?: string;   
+  private audioUri?: ImageURISource | number | { uri: string }; 
 
   constructor(
     questionId: string, 
     type: ExerciseType,
     questionPrompt: string, 
     answerChoice: AnswerChoice[], 
-    goodAnswerId: string
+    goodAnswerId: string,
+    instructionText?: string,    
+    audioUri?: ImageURISource | number | { uri: string }
   ){
     this.questionId = questionId;
     this.type = type;
     this.questionPrompt = questionPrompt;
     this.answerChoice = answerChoice;
     this.goodAnswerId = goodAnswerId;
+    this.instructionText = instructionText;
+    this.audioUri = audioUri;
   }
 
   getQuestionId(): string {
@@ -144,6 +150,13 @@ export class Exercise {
   }
   isCorrect(answerId: string): boolean{
     return this.goodAnswerId === answerId;
+  }
+  getInstructionText(): string | undefined {
+    return this.instructionText;
+  }
+
+  getAudioUri(): ImageURISource | number | { uri: string } | undefined {
+    return this.audioUri;
   }
 }
 

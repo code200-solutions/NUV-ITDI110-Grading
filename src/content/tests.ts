@@ -1,6 +1,11 @@
 import { AnswerChoice, Exercise, ImageAnswerChoice, Sequence, Test, TextAnswerChoice } from "@/types/Test.class";
-
-// Image image assets
+//Audio assets
+const audioRep1Q1 = require('@/assets/audio/rep1-q1.mp3');
+const audioRep1Q2 = require('@/assets/audio/rep1-q1.mp3');
+const audioRep1Q3 = require('@/assets/audio/rep1-q1.mp3');
+const audioRep1Q4 = require('@/assets/audio/rep1-q1.mp3');
+const audioRep1Q5 = require('@/assets/audio/rep1-q1.mp3');
+// Image assets
 const imgRep1Seq1Ex1Img1 = require('@/assets/images/reperes1/rep1-seq1-ex1-img1.png');
 const imgRep1Seq1Ex1Img2 = require('@/assets/images/reperes1/rep1-seq1-ex1-img2.png');
 const imgRep1Seq1Ex1Img3 = require('@/assets/images/reperes1/rep1-seq1-ex1-img3.png');
@@ -76,7 +81,15 @@ export const test3AnswerChoices1: AnswerChoice[] = [
 
 //creating some exercises for the sequences 
 export const reperes1: Exercise[] = [
-  new Exercise("rep1-seq1-ex1", 'listening', "Question 1", test1AnswerChoices1, "A"),
+  new Exercise(
+    "rep1-seq1-ex1",
+    'listening',
+    "Question 1",
+    test1AnswerChoices1,
+    "A",
+    "Écoute attentivement et choisis la bonne image.",      
+    audioRep1Q1                               
+  ),
   new Exercise("rep1-seq1-ex2", 'listening', "Question 2", test1AnswerChoices1, "B"),
   new Exercise("rep1-seq1-ex3", 'listening', "Question 3", test1AnswerChoices1, "C"),
   new Exercise("rep1-seq2-ex4", 'listening', "Question 4", test1AnswerChoices1, "D"),
