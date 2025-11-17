@@ -1,10 +1,7 @@
 import { AnswerChoice, Exercise, ImageAnswerChoice, Sequence, Test, TextAnswerChoice } from "@/types/Test.class";
+import { AudioSource } from "expo-audio";
 //Audio assets
-const audioRep1Q1 = require('@/assets/audio/rep1-q1.mp3');
-const audioRep1Q2 = require('@/assets/audio/rep1-q1.mp3');
-const audioRep1Q3 = require('@/assets/audio/rep1-q1.mp3');
-const audioRep1Q4 = require('@/assets/audio/rep1-q1.mp3');
-const audioRep1Q5 = require('@/assets/audio/rep1-q1.mp3');
+const audioRep1Q1: AudioSource = require('../assets/audio/rep1-q1.mp3');
 // Image assets
 const imgRep1Seq1Ex1Img1 = require('@/assets/images/reperes1/rep1-seq1-ex1-img1.png');
 const imgRep1Seq1Ex1Img2 = require('@/assets/images/reperes1/rep1-seq1-ex1-img2.png');
@@ -80,20 +77,36 @@ export const test3AnswerChoices1: AnswerChoice[] = [
 ];
 
 //creating some exercises for the sequences 
-export const reperes1: Exercise[] = [
+export const reperes1Seq1: Exercise[] = [
   new Exercise(
     "rep1-seq1-ex1",
     'listening',
     "Question 1",
     test1AnswerChoices1,
     "A",
-    "Écoute attentivement et choisis la bonne image.",      
+    "Listen to a text then answer questions by circling the answer from among four options.",      
     audioRep1Q1                               
   ),
-  new Exercise("rep1-seq1-ex2", 'listening', "Question 2", test1AnswerChoices1, "B"),
-  new Exercise("rep1-seq1-ex3", 'listening', "Question 3", test1AnswerChoices1, "C"),
-  new Exercise("rep1-seq2-ex4", 'listening', "Question 4", test1AnswerChoices1, "D"),
-  new Exercise("rep1-seq2-ex5", 'listening', "Question 5", test1AnswerChoices1, "A"),
+  new Exercise("rep1-seq1-ex2", 'listening', "Question 2", test1AnswerChoices2, "B"),
+  new Exercise("rep1-seq1-ex3", 'listening', "Question 3", test1AnswerChoices3, "C"),
+  new Exercise("rep1-seq2-ex4", 'listening', "Question 4", test1AnswerChoices4, "D"),
+  new Exercise("rep1-seq2-ex5", 'listening', "Question 5", test1AnswerChoices5, "A"),
+];
+
+export const reperes1Seq2: Exercise[] = [
+  new Exercise(
+    "rep1-seq1-ex1",
+    'listening',
+    "Question 1",
+    test1AnswerChoices1,
+    "A",
+    "Listen to a text then answer questions by circling the answer from among four options.",      
+    audioRep1Q1                               
+  ),
+  new Exercise("rep1-seq1-ex2", 'listening', "Question 2", test1AnswerChoices2, "B"),
+  new Exercise("rep1-seq1-ex3", 'listening', "Question 3", test1AnswerChoices3, "C"),
+  new Exercise("rep1-seq2-ex4", 'listening', "Question 4", test1AnswerChoices4, "D"),
+  new Exercise("rep1-seq2-ex5", 'listening', "Question 5", test1AnswerChoices5, "A"),
 ];
 
 export const reperes2a: Exercise[] = [
@@ -123,7 +136,7 @@ export const reperes3: Exercise[] = [
 ];
 
 export const Tests: Test[] = [
-  new Test('Test 1', [new Sequence('test1.seq1', reperes1)],
+  new Test('Test 1', [new Sequence('test1.seq1', reperes1Seq1)],
     'This test evaluates your understanding of basic listening exercises using image recognition.'
   ),
   new Test('Test 2', [new Sequence('test2.seq1', reperes2a)]),

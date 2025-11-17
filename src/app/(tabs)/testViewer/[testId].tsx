@@ -14,6 +14,7 @@ import {
   ImageAnswerChoice,
   AnswerChoice,
 } from "@/types/Test.class";
+import { Audio } from "expo-av";
 
 export default function TestViewerScreen() {
   const { testId } = useLocalSearchParams();
@@ -38,12 +39,18 @@ export default function TestViewerScreen() {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const question = exercises[currentQuestion];
-  const selectedChoiceId = selectedAnswers[question.getQuestionId()] || null;
-
+  const selectedChoiceId = selectedAnswers[question.getQuestionId()] ?? null;
+  
   // Select answer
   const handleSelect = (questionId: string, choiceId: string) => {
-    setSelectedAnswers((prev) => ({ ...prev, [questionId]: choiceId }));
-  };
+  setSelectedAnswers((prev) => {
+    const isAlreadySelected = prev[questionId] === choiceId;
+    return {
+      ...prev,
+      [questionId]: isAlreadySelected ? null : choiceId, // toggle selection
+    };
+  });
+};
 
   // Navigation
   const goToNext = () => {
@@ -124,6 +131,38 @@ export default function TestViewerScreen() {
         <Text className="text-lg font-semibold mb-4 text-gray-900">
           {question.getQuestionPrompt()}
         </Text>
+
+        {/* Exercise instruction + Audio block for the question */}
+        {question.getInstructionText && question.getInstructionText() && (
+          <Text className="text-base text-gray-700 mb-4">
+            {question.getInstructionText()}
+          </Text>
+        )}
+
+        {question.getAudioUri && question.getAudioUri() && (
+          <View className="bg-gray-100 p-4 rounded-lg mb-6">
+            <Text className="text-gray-800 font-semibold mb-2">
+              Listen to the question:
+            </Text>
+
+            <Pressable
+              onPress={async () => {
+                try {
+                  const { sound } = await Audio.Sound.createAsync(
+                    question.getAudioUri()
+                  );
+                  await sound.playAsync();
+                } catch (e) {
+                  console.warn("Audio playback error:", e);
+                }
+              }}
+              className="bg-blue-600 py-2 px-4 rounded-lg"
+            >
+              <Text className="text-white text-center">▶ Play Audio</Text>
+            </Pressable>
+          </View>
+        )}
+
         <ScrollView className="flex-1">
           {/* Text Answers */}
           {question
@@ -170,10 +209,7 @@ export default function TestViewerScreen() {
                 if (choice instanceof ImageAnswerChoice) {
                   const isSelected = selectedChoiceId === choice.getId();
                   return (
-                    <View
-                      key={choice.getId()}
-                      className="mb-4" 
-                    >
+                    <View key={choice.getId()} className="mb-4">
                       <Text className="text-center py-2 text-gray-800 font-medium">
                         {choice.getId()}
                       </Text>
@@ -182,9 +218,9 @@ export default function TestViewerScreen() {
                           handleSelect(question.getQuestionId(), choice.getId())
                         }
                         className={`flex-row items-center mb-3 border rounded-lg px-4 py-3 ${
-                          isSelected 
-                          ? "border-blue-600 bg-blue-100"
-                          : "border-gray-300 bg-white"
+                          isSelected
+                            ? "border-blue-600 bg-blue-100"
+                            : "border-gray-300 bg-white"
                         }`}
                       >
                         <Image

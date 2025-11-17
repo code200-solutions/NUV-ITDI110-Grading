@@ -1,5 +1,6 @@
 //Type of exercises and answers for test
 import { ImageSourcePropType, ImageURISource } from "react-native";
+import { AudioSource } from "expo-audio";
 
 type ReadingExercise = string;
 type ListeningExercise = string;
@@ -113,7 +114,8 @@ export class Exercise {
   private answerChoice: AnswerChoice[];
   protected goodAnswerId: string;
   private instructionText?: string;   
-  private audioUri?: ImageURISource | number | { uri: string }; 
+  private audioUri?: AudioSource;
+  
 
   constructor(
     questionId: string, 
@@ -122,7 +124,7 @@ export class Exercise {
     answerChoice: AnswerChoice[], 
     goodAnswerId: string,
     instructionText?: string,    
-    audioUri?: ImageURISource | number | { uri: string }
+    audioUri?: AudioSource
   ){
     this.questionId = questionId;
     this.type = type;
@@ -155,7 +157,7 @@ export class Exercise {
     return this.instructionText;
   }
 
-  getAudioUri(): ImageURISource | number | { uri: string } | undefined {
+  getAudioUri(): AudioSource {
     return this.audioUri;
   }
 }
