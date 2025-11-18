@@ -148,9 +148,9 @@ export default function TestViewerScreen() {
             <Pressable
               onPress={async () => {
                 try {
-                  const { sound } = await Audio.Sound.createAsync(
-                    question.getAudioUri()
-                  );
+                  const { sound } = await Audio.Sound.createAsync({
+                    uri: question.getAudioUri() as string
+                  });
                   await sound.playAsync();
                 } catch (e) {
                   console.warn("Audio playback error:", e);

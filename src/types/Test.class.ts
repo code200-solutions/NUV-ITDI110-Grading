@@ -3,7 +3,7 @@ import { ImageSourcePropType, ImageURISource } from "react-native";
 import { AudioSource } from "expo-audio";
 
 type ReadingExercise = string;
-type ListeningExercise = string;
+type ListeningExercise = AudioSource;
 type MatchingAnswers = Array<{question: string; answer:string}>;
 type MultiChoiceAnswers = string[];
 type ShortAnswers = string[];
