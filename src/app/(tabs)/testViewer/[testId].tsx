@@ -142,7 +142,7 @@ export default function TestViewerScreen() {
         {question.getAudioUri && question.getAudioUri() && (
           <View className="bg-gray-100 p-4 rounded-lg mb-6">
             <Text className="text-gray-800 font-semibold mb-2">
-              Listen to the question:
+              Click and play to listen:
             </Text>
 
             <Pressable
