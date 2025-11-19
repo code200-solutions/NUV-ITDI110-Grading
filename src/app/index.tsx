@@ -1,6 +1,6 @@
 import { router } from "expo-router";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { Button, StyleSheet, Text, View } from "react-native";
 import GradientButton from "@/components/ButtonLinearGradient/ButtonLinearGradient";
 
 export default function Page() {
@@ -16,10 +16,10 @@ export default function Page() {
               Welcome to Test Sitting and Grading App
             </Text>
 
-            <View style={styles.container} className="mt-12 w-full">
+            <View style={styles.container} className="mt-12 w-full max-w-md">
 
               {/* Login button */}
-              <View style={{ marginBottom: 10, width: "60%", alignSelf: "center" }}>
+              <View style={{ marginBottom: 10, width: "30%", alignSelf: "center" }}>
                 <GradientButton
                   title="Login"
                   onPress={() => router.push("/loginScreen")}
@@ -31,8 +31,8 @@ export default function Page() {
               </View>
 
               {/* Sign in button */}
-              <View style={{ marginBottom: 10, width: "60%", alignSelf: "center" }}>
-                <GradientButton
+              <View style={{ marginBottom: 10, width: "30%", alignSelf: "center" }}>
+                <Button
                   title="Sign In"
                   onPress={() => router.push("/loginScreen")}
                 />

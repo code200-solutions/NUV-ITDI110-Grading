@@ -25,35 +25,46 @@ const imgRep1Seq1Ex1Img19 = require('@/assets/images/reperes1/rep1-seq1-ex1-img1
 const imgRep1Seq1Ex1Img20 = require('@/assets/images/reperes1/rep1-seq1-ex1-img20.png');
 
 //answer choices for exercise 1 or Reperes - 1
-export const test1AnswerChoices1: AnswerChoice[] = [
+export const test1Ex1AnswerChoices1: AnswerChoice[] = [
   new ImageAnswerChoice('A', imgRep1Seq1Ex1Img1),
   new ImageAnswerChoice('B', imgRep1Seq1Ex1Img2),
   new ImageAnswerChoice('C', imgRep1Seq1Ex1Img3),
   new ImageAnswerChoice('D', imgRep1Seq1Ex1Img4),
 ];
 
-export const test1AnswerChoices2: AnswerChoice[] = [
+export const test1Ex1AnswerChoices2: AnswerChoice[] = [
   new ImageAnswerChoice('A', imgRep1Seq1Ex1Img5),
   new ImageAnswerChoice('B', imgRep1Seq1Ex1Img6),
   new ImageAnswerChoice('C', imgRep1Seq1Ex1Img7),
   new ImageAnswerChoice('D', imgRep1Seq1Ex1Img8),
 ]; 
 
-export const test1AnswerChoices3: AnswerChoice[] = [
+export const test1Ex1AnswerChoices3: AnswerChoice[] = [
   new ImageAnswerChoice('A', imgRep1Seq1Ex1Img9),
   new ImageAnswerChoice('B', imgRep1Seq1Ex1Img10),
   new ImageAnswerChoice('C', imgRep1Seq1Ex1Img11),
   new ImageAnswerChoice('D', imgRep1Seq1Ex1Img12),
 ];
 
-export const test1AnswerChoices4: AnswerChoice[] = [
+export const test1Ex1AnswerChoices4: AnswerChoice[] = [
   new ImageAnswerChoice('A', imgRep1Seq1Ex1Img13),
   new ImageAnswerChoice('B', imgRep1Seq1Ex1Img14),
   new ImageAnswerChoice('C', imgRep1Seq1Ex1Img15),
   new ImageAnswerChoice('D', imgRep1Seq1Ex1Img16),
 ];
 
-export const test1AnswerChoices5: AnswerChoice[] = [
+export const test1Ex1AnswerChoices5: AnswerChoice[] = [
+  new ImageAnswerChoice('A', imgRep1Seq1Ex1Img17),
+  new ImageAnswerChoice('B', imgRep1Seq1Ex1Img18),
+  new ImageAnswerChoice('C', imgRep1Seq1Ex1Img19),
+  new ImageAnswerChoice('D', imgRep1Seq1Ex1Img20),
+];
+
+export const test1Ex1AnswerChoices6: AnswerChoice[] = [
+  new ImageAnswerChoice('A', imgRep1Seq1Ex1Img17),
+  new ImageAnswerChoice('B', imgRep1Seq1Ex1Img18),
+  new ImageAnswerChoice('C', imgRep1Seq1Ex1Img19),
+  new ImageAnswerChoice('D', imgRep1Seq1Ex1Img20),
   new ImageAnswerChoice('A', imgRep1Seq1Ex1Img17),
   new ImageAnswerChoice('B', imgRep1Seq1Ex1Img18),
   new ImageAnswerChoice('C', imgRep1Seq1Ex1Img19),
@@ -78,36 +89,33 @@ export const test3AnswerChoices1: AnswerChoice[] = [
 
 //creating some exercises for the sequences 
 export const reperes1Seq1: Exercise[] = [
+//Exercise 1
   new Exercise(
     "rep1-seq1-ex1",
     'listening',
-    "Question 1",
-    test1AnswerChoices1,
+    "Question 1 Part A:",
+    test1Ex1AnswerChoices1,
     "A",
     "Listen to a text then answer questions by circling the answer from among four options.",      
     audioRep1Q1                               
   ),
-  new Exercise("rep1-seq1-ex2", 'listening', "Question 2", test1AnswerChoices2, "B"),
-  new Exercise("rep1-seq1-ex3", 'listening', "Question 3", test1AnswerChoices3, "C"),
-  new Exercise("rep1-seq2-ex4", 'listening', "Question 4", test1AnswerChoices4, "D"),
-  new Exercise("rep1-seq2-ex5", 'listening', "Question 5", test1AnswerChoices5, "A"),
+  new Exercise("rep1-seq1-ex2", 'listening', "Part B", test1Ex1AnswerChoices2, "B"),
+  new Exercise("rep1-seq1-ex3", 'listening', "Part C", test1Ex1AnswerChoices3, "C"),
+  new Exercise("rep1-seq2-ex4", 'listening', "Part D", test1Ex1AnswerChoices4, "D"),
+  new Exercise("rep1-seq2-ex5", 'listening', "Part E", test1Ex1AnswerChoices5, "A"),
+
+//Exercise 2
+  new Exercise(
+    "rep1-seq1-ex2",
+    'listening',
+    "Question 2 Part A:",
+    test1Ex1AnswerChoices6,
+    "A",
+    "Listen to a text then answer questions by circling the answer from among four options.",      
+    audioRep1Q1                               
+  ),
 ];
 
-export const reperes1Seq2: Exercise[] = [
-  new Exercise(
-    "rep1-seq1-ex1",
-    'listening',
-    "Question 1",
-    test1AnswerChoices1,
-    "A",
-    "Listen to a text then answer questions by circling the answer from among four options.",      
-    audioRep1Q1                               
-  ),
-  new Exercise("rep1-seq1-ex2", 'listening', "Question 2", test1AnswerChoices2, "B"),
-  new Exercise("rep1-seq1-ex3", 'listening', "Question 3", test1AnswerChoices3, "C"),
-  new Exercise("rep1-seq2-ex4", 'listening', "Question 4", test1AnswerChoices4, "D"),
-  new Exercise("rep1-seq2-ex5", 'listening', "Question 5", test1AnswerChoices5, "A"),
-];
 
 export const reperes2a: Exercise[] = [
   new Exercise("rep2a-seq1-ex1", 'reading', "Question 1", test2AnswerChoices1, "A"),
@@ -136,7 +144,7 @@ export const reperes3: Exercise[] = [
 ];
 
 export const Tests: Test[] = [
-  new Test('Test 1', [new Sequence('test1.seq1', reperes1Seq1)],
+  new Test('Repere 1', [new Sequence('test1.seq1', reperes1Seq1,)],
     'This test evaluates your understanding of basic listening exercises using image recognition.'
   ),
   new Test('Test 2', [new Sequence('test2.seq1', reperes2a)]),
