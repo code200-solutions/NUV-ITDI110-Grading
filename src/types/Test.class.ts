@@ -112,7 +112,7 @@ export class Exercise {
   private type?: ExerciseType;
   private questionPrompt: string;
   private answerChoice: AnswerChoice[];
-  protected goodAnswerId: string;
+  protected goodAnswerId: string[];
   private instructionText?: string;   
   private audioUri?: AudioSource;
   
@@ -122,7 +122,7 @@ export class Exercise {
     type: ExerciseType,
     questionPrompt: string, 
     answerChoice: AnswerChoice[], 
-    goodAnswerId: string,
+    goodAnswerId: string[],
     instructionText?: string,    
     audioUri?: AudioSource
   ){
@@ -150,7 +150,7 @@ export class Exercise {
   getAnswer() {
     return this.answerChoice;
   }
-  isCorrect(answerId: string): boolean{
+  isCorrect(answerId: string[]){
     return this.goodAnswerId === answerId;
   }
   getInstructionText(): string | undefined {
