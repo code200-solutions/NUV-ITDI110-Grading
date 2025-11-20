@@ -39,8 +39,73 @@ const [selectedAnswers, setSelectedAnswers] = useState<{
   [key: string]: string[];
 }>({});
 const [isSubmitted, setIsSubmitted] = useState(false);
+const [audioState, setAudioState] = useState<{
+  [key: string]: { isPlaying: boolean; duration: number; position: number; sound: any };
+}>({});
 
 const question = exercises[currentQuestion];
+
+const handleAudioToggle = async (questionId: string) => {
+  const state = audioState[questionId];
+  
+  try {
+    if (state && state.sound) {
+      if (state.isPlaying) {
+        await state.sound.pauseAsync();
+        setAudioState(prev => ({
+          ...prev,
+          [questionId]: { ...state, isPlaying: false }
+        }));
+      } else {
+        await state.sound.playAsync();
+        setAudioState(prev => ({
+          ...prev,
+          [questionId]: { ...state, isPlaying: true }
+        }));
+      }
+    } else {
+      const { sound } = await Audio.Sound.createAsync({
+        uri: question.getAudioUri() as string,
+      });
+      
+      const status = await sound.getStatusAsync();
+            const duration = status.isLoaded ? status.durationMillis ?? 0 : 0;
+      setAudioState(prev => ({
+        ...prev,
+        [questionId]: {
+          isPlaying: true,
+          duration,
+          position: 0,
+          sound
+        }
+      }));
+      
+      sound.setOnPlaybackStatusUpdate((status: any) => {
+        if (status.isLoaded) {
+          setAudioState(prev => ({
+            ...prev,
+            [questionId]: {
+              ...prev[questionId],
+              position: status.positionMillis || 0,
+              isPlaying: status.isPlaying
+            }
+          }));
+        }
+      });
+      
+      await sound.playAsync();
+    }
+  } catch (e) {
+    console.warn("Audio error:", e);
+  }
+};
+
+const formatTime = (ms: number) => {
+  const seconds = Math.floor(ms / 1000);
+  const mins = Math.floor(seconds / 60);
+  const secs = seconds % 60;
+  return `${mins}:${secs.toString().padStart(2, '0')}`;
+};
 const selectedChoiceId = selectedAnswers[question.getQuestionId()] ?? null;
 
 // Select answer
@@ -58,7 +123,7 @@ const handleSelect = (questionId: string, choiceId: string) => {
 
     // Limit to 3 choices
     if (current.length >= 3) {
-      return prev; // do nothing
+      return prev;
     }
 
     // Add new choice
@@ -161,20 +226,42 @@ const handleSelect = (questionId: string, choiceId: string) => {
               Click and play to listen:
             </Text>
 
+            <View className="flex-row items-center gap-3 mb-3">
+              <Pressable
+                onPress={() => handleAudioToggle(question.getQuestionId())}
+                className="bg-blue-600 py-2 px-4 rounded-lg"
+              >
+                <Text className="text-white text-center">
+                  {audioState[question.getQuestionId()]?.isPlaying ? "⏸ Pause" : "▶ Play"}
+                </Text>
+              </Pressable>
+              
+              <Text className="text-gray-700 text-xs font-medium whitespace-nowrap">
+                {formatTime(audioState[question.getQuestionId()]?.position || 0)} / {formatTime(audioState[question.getQuestionId()]?.duration || 0)}
+              </Text>
+            </View>
+
             <Pressable
-              onPress={async () => {
-                try {
-                  const { sound } = await Audio.Sound.createAsync({
-                    uri: question.getAudioUri() as string,
-                  });
-                  await sound.playAsync();
-                } catch (e) {
-                  console.warn("Audio playback error:", e);
+              onPress={async (e) => {
+                const state = audioState[question.getQuestionId()];
+                if (state?.sound && state?.duration) {
+                  const nativeEvent = e.nativeEvent;
+                  const width = (e.target as any)?.offsetWidth || 300;
+                  const percentage = nativeEvent.locationX / width;
+                  const newPosition = percentage * state.duration;
+                  await state.sound.setPositionAsync(newPosition);
                 }
               }}
-              className="bg-blue-600 py-2 px-4 rounded-lg"
+              className="w-full"
             >
-              <Text className="text-white text-center">▶ Play Audio</Text>
+              <View className="w-full bg-gray-300 h-1.5 rounded-full overflow-hidden">
+                <View
+                  style={{
+                    width: `${((audioState[question.getQuestionId()]?.position || 0) / (audioState[question.getQuestionId()]?.duration || 1)) * 100}%`,
+                  }}
+                  className="h-full bg-blue-600"
+                />
+              </View>
             </Pressable>
           </View>
         )}
@@ -225,8 +312,7 @@ const handleSelect = (questionId: string, choiceId: string) => {
             <View className="flex-row flex-wrap justify-between">
               {question.getAnswerChoices().map((choice: AnswerChoice) => {
                 if (choice instanceof ImageAnswerChoice) {
-                  const selectedIds =
-                    selectedAnswers[question.getQuestionId()] || [];
+                  const selectedIds = selectedAnswers[question.getQuestionId()] || [];
                   const isSelected = selectedIds.includes(choice.getId());
 
                   return (
