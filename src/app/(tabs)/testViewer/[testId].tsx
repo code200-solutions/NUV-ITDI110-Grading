@@ -220,6 +220,7 @@ const handleSelect = (questionId: string, choiceId: string) => {
     }, 0);
 
     return (
+    // Test Complete - Mark Sheet
       <View className="flex-1 bg-white p-6">
         <Text className="text-2xl font-bold text-center mb-4 text-gray-800">
           Test Completed
@@ -255,7 +256,7 @@ const handleSelect = (questionId: string, choiceId: string) => {
 
         <Pressable
           onPress={() => router.back()}
-          className="mt-6 bg-blue-600 py-3 rounded-lg"
+          className="mt-6 bg-blue-700 py-3 rounded-lg"
         >
           <Text className="text-white text-center font-semibold">Go Back</Text>
         </Pressable>
@@ -271,7 +272,7 @@ const handleSelect = (questionId: string, choiceId: string) => {
           style={{
             width: `${((currentQuestion + 1) / totalQuestions) * 100}%`,
           }}
-          className="h-full bg-purple-800 rounded-full"
+          className="h-full bg-blue-700 rounded-full"
         />
       </View>
       <View className="flex-1 bg-white p-8 rounded-lg">
@@ -458,7 +459,7 @@ const handleSelect = (questionId: string, choiceId: string) => {
             onPress={goToPrevious}
             disabled={currentQuestion === 0}
             className={`rounded py-2 px-4 ${
-              currentQuestion === 0 ? "bg-gray-400" : "bg-blue-600"
+              currentQuestion === 0 ? "bg-gray-400" : "bg-blue-700"
             }`}
           >
             <Text className="text-white font-semibold">Previous</Text>
@@ -474,7 +475,7 @@ const handleSelect = (questionId: string, choiceId: string) => {
           ) : (
             <Pressable
               onPress={goToNext}
-              className="rounded py-2 px-4 bg-blue-600"
+              className="rounded py-2 px-4 bg-blue-700"
             >
               <Text className="text-white font-semibold">Next</Text>
             </Pressable>
