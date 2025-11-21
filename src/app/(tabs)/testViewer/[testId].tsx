@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState, useEffect, useRef } from "react";
 import {
   View,
   Text,
@@ -43,34 +43,68 @@ const [audioState, setAudioState] = useState<{
   [key: string]: { isPlaying: boolean; duration: number; position: number; sound: any };
 }>({});
 
+const audioStateRef = useRef(audioState);
+const setAudioStateAndRef = (updater: any) => {
+  setAudioState((prev) => {
+    const newState = typeof updater === "function" ? updater(prev) : updater;
+    audioStateRef.current = newState;
+    return newState;
+  });
+};
+
+// Poll as a fallback to ensure UI gets updated while audio is playing.
+useEffect(() => {
+  const interval = setInterval(() => {
+    (async () => {
+      const entries = Object.entries(audioStateRef.current);
+      for (const [id, s] of entries) {
+        if (s?.sound) {
+          try {
+            const status = await s.sound.getStatusAsync();
+            if (status.isLoaded) {
+              setAudioStateAndRef((prev: any) => ({
+                ...prev,
+                [id]: {
+                  ...prev[id],
+                  position: status.positionMillis || 0,
+                  duration: status.durationMillis || prev[id]?.duration || 0,
+                  isPlaying: status.isPlaying,
+                },
+              }));
+            }
+          } catch (e) {
+            // noop
+          }
+        }
+      }
+    })();
+  }, 500);
+
+  return () => clearInterval(interval);
+}, []);
+
+const [barWidths, setBarWidths] = useState<Record<string, number>>({});
+
 const question = exercises[currentQuestion];
 
-const handleAudioToggle = async (questionId: string) => {
+const handleAudioPlay = async (questionId: string) => {
   const state = audioState[questionId];
   
   try {
     if (state && state.sound) {
-      if (state.isPlaying) {
-        await state.sound.pauseAsync();
-        setAudioState(prev => ({
-          ...prev,
-          [questionId]: { ...state, isPlaying: false }
-        }));
-      } else {
-        await state.sound.playAsync();
-        setAudioState(prev => ({
-          ...prev,
-          [questionId]: { ...state, isPlaying: true }
-        }));
-      }
+      await state.sound.playAsync();
+      setAudioStateAndRef(prev => ({
+        ...prev,
+        [questionId]: { ...state, isPlaying: true }
+      }));
     } else {
       const { sound } = await Audio.Sound.createAsync({
         uri: question.getAudioUri() as string,
       });
       
       const status = await sound.getStatusAsync();
-            const duration = status.isLoaded ? status.durationMillis ?? 0 : 0;
-      setAudioState(prev => ({
+      const duration = status.isLoaded ? status.durationMillis ?? 0 : 0;
+      setAudioStateAndRef(prev => ({
         ...prev,
         [questionId]: {
           isPlaying: true,
@@ -82,7 +116,7 @@ const handleAudioToggle = async (questionId: string) => {
       
       sound.setOnPlaybackStatusUpdate((status: any) => {
         if (status.isLoaded) {
-          setAudioState(prev => ({
+          setAudioStateAndRef(prev => ({
             ...prev,
             [questionId]: {
               ...prev[questionId],
@@ -94,6 +128,39 @@ const handleAudioToggle = async (questionId: string) => {
       });
       
       await sound.playAsync();
+    }
+  } catch (e) {
+    console.warn("Audio error:", e);
+  }
+};
+
+const handleAudioPause = async (questionId: string) => {
+  const state = audioState[questionId];
+  
+  try {
+    if (state && state.sound) {
+      await state.sound.pauseAsync();
+      setAudioStateAndRef(prev => ({
+        ...prev,
+        [questionId]: { ...state, isPlaying: false }
+      }));
+    }
+  } catch (e) {
+    console.warn("Audio error:", e);
+  }
+};
+
+const handleAudioStop = async (questionId: string) => {
+  const state = audioState[questionId];
+  
+  try {
+    if (state && state.sound) {
+      await state.sound.stopAsync();
+      await state.sound.setPositionAsync(0);
+      setAudioStateAndRef(prev => ({
+        ...prev,
+        [questionId]: { ...state, isPlaying: false, position: 0 }
+      }));
     }
   } catch (e) {
     console.warn("Audio error:", e);
@@ -227,13 +294,30 @@ const handleSelect = (questionId: string, choiceId: string) => {
             </Text>
 
             <View className="flex-row items-center gap-3 mb-3">
+              {audioState[question.getQuestionId()]?.isPlaying ? (
+                <Pressable
+                  onPress={() => handleAudioPause(question.getQuestionId())}
+                  className="bg-blue-700 py-2 px-4 rounded-lg"
+                  style={({ pressed }) => [{ opacity: pressed ? 0.6 : 1 }]}
+                >
+                  <Text className="text-white text-center">⏸ Pause</Text>
+                </Pressable>
+              ) : (
+                <Pressable
+                  onPress={() => handleAudioPlay(question.getQuestionId())}
+                  className="bg-blue-700 py-2 px-4 rounded-lg"
+                  style={({ pressed }) => [{ opacity: pressed ? 0.6 : 1 }]}
+                >
+                  <Text className="text-white text-center">▶ Play</Text>
+                </Pressable>
+              )}
+              
               <Pressable
-                onPress={() => handleAudioToggle(question.getQuestionId())}
-                className="bg-blue-600 py-2 px-4 rounded-lg"
+                onPress={() => handleAudioStop(question.getQuestionId())}
+                className="bg-blue-700 py-2 px-4 rounded-lg"
+                style={({ pressed }) => [{ opacity: pressed ? 0.6 : 1 }]}
               >
-                <Text className="text-white text-center">
-                  {audioState[question.getQuestionId()]?.isPlaying ? "⏸ Pause" : "▶ Play"}
-                </Text>
+                <Text className="text-white text-center">⏹ Stop</Text>
               </Pressable>
               
               <Text className="text-gray-700 text-xs font-medium whitespace-nowrap">
@@ -246,15 +330,32 @@ const handleSelect = (questionId: string, choiceId: string) => {
                 const state = audioState[question.getQuestionId()];
                 if (state?.sound && state?.duration) {
                   const nativeEvent = e.nativeEvent;
-                  const width = (e.target as any)?.offsetWidth || 300;
-                  const percentage = nativeEvent.locationX / width;
+                  const width = barWidths[question.getQuestionId()] || 1;
+                  const percentage = Math.min(Math.max(nativeEvent.locationX / width, 0), 1);
                   const newPosition = percentage * state.duration;
-                  await state.sound.setPositionAsync(newPosition);
+                  try {
+                    await state.sound.setPositionAsync(newPosition);
+                    setAudioStateAndRef((prev: any) => ({
+                      ...prev,
+                      [question.getQuestionId()]: {
+                        ...prev[question.getQuestionId()],
+                        position: newPosition,
+                      },
+                    }));
+                  } catch (err) {
+                    // ignore
+                  }
                 }
               }}
               className="w-full"
             >
-              <View className="w-full bg-gray-300 h-1.5 rounded-full overflow-hidden">
+              <View
+                className="w-full bg-gray-300 h-1.5 rounded-full overflow-hidden"
+                onLayout={(e) => {
+                  const w = e.nativeEvent.layout.width;
+                  setBarWidths((prev) => ({ ...prev, [question.getQuestionId()]: w }));
+                }}
+              >
                 <View
                   style={{
                     width: `${((audioState[question.getQuestionId()]?.position || 0) / (audioState[question.getQuestionId()]?.duration || 1)) * 100}%`,
