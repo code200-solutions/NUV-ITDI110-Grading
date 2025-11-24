@@ -24,9 +24,30 @@ const imgRep1Seq1Ex1Img18 = require('@/assets/images/reperes1/ex1/rep1-seq1-ex1-
 const imgRep1Seq1Ex1Img19 = require('@/assets/images/reperes1/ex1/rep1-seq1-ex1-img19.png');
 const imgRep1Seq1Ex1Img20 = require('@/assets/images/reperes1/ex1/rep1-seq1-ex1-img20.png');
 // Image assets Rep 1 Ex2
-const imgRep1Seq1Ex2Img1 = require('@/assets/images/reperes1/ex2/rep1-seq1-ex2-img1(a1).png');
-const imgRep1Seq1Ex2Img2 = require('@/assets/images/reperes1/ex2/rep1-seq1-ex2-img2(a2).png');
-const imgRep1Seq1Ex2Img3 = require('@/assets/images/reperes1/ex2/rep1-seq1-ex2-img3(a3).png');
+const imgRep1Seq1Ex2Img1a1 = require('@/assets/images/reperes1/ex2/rep1-seq1-ex2-img1(a1).png');
+const imgRep1Seq1Ex2Img2a2 = require('@/assets/images/reperes1/ex2/rep1-seq1-ex2-img2(a2).png');
+const imgRep1Seq1Ex2Img3a3 = require('@/assets/images/reperes1/ex2/rep1-seq1-ex2-img3(a3).png');
+const imgRep1Seq1Ex2Img4b1 = require('@/assets/images/reperes1/ex2/rep1-seq1-ex2-img4(b1).png');
+const imgRep1Seq1Ex2Img5b2 = require('@/assets/images/reperes1/ex2/rep1-seq1-ex2-img5(b2).png');
+const imgRep1Seq1Ex2Img6b3 = require('@/assets/images/reperes1/ex2/rep1-seq1-ex2-img6(b3).png');
+const imgRep1Seq1Ex2Img7c1 = require('@/assets/images/reperes1/ex2/rep1-seq1-ex2-img7(c1).png');
+const imgRep1Seq1Ex2Img8c2 = require('@/assets/images/reperes1/ex2/rep1-seq1-ex2-img8(c2).png');
+const imgRep1Seq1Ex2Img9c3 = require('@/assets/images/reperes1/ex2/rep1-seq1-ex2-img9(c3).png');
+const imgRep1Seq1Ex2Img10d1 = require('@/assets/images/reperes1/ex2/rep1-seq1-ex2-img10(d1).png');
+const imgRep1Seq1Ex2Img11d2 = require('@/assets/images/reperes1/ex2/rep1-seq1-ex2-img11(d2).png');
+const imgRep1Seq1Ex2Img12d3 = require('@/assets/images/reperes1/ex2/rep1-seq1-ex2-img12(d3).png');
+const imgRep1Seq1Ex2Img13e1 = require('@/assets/images/reperes1/ex2/rep1-seq1-ex2-img13(e1).png');
+const imgRep1Seq1Ex2Img14e2 = require('@/assets/images/reperes1/ex2/rep1-seq1-ex2-img14(e2).png');
+const imgRep1Seq1Ex2Img15e3 = require('@/assets/images/reperes1/ex2/rep1-seq1-ex2-img15(e3).png');
+const imgRep1Seq1Ex2Img16f1 = require('@/assets/images/reperes1/ex2/rep1-seq1-ex2-img16(f1).png');
+const imgRep1Seq1Ex2Img17f2 = require('@/assets/images/reperes1/ex2/rep1-seq1-ex2-img17(f2).png');
+const imgRep1Seq1Ex2Img18f3 = require('@/assets/images/reperes1/ex2/rep1-seq1-ex2-img18(f3).png');
+const imgRep1Seq1Ex2Img19g1 = require('@/assets/images/reperes1/ex2/rep1-seq1-ex2-img19(g1).png');
+const imgRep1Seq1Ex2Img20g2 = require('@/assets/images/reperes1/ex2/rep1-seq1-ex2-img20(g2).png');
+const imgRep1Seq1Ex2Img21g3 = require('@/assets/images/reperes1/ex2/rep1-seq1-ex2-img21(g3).png');
+const imgRep1Seq1Ex2Img22i1 = require('@/assets/images/reperes1/ex2/rep1-seq1-ex2-img22(i1).png');
+const imgRep1Seq1Ex2Img23i2 = require('@/assets/images/reperes1/ex2/rep1-seq1-ex2-img23(i2).png');
+const imgRep1Seq1Ex2Img24i3 = require('@/assets/images/reperes1/ex2/rep1-seq1-ex2-img24(i3).png');
 //answer choices for exercise 1 or Reperes - 1
 export const test1Ex1AnswerChoices1: AnswerChoice[] = [
   new ImageAnswerChoice('A', imgRep1Seq1Ex1Img1),
@@ -64,14 +85,9 @@ export const test1Ex1AnswerChoices5: AnswerChoice[] = [
 ];
 
 export const test1Ex1AnswerChoices6: AnswerChoice[] = [
-  new ImageAnswerChoice('1', imgRep1Seq1Ex2Img1),
-  new ImageAnswerChoice('2', imgRep1Seq1Ex2Img2),
-  new ImageAnswerChoice('3', imgRep1Seq1Ex2Img3),
-  new ImageAnswerChoice('D', imgRep1Seq1Ex1Img4),
-  new ImageAnswerChoice('E', imgRep1Seq1Ex1Img17),
-  new ImageAnswerChoice('F', imgRep1Seq1Ex1Img18),
-  new ImageAnswerChoice('G', imgRep1Seq1Ex1Img19),
-  new ImageAnswerChoice('H', imgRep1Seq1Ex1Img20),
+  new ImageAnswerChoice('1', imgRep1Seq1Ex2Img1a1),
+  new ImageAnswerChoice('2', imgRep1Seq1Ex2Img2a2),
+  new ImageAnswerChoice('3', imgRep1Seq1Ex2Img3a3),
 ];
 
 //Answer choices for reperes 2a

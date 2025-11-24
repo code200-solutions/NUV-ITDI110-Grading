@@ -187,7 +187,10 @@ const handleSelect = (questionId: string, choiceId: string) => {
         [questionId]: current.filter((id) => id !== choiceId),
       };
     }
-
+    // Limit to single choice
+    if (current.length == 1) {
+      return prev;
+    }
     // Limit to 3 choices
     if (current.length >= 3) {
       return prev;
