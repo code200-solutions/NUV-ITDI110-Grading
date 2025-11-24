@@ -110,7 +110,7 @@ export const reperes1Seq1: Exercise[] = [
     'listening',
     "Question 2 Part A:",
     test1Ex1AnswerChoices6,
-    [ "A,", " B,", " C" ],
+    [ "A", " B", " C" ],
     "Listen to a text then answer questions by circling the answer from among four options.",      
     audioRep1Q1                               
   ),
