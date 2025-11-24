@@ -2,7 +2,7 @@ import { AnswerChoice, Exercise, ImageAnswerChoice, Sequence, Test, TextAnswerCh
 import { AudioSource } from "expo-audio";
 //Audio assets
 const audioRep1Q1: AudioSource = require('../assets/audio/rep1-q1.mp3');
-// Image assets
+// Image assets Rep 1 Ex1
 const imgRep1Seq1Ex1Img1 = require('@/assets/images/reperes1/ex1/rep1-seq1-ex1-img1.png');
 const imgRep1Seq1Ex1Img2 = require('@/assets/images/reperes1/ex1/rep1-seq1-ex1-img2.png');
 const imgRep1Seq1Ex1Img3 = require('@/assets/images/reperes1/ex1/rep1-seq1-ex1-img3.png');
@@ -23,7 +23,10 @@ const imgRep1Seq1Ex1Img17 = require('@/assets/images/reperes1/ex1/rep1-seq1-ex1-
 const imgRep1Seq1Ex1Img18 = require('@/assets/images/reperes1/ex1/rep1-seq1-ex1-img18.png');
 const imgRep1Seq1Ex1Img19 = require('@/assets/images/reperes1/ex1/rep1-seq1-ex1-img19.png');
 const imgRep1Seq1Ex1Img20 = require('@/assets/images/reperes1/ex1/rep1-seq1-ex1-img20.png');
-
+// Image assets Rep 1 Ex2
+const imgRep1Seq1Ex2Img1 = require('@/assets/images/reperes1/ex2/rep1-seq1-ex2-img1(a1).png');
+const imgRep1Seq1Ex2Img2 = require('@/assets/images/reperes1/ex2/rep1-seq1-ex2-img2(a2).png');
+const imgRep1Seq1Ex2Img3 = require('@/assets/images/reperes1/ex2/rep1-seq1-ex2-img3(a3).png');
 //answer choices for exercise 1 or Reperes - 1
 export const test1Ex1AnswerChoices1: AnswerChoice[] = [
   new ImageAnswerChoice('A', imgRep1Seq1Ex1Img1),
@@ -61,9 +64,9 @@ export const test1Ex1AnswerChoices5: AnswerChoice[] = [
 ];
 
 export const test1Ex1AnswerChoices6: AnswerChoice[] = [
-  new ImageAnswerChoice('A', imgRep1Seq1Ex1Img1),
-  new ImageAnswerChoice('B', imgRep1Seq1Ex1Img2),
-  new ImageAnswerChoice('C', imgRep1Seq1Ex1Img3),
+  new ImageAnswerChoice('1', imgRep1Seq1Ex2Img1),
+  new ImageAnswerChoice('2', imgRep1Seq1Ex2Img2),
+  new ImageAnswerChoice('3', imgRep1Seq1Ex2Img3),
   new ImageAnswerChoice('D', imgRep1Seq1Ex1Img4),
   new ImageAnswerChoice('E', imgRep1Seq1Ex1Img17),
   new ImageAnswerChoice('F', imgRep1Seq1Ex1Img18),
