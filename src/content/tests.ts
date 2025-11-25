@@ -23,6 +23,7 @@ const imgRep1Seq1Ex1Img17 = require('@/assets/images/reperes1/ex1/rep1-seq1-ex1-
 const imgRep1Seq1Ex1Img18 = require('@/assets/images/reperes1/ex1/rep1-seq1-ex1-img18.png');
 const imgRep1Seq1Ex1Img19 = require('@/assets/images/reperes1/ex1/rep1-seq1-ex1-img19.png');
 const imgRep1Seq1Ex1Img20 = require('@/assets/images/reperes1/ex1/rep1-seq1-ex1-img20.png');
+
 // Image assets Rep 1 Ex2
 const imgRep1Seq1Ex2Img1a1 = require('@/assets/images/reperes1/ex2/rep1-seq1-ex2-img1(a1).png');
 const imgRep1Seq1Ex2Img2a2 = require('@/assets/images/reperes1/ex2/rep1-seq1-ex2-img2(a2).png');
@@ -48,7 +49,25 @@ const imgRep1Seq1Ex2Img21g3 = require('@/assets/images/reperes1/ex2/rep1-seq1-ex
 const imgRep1Seq1Ex2Img22i1 = require('@/assets/images/reperes1/ex2/rep1-seq1-ex2-img22(i1).png');
 const imgRep1Seq1Ex2Img23i2 = require('@/assets/images/reperes1/ex2/rep1-seq1-ex2-img23(i2).png');
 const imgRep1Seq1Ex2Img24i3 = require('@/assets/images/reperes1/ex2/rep1-seq1-ex2-img24(i3).png');
-//answer choices for exercise 1 or Reperes - 1
+const imgRep1Seq1Ex2Img25m1 = require('@/assets/images/reperes1/ex2/rep1-seq1-ex2-img25(m1).png');
+const imgRep1Seq1Ex2Img26m2 = require('@/assets/images/reperes1/ex2/rep1-seq1-ex2-img26(m2).png');
+const imgRep1Seq1Ex2Img27m3 = require('@/assets/images/reperes1/ex2/rep1-seq1-ex2-img27(m3).png');
+const imgRep1Seq1Ex2Img28n1 = require('@/assets/images/reperes1/ex2/rep1-seq1-ex2-img28(n1).png');
+const imgRep1Seq1Ex2Img29n2 = require('@/assets/images/reperes1/ex2/rep1-seq1-ex2-img29(n2).png');
+const imgRep1Seq1Ex2Img30n3 = require('@/assets/images/reperes1/ex2/rep1-seq1-ex2-img30(n3).png');
+const imgRep1Seq1Ex2Img31o1 = require('@/assets/images/reperes1/ex2/rep1-seq1-ex2-img31(o1).png');
+const imgRep1Seq1Ex2Img32o2 = require('@/assets/images/reperes1/ex2/rep1-seq1-ex2-img32(o2).png');
+const imgRep1Seq1Ex2Img33o3 = require('@/assets/images/reperes1/ex2/rep1-seq1-ex2-img33(o3).png');
+const imgRep1Seq1Ex2Img34r1 = require('@/assets/images/reperes1/ex2/rep1-seq1-ex2-img34(r1).png');
+const imgRep1Seq1Ex2Img35r2 = require('@/assets/images/reperes1/ex2/rep1-seq1-ex2-img35(r2).png');
+const imgRep1Seq1Ex2Img36r3 = require('@/assets/images/reperes1/ex2/rep1-seq1-ex2-img36(r3).png');
+const imgRep1Seq1Ex2Img37s1 = require('@/assets/images/reperes1/ex2/rep1-seq1-ex2-img37(s1).png');
+const imgRep1Seq1Ex2Img38s2 = require('@/assets/images/reperes1/ex2/rep1-seq1-ex2-img38(s2).png');
+const imgRep1Seq1Ex2Img39s3 = require('@/assets/images/reperes1/ex2/rep1-seq1-ex2-img39(s3).png');
+const imgRep1Seq1Ex2Img40v1 = require('@/assets/images/reperes1/ex2/rep1-seq1-ex2-img40(v1).png');
+const imgRep1Seq1Ex2Img41v2 = require('@/assets/images/reperes1/ex2/rep1-seq1-ex2-img41(v2).png');
+const imgRep1Seq1Ex2Img42v3 = require('@/assets/images/reperes1/ex2/rep1-seq1-ex2-img42(v3).png');
+//answer choices for exercise 1, Reperes - 1
 export const test1Ex1AnswerChoices1: AnswerChoice[] = [
   new ImageAnswerChoice('A', imgRep1Seq1Ex1Img1),
   new ImageAnswerChoice('B', imgRep1Seq1Ex1Img2),
@@ -83,11 +102,47 @@ export const test1Ex1AnswerChoices5: AnswerChoice[] = [
   new ImageAnswerChoice('C', imgRep1Seq1Ex1Img19),
   new ImageAnswerChoice('D', imgRep1Seq1Ex1Img20),
 ];
+//answer choices for exercise 2, Reperes - 1
+export const test1Ex2AnswerChoices1: AnswerChoice[] = [
+  new ImageAnswerChoice('1', imgRep1Seq1Ex2Img22i1),
+  new ImageAnswerChoice('2', imgRep1Seq1Ex2Img17f2),
+  new ImageAnswerChoice('3', imgRep1Seq1Ex2Img2a2),
+  new ImageAnswerChoice('4', imgRep1Seq1Ex2Img33o3),
+  new ImageAnswerChoice('5', imgRep1Seq1Ex2Img19g1),
+  new ImageAnswerChoice('6', imgRep1Seq1Ex2Img11d2),
+  new ImageAnswerChoice('7', imgRep1Seq1Ex2Img18f3),
+  new ImageAnswerChoice('8', imgRep1Seq1Ex2Img31o1),
+  new ImageAnswerChoice('9', imgRep1Seq1Ex2Img1a1),
+  new ImageAnswerChoice('10', imgRep1Seq1Ex2Img24i3),
+  new ImageAnswerChoice('11', imgRep1Seq1Ex2Img10d1),
+  new ImageAnswerChoice('12', imgRep1Seq1Ex2Img21g3),
+  new ImageAnswerChoice('13', imgRep1Seq1Ex2Img32o2),
+  new ImageAnswerChoice('14', imgRep1Seq1Ex2Img23i2),
+  new ImageAnswerChoice('15', imgRep1Seq1Ex2Img16f1),
+  new ImageAnswerChoice('16', imgRep1Seq1Ex2Img20g2),
+  new ImageAnswerChoice('17', imgRep1Seq1Ex2Img3a3),
+  new ImageAnswerChoice('18', imgRep1Seq1Ex2Img12d3),
+];
 
-export const test1Ex1AnswerChoices6: AnswerChoice[] = [
-  new ImageAnswerChoice('1', imgRep1Seq1Ex2Img1a1),
-  new ImageAnswerChoice('2', imgRep1Seq1Ex2Img2a2),
-  new ImageAnswerChoice('3', imgRep1Seq1Ex2Img3a3),
+export const test1Ex2AnswerChoices2: AnswerChoice[] = [
+  new ImageAnswerChoice('1', imgRep1Seq1Ex2Img13e1),
+  new ImageAnswerChoice('2', imgRep1Seq1Ex2Img17f2),
+  new ImageAnswerChoice('3', imgRep1Seq1Ex2Img2a2),
+  new ImageAnswerChoice('4', imgRep1Seq1Ex2Img33o3),
+  new ImageAnswerChoice('5', imgRep1Seq1Ex2Img19g1),
+  new ImageAnswerChoice('6', imgRep1Seq1Ex2Img11d2),
+  new ImageAnswerChoice('7', imgRep1Seq1Ex2Img18f3),
+  new ImageAnswerChoice('8', imgRep1Seq1Ex2Img31o1),
+  new ImageAnswerChoice('9', imgRep1Seq1Ex2Img1a1),
+  new ImageAnswerChoice('10', imgRep1Seq1Ex2Img24i3),
+  new ImageAnswerChoice('11', imgRep1Seq1Ex2Img10d1),
+  new ImageAnswerChoice('12', imgRep1Seq1Ex2Img21g3),
+  new ImageAnswerChoice('13', imgRep1Seq1Ex2Img32o2),
+  new ImageAnswerChoice('14', imgRep1Seq1Ex2Img23i2),
+  new ImageAnswerChoice('15', imgRep1Seq1Ex2Img16f1),
+  new ImageAnswerChoice('16', imgRep1Seq1Ex2Img20g2),
+  new ImageAnswerChoice('17', imgRep1Seq1Ex2Img3a3),
+  new ImageAnswerChoice('18', imgRep1Seq1Ex2Img12d3),
 ];
 
 //Answer choices for reperes 2a
@@ -128,13 +183,22 @@ export const reperes1Seq1: Exercise[] = [
     "rep1-seq1-ex2",
     'listening',
     "Question 2 Part A:",
-    test1Ex1AnswerChoices6,
-    [ "A", " B", " C" ],
+    test1Ex2AnswerChoices1,
+    [ "1", "2", "3" ],
+    "Listen to a text then answer questions by circling the answer from among four options.",      
+    audioRep1Q1                               
+  ),
+
+  new Exercise(
+    "rep1-seq1-ex2",
+    'listening',
+    "Question 2 Part B:",
+    test1Ex2AnswerChoices2,
+    [ "1", "2", "3" ],
     "Listen to a text then answer questions by circling the answer from among four options.",      
     audioRep1Q1                               
   ),
 ];
-
 
 export const reperes2a: Exercise[] = [
   new Exercise("rep2a-seq1-ex1", 'reading', "Question 1", test2AnswerChoices1, ["A", "C", "D"]),
