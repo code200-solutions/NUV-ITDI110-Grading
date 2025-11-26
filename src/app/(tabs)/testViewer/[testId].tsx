@@ -246,8 +246,12 @@ const handleSelect = (questionId: string, choiceId: string) => {
                 >
                   {isCorrect ? "Correct" : "Incorrect"}
                 </Text>
+                <View>
                 <Text>Your answer: {selectedIds.length ? selectedIds.join(", ") : "None"}</Text>
-                <Text className="text-gray-700">Correct answer: {correctId}</Text>
+                </View>
+                <View>
+                <Text className="text-gray-700"> Correct answer: {correctId.length ? correctId.join(", "): ""} </Text>
+                </View>
               </View>
             );
           })}

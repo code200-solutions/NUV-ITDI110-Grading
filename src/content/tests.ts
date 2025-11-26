@@ -188,27 +188,6 @@ export const test1Ex2AnswerChoices4: AnswerChoice[] = [
 ];
 
 export const test1Ex2AnswerChoices5: AnswerChoice[] = [
-  new ImageAnswerChoice('1', imgRep1Seq1Ex2Img13e1),
-  new ImageAnswerChoice('2', imgRep1Seq1Ex2Img5b2),
-  new ImageAnswerChoice('3', imgRep1Seq1Ex2Img2a2),
-  new ImageAnswerChoice('4', imgRep1Seq1Ex2Img33o3),
-  new ImageAnswerChoice('5', imgRep1Seq1Ex2Img7c1),
-  new ImageAnswerChoice('6', imgRep1Seq1Ex2Img11d2),
-  new ImageAnswerChoice('7', imgRep1Seq1Ex2Img6b3),
-  new ImageAnswerChoice('8', imgRep1Seq1Ex2Img31o1),
-  new ImageAnswerChoice('9', imgRep1Seq1Ex2Img1a1),
-  new ImageAnswerChoice('10', imgRep1Seq1Ex2Img15e3),
-  new ImageAnswerChoice('11', imgRep1Seq1Ex2Img10d1),
-  new ImageAnswerChoice('12', imgRep1Seq1Ex2Img9c3),
-  new ImageAnswerChoice('13', imgRep1Seq1Ex2Img32o2),
-  new ImageAnswerChoice('14', imgRep1Seq1Ex2Img14e2),
-  new ImageAnswerChoice('15', imgRep1Seq1Ex2Img4b1),
-  new ImageAnswerChoice('16', imgRep1Seq1Ex2Img8c2),
-  new ImageAnswerChoice('17', imgRep1Seq1Ex2Img3a3),
-  new ImageAnswerChoice('18', imgRep1Seq1Ex2Img12d3),
-];
-
-export const test1Ex2AnswerChoices6: AnswerChoice[] = [
   new ImageAnswerChoice('1', imgRep1Seq1Ex2Img34r1),
   new ImageAnswerChoice('2', imgRep1Seq1Ex2Img41v2),
   new ImageAnswerChoice('3', imgRep1Seq1Ex2Img26m2),
@@ -253,13 +232,13 @@ export const reperes1Seq1: Exercise[] = [
     "Question 1 Part A:",
     test1Ex1AnswerChoices1,
     ["A"],
-    "Listen to a text then answer questions by circling the answer from among four options.",      
+    "Listen to a audio then answer questions by circling or choosing the answer from among the four options.",      
     audioRep1Q1                               
   ),
-  new Exercise("rep1-seq1-ex1B", 'listening', "Part B", test1Ex1AnswerChoices2, ["B"]),
-  new Exercise("rep1-seq1-ex1C", 'listening', "Part C", test1Ex1AnswerChoices3, ["C"]),
-  new Exercise("rep1-seq2-ex1D", 'listening', "Part D", test1Ex1AnswerChoices4, ["D"]),
-  new Exercise("rep1-seq2-ex1E", 'listening', "Part E", test1Ex1AnswerChoices5, ["A"]),
+  new Exercise("rep1-seq1-ex1B", 'listening', "Question 1 Part B:", test1Ex1AnswerChoices2, ["C"]),
+  new Exercise("rep1-seq1-ex1C", 'listening', "Question 1 Part C:", test1Ex1AnswerChoices3, ["C"]),
+  new Exercise("rep1-seq2-ex1D", 'listening', "Question 1 Part D:", test1Ex1AnswerChoices4, ["A"]),
+  new Exercise("rep1-seq2-ex1E", 'listening', "Question 1 Part E:", test1Ex1AnswerChoices5, ["B"]),
 
 //Exercise 2
   new Exercise(
@@ -267,8 +246,8 @@ export const reperes1Seq1: Exercise[] = [
     'listening',
     "Question 2 Part A:",
     test1Ex2AnswerChoices1,
-    [ "1", "2", "3" ],
-    "Listen to a text then answer questions by circling the answer from among four options.",      
+    [ "3", "9", "17" ],
+    "Choose or Circle every types of fonts of the letter dictated by the teacher or when playing the audio.",      
     audioRep1Q1                               
   ),
 
@@ -277,8 +256,8 @@ export const reperes1Seq1: Exercise[] = [
     'listening',
     "Question 2 Part B:",
     test1Ex2AnswerChoices2,
-    [ "1", "2", "3" ],
-    "Listen to a text then answer questions by circling the answer from among four options.",      
+    [ "1", "10", "14" ],
+    "Choose or Circle every types of fonts of the letter dictated by the teacher or when playing the audio.",      
     audioRep1Q1                               
   ),
 
@@ -287,8 +266,8 @@ export const reperes1Seq1: Exercise[] = [
     'listening',
     "Question 2 Part C:",
     test1Ex2AnswerChoices3,
-    [ "1", "2", "3" ],
-    "Listen to a text then answer questions by circling the answer from among four options.",      
+    [ "5", "12", "16" ],
+    "Choose or Circle every types of fonts of the letter dictated by the teacher or when playing the audio.",      
     audioRep1Q1                               
   ),
 
@@ -297,18 +276,8 @@ export const reperes1Seq1: Exercise[] = [
     'listening',
     "Question 2 Part D:",
     test1Ex2AnswerChoices4,
-    [ "1", "2", "3" ],
-    "Listen to a text then answer questions by circling the answer from among four options.",      
-    audioRep1Q1                               
-  ),
-
-  new Exercise(
-    "rep1-seq1-ex2E",
-    'listening',
-    "Question 2 Part E:",
-    test1Ex2AnswerChoices5,
-    [ "1", "2", "3" ],
-    "Listen to a text then answer questions by circling the answer from among four options.",      
+    [ "4", "8", "13" ],
+    "Choose or Circle every types of fonts of the letter dictated by the teacher or when playing the audio.",      
     audioRep1Q1                               
   ),
 
@@ -316,9 +285,9 @@ export const reperes1Seq1: Exercise[] = [
     "rep1-seq1-ex2F",
     'listening',
     "Question 2 Part F:",
-    test1Ex2AnswerChoices6,
-    [ "1", "2", "3" ],
-    "Listen to a text then answer questions by circling the answer from among four options.",      
+    test1Ex2AnswerChoices5,
+    [ "3", "9", "17" ],
+    "Choose or Circle every types of fonts of the letter dictated by the teacher or when playing the audio.",      
     audioRep1Q1                               
   ),
 ];
