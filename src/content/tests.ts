@@ -126,25 +126,108 @@ export const test1Ex2AnswerChoices1: AnswerChoice[] = [
 
 export const test1Ex2AnswerChoices2: AnswerChoice[] = [
   new ImageAnswerChoice('1', imgRep1Seq1Ex2Img13e1),
-  new ImageAnswerChoice('2', imgRep1Seq1Ex2Img17f2),
+  new ImageAnswerChoice('2', imgRep1Seq1Ex2Img5b2),
   new ImageAnswerChoice('3', imgRep1Seq1Ex2Img2a2),
   new ImageAnswerChoice('4', imgRep1Seq1Ex2Img33o3),
-  new ImageAnswerChoice('5', imgRep1Seq1Ex2Img19g1),
+  new ImageAnswerChoice('5', imgRep1Seq1Ex2Img7c1),
   new ImageAnswerChoice('6', imgRep1Seq1Ex2Img11d2),
-  new ImageAnswerChoice('7', imgRep1Seq1Ex2Img18f3),
+  new ImageAnswerChoice('7', imgRep1Seq1Ex2Img6b3),
   new ImageAnswerChoice('8', imgRep1Seq1Ex2Img31o1),
   new ImageAnswerChoice('9', imgRep1Seq1Ex2Img1a1),
-  new ImageAnswerChoice('10', imgRep1Seq1Ex2Img24i3),
+  new ImageAnswerChoice('10', imgRep1Seq1Ex2Img15e3),
   new ImageAnswerChoice('11', imgRep1Seq1Ex2Img10d1),
-  new ImageAnswerChoice('12', imgRep1Seq1Ex2Img21g3),
+  new ImageAnswerChoice('12', imgRep1Seq1Ex2Img9c3),
   new ImageAnswerChoice('13', imgRep1Seq1Ex2Img32o2),
-  new ImageAnswerChoice('14', imgRep1Seq1Ex2Img23i2),
-  new ImageAnswerChoice('15', imgRep1Seq1Ex2Img16f1),
-  new ImageAnswerChoice('16', imgRep1Seq1Ex2Img20g2),
+  new ImageAnswerChoice('14', imgRep1Seq1Ex2Img14e2),
+  new ImageAnswerChoice('15', imgRep1Seq1Ex2Img4b1),
+  new ImageAnswerChoice('16', imgRep1Seq1Ex2Img8c2),
   new ImageAnswerChoice('17', imgRep1Seq1Ex2Img3a3),
   new ImageAnswerChoice('18', imgRep1Seq1Ex2Img12d3),
 ];
 
+export const test1Ex2AnswerChoices3: AnswerChoice[] = [
+  new ImageAnswerChoice('1', imgRep1Seq1Ex2Img13e1),
+  new ImageAnswerChoice('2', imgRep1Seq1Ex2Img5b2),
+  new ImageAnswerChoice('3', imgRep1Seq1Ex2Img2a2),
+  new ImageAnswerChoice('4', imgRep1Seq1Ex2Img33o3),
+  new ImageAnswerChoice('5', imgRep1Seq1Ex2Img7c1),
+  new ImageAnswerChoice('6', imgRep1Seq1Ex2Img11d2),
+  new ImageAnswerChoice('7', imgRep1Seq1Ex2Img6b3),
+  new ImageAnswerChoice('8', imgRep1Seq1Ex2Img31o1),
+  new ImageAnswerChoice('9', imgRep1Seq1Ex2Img1a1),
+  new ImageAnswerChoice('10', imgRep1Seq1Ex2Img15e3),
+  new ImageAnswerChoice('11', imgRep1Seq1Ex2Img10d1),
+  new ImageAnswerChoice('12', imgRep1Seq1Ex2Img9c3),
+  new ImageAnswerChoice('13', imgRep1Seq1Ex2Img32o2),
+  new ImageAnswerChoice('14', imgRep1Seq1Ex2Img14e2),
+  new ImageAnswerChoice('15', imgRep1Seq1Ex2Img4b1),
+  new ImageAnswerChoice('16', imgRep1Seq1Ex2Img8c2),
+  new ImageAnswerChoice('17', imgRep1Seq1Ex2Img3a3),
+  new ImageAnswerChoice('18', imgRep1Seq1Ex2Img12d3),
+];
+
+export const test1Ex2AnswerChoices4: AnswerChoice[] = [
+  new ImageAnswerChoice('1', imgRep1Seq1Ex2Img13e1),
+  new ImageAnswerChoice('2', imgRep1Seq1Ex2Img5b2),
+  new ImageAnswerChoice('3', imgRep1Seq1Ex2Img2a2),
+  new ImageAnswerChoice('4', imgRep1Seq1Ex2Img33o3),
+  new ImageAnswerChoice('5', imgRep1Seq1Ex2Img7c1),
+  new ImageAnswerChoice('6', imgRep1Seq1Ex2Img11d2),
+  new ImageAnswerChoice('7', imgRep1Seq1Ex2Img6b3),
+  new ImageAnswerChoice('8', imgRep1Seq1Ex2Img31o1),
+  new ImageAnswerChoice('9', imgRep1Seq1Ex2Img1a1),
+  new ImageAnswerChoice('10', imgRep1Seq1Ex2Img15e3),
+  new ImageAnswerChoice('11', imgRep1Seq1Ex2Img10d1),
+  new ImageAnswerChoice('12', imgRep1Seq1Ex2Img9c3),
+  new ImageAnswerChoice('13', imgRep1Seq1Ex2Img32o2),
+  new ImageAnswerChoice('14', imgRep1Seq1Ex2Img14e2),
+  new ImageAnswerChoice('15', imgRep1Seq1Ex2Img4b1),
+  new ImageAnswerChoice('16', imgRep1Seq1Ex2Img8c2),
+  new ImageAnswerChoice('17', imgRep1Seq1Ex2Img3a3),
+  new ImageAnswerChoice('18', imgRep1Seq1Ex2Img12d3),
+];
+
+export const test1Ex2AnswerChoices5: AnswerChoice[] = [
+  new ImageAnswerChoice('1', imgRep1Seq1Ex2Img13e1),
+  new ImageAnswerChoice('2', imgRep1Seq1Ex2Img5b2),
+  new ImageAnswerChoice('3', imgRep1Seq1Ex2Img2a2),
+  new ImageAnswerChoice('4', imgRep1Seq1Ex2Img33o3),
+  new ImageAnswerChoice('5', imgRep1Seq1Ex2Img7c1),
+  new ImageAnswerChoice('6', imgRep1Seq1Ex2Img11d2),
+  new ImageAnswerChoice('7', imgRep1Seq1Ex2Img6b3),
+  new ImageAnswerChoice('8', imgRep1Seq1Ex2Img31o1),
+  new ImageAnswerChoice('9', imgRep1Seq1Ex2Img1a1),
+  new ImageAnswerChoice('10', imgRep1Seq1Ex2Img15e3),
+  new ImageAnswerChoice('11', imgRep1Seq1Ex2Img10d1),
+  new ImageAnswerChoice('12', imgRep1Seq1Ex2Img9c3),
+  new ImageAnswerChoice('13', imgRep1Seq1Ex2Img32o2),
+  new ImageAnswerChoice('14', imgRep1Seq1Ex2Img14e2),
+  new ImageAnswerChoice('15', imgRep1Seq1Ex2Img4b1),
+  new ImageAnswerChoice('16', imgRep1Seq1Ex2Img8c2),
+  new ImageAnswerChoice('17', imgRep1Seq1Ex2Img3a3),
+  new ImageAnswerChoice('18', imgRep1Seq1Ex2Img12d3),
+];
+
+export const test1Ex2AnswerChoices6: AnswerChoice[] = [
+  new ImageAnswerChoice('1', imgRep1Seq1Ex2Img34r1),
+  new ImageAnswerChoice('2', imgRep1Seq1Ex2Img41v2),
+  new ImageAnswerChoice('3', imgRep1Seq1Ex2Img26m2),
+  new ImageAnswerChoice('4', imgRep1Seq1Ex2Img30n3),
+  new ImageAnswerChoice('5', imgRep1Seq1Ex2Img37s1),
+  new ImageAnswerChoice('6', imgRep1Seq1Ex2Img11d2),
+  new ImageAnswerChoice('7', imgRep1Seq1Ex2Img42v3),
+  new ImageAnswerChoice('8', imgRep1Seq1Ex2Img28n1),
+  new ImageAnswerChoice('9', imgRep1Seq1Ex2Img25m1),
+  new ImageAnswerChoice('10', imgRep1Seq1Ex2Img36r3),
+  new ImageAnswerChoice('11', imgRep1Seq1Ex2Img10d1),
+  new ImageAnswerChoice('12', imgRep1Seq1Ex2Img39s3),
+  new ImageAnswerChoice('13', imgRep1Seq1Ex2Img29n2),
+  new ImageAnswerChoice('14', imgRep1Seq1Ex2Img35r2),
+  new ImageAnswerChoice('15', imgRep1Seq1Ex2Img40v1),
+  new ImageAnswerChoice('16', imgRep1Seq1Ex2Img38s2),
+  new ImageAnswerChoice('17', imgRep1Seq1Ex2Img27m3),
+  new ImageAnswerChoice('18', imgRep1Seq1Ex2Img12d3),
+];
 //Answer choices for reperes 2a
 export const test2AnswerChoices1: AnswerChoice[] = [
   new TextAnswerChoice('A', "Question 1"),
@@ -165,7 +248,7 @@ export const test3AnswerChoices1: AnswerChoice[] = [
 export const reperes1Seq1: Exercise[] = [
 //Exercise 1
   new Exercise(
-    "rep1-seq1-ex1",
+    "rep1-seq1-ex1A",
     'listening',
     "Question 1 Part A:",
     test1Ex1AnswerChoices1,
@@ -173,14 +256,14 @@ export const reperes1Seq1: Exercise[] = [
     "Listen to a text then answer questions by circling the answer from among four options.",      
     audioRep1Q1                               
   ),
-  new Exercise("rep1-seq1-ex2", 'listening', "Part B", test1Ex1AnswerChoices2, ["B"]),
-  new Exercise("rep1-seq1-ex3", 'listening', "Part C", test1Ex1AnswerChoices3, ["C"]),
-  new Exercise("rep1-seq2-ex4", 'listening', "Part D", test1Ex1AnswerChoices4, ["D"]),
-  new Exercise("rep1-seq2-ex5", 'listening', "Part E", test1Ex1AnswerChoices5, ["A"]),
+  new Exercise("rep1-seq1-ex1B", 'listening', "Part B", test1Ex1AnswerChoices2, ["B"]),
+  new Exercise("rep1-seq1-ex1C", 'listening', "Part C", test1Ex1AnswerChoices3, ["C"]),
+  new Exercise("rep1-seq2-ex1D", 'listening', "Part D", test1Ex1AnswerChoices4, ["D"]),
+  new Exercise("rep1-seq2-ex1E", 'listening', "Part E", test1Ex1AnswerChoices5, ["A"]),
 
 //Exercise 2
   new Exercise(
-    "rep1-seq1-ex2",
+    "rep1-seq1-ex2A",
     'listening',
     "Question 2 Part A:",
     test1Ex2AnswerChoices1,
@@ -190,10 +273,50 @@ export const reperes1Seq1: Exercise[] = [
   ),
 
   new Exercise(
-    "rep1-seq1-ex2",
+    "rep1-seq1-ex2B",
     'listening',
     "Question 2 Part B:",
     test1Ex2AnswerChoices2,
+    [ "1", "2", "3" ],
+    "Listen to a text then answer questions by circling the answer from among four options.",      
+    audioRep1Q1                               
+  ),
+
+  new Exercise(
+    "rep1-seq1-ex2C",
+    'listening',
+    "Question 2 Part C:",
+    test1Ex2AnswerChoices3,
+    [ "1", "2", "3" ],
+    "Listen to a text then answer questions by circling the answer from among four options.",      
+    audioRep1Q1                               
+  ),
+
+  new Exercise(
+    "rep1-seq1-ex2D",
+    'listening',
+    "Question 2 Part D:",
+    test1Ex2AnswerChoices4,
+    [ "1", "2", "3" ],
+    "Listen to a text then answer questions by circling the answer from among four options.",      
+    audioRep1Q1                               
+  ),
+
+  new Exercise(
+    "rep1-seq1-ex2E",
+    'listening',
+    "Question 2 Part E:",
+    test1Ex2AnswerChoices5,
+    [ "1", "2", "3" ],
+    "Listen to a text then answer questions by circling the answer from among four options.",      
+    audioRep1Q1                               
+  ),
+
+  new Exercise(
+    "rep1-seq1-ex2F",
+    'listening',
+    "Question 2 Part F:",
+    test1Ex2AnswerChoices6,
     [ "1", "2", "3" ],
     "Listen to a text then answer questions by circling the answer from among four options.",      
     audioRep1Q1                               

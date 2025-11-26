@@ -150,13 +150,13 @@ export class Exercise {
   getAnswer() {
     return this.answerChoice;
   }
-  isCorrect(answerId: string[]){
-    return this.goodAnswerId === answerId;
+  isCorrect(answerId: string[]) {
+    if (!answerId || answerId.length !== this.goodAnswerId.length) return false;
+    return this.goodAnswerId.every(a => answerId.includes(a));
   }
   getInstructionText(): string | undefined {
     return this.instructionText;
   }
-
   getAudioUri(): AudioSource {
     return this.audioUri;
   }
