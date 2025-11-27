@@ -282,9 +282,9 @@ export const reperes1Seq1: Exercise[] = [
   ),
 
   new Exercise(
-    "rep1-seq1-ex2F",
+    "rep1-seq1-ex2E",
     'listening',
-    "Question 2 Part F:",
+    "Question 2 Part E:",
     test1Ex2AnswerChoices5,
     [ "3", "9", "17" ],
     "Choose or Circle every types of fonts of the letter dictated by the teacher or when playing the audio.",      
