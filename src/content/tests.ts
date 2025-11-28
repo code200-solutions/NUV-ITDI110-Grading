@@ -67,6 +67,25 @@ const imgRep1Seq1Ex2Img39s3 = require('@/assets/images/reperes1/ex2/rep1-seq1-ex
 const imgRep1Seq1Ex2Img40v1 = require('@/assets/images/reperes1/ex2/rep1-seq1-ex2-img40(v1).png');
 const imgRep1Seq1Ex2Img41v2 = require('@/assets/images/reperes1/ex2/rep1-seq1-ex2-img41(v2).png');
 const imgRep1Seq1Ex2Img42v3 = require('@/assets/images/reperes1/ex2/rep1-seq1-ex2-img42(v3).png');
+//Image assets Rep 1 Ex3
+const imgRep1Seq1Ex3Img1 = require('@/assets/images/reperes1/ex3/rep1-seq1-ex3-img1.png');
+const imgRep1Seq1Ex3Img2 = require('@/assets/images/reperes1/ex3/rep1-seq1-ex3-img2.png');
+const imgRep1Seq1Ex3Img3 = require('@/assets/images/reperes1/ex3/rep1-seq1-ex3-img3.png');
+const imgRep1Seq1Ex3Img4 = require('@/assets/images/reperes1/ex3/rep1-seq1-ex3-img4.png'); 
+const imgRep1Seq1Ex3Img5 = require('@/assets/images/reperes1/ex3/rep1-seq1-ex3-img5.png');
+const imgRep1Seq1Ex3Img6 = require('@/assets/images/reperes1/ex3/rep1-seq1-ex3-img6.png');
+const imgRep1Seq1Ex3Img7 = require('@/assets/images/reperes1/ex3/rep1-seq1-ex3-img7.png');    
+const imgRep1Seq1Ex3Img8 = require('@/assets/images/reperes1/ex3/rep1-seq1-ex3-img8.png');
+const imgRep1Seq1Ex3Img9 = require('@/assets/images/reperes1/ex3/rep1-seq1-ex3-img9.png');
+const imgRep1Seq1Ex3Img10 = require('@/assets/images/reperes1/ex3/rep1-seq1-ex3-img10.png');
+const imgRep1Seq1Ex3Img11 = require('@/assets/images/reperes1/ex3/rep1-seq1-ex3-img11.png');
+const imgRep1Seq1Ex3Img12 = require('@/assets/images/reperes1/ex3/rep1-seq1-ex3-img12.png');
+const imgRep1Seq1Ex3Img13 = require('@/assets/images/reperes1/ex3/rep1-seq1-ex3-img13.png');
+const imgRep1Seq1Ex3Img14 = require('@/assets/images/reperes1/ex3/rep1-seq1-ex3-img14.png');
+const imgRep1Seq1Ex3Img15 = require('@/assets/images/reperes1/ex3/rep1-seq1-ex3-img15.png');
+const imgRep1Seq1Ex3Img16 = require('@/assets/images/reperes1/ex3/rep1-seq1-ex3-img16.png');
+const imgRep1Seq1Ex3Img17 = require('@/assets/images/reperes1/ex3/rep1-seq1-ex3-img17.png');
+const imgRep1Seq1Ex3Img18 = require('@/assets/images/reperes1/ex3/rep1-seq1-ex3-img18.png');
 //answer choices for exercise 1, Reperes - 1
 export const test1Ex1AnswerChoices1: AnswerChoice[] = [
   new ImageAnswerChoice('A', imgRep1Seq1Ex1Img1),
@@ -207,6 +226,37 @@ export const test1Ex2AnswerChoices5: AnswerChoice[] = [
   new ImageAnswerChoice('17', imgRep1Seq1Ex2Img27m3),
   new ImageAnswerChoice('18', imgRep1Seq1Ex2Img12d3),
 ];
+//answer choices for exercise 3, Reperes - 1
+export const test1Ex3AnswerChoices1: AnswerChoice[] = [
+  new ImageAnswerChoice('A', imgRep1Seq1Ex3Img1),
+  new ImageAnswerChoice('B', imgRep1Seq1Ex3Img2),
+  new ImageAnswerChoice('C', imgRep1Seq1Ex3Img3),
+];
+export const test1Ex3AnswerChoices2: AnswerChoice[] = [
+  new ImageAnswerChoice('A', imgRep1Seq1Ex3Img4),
+  new ImageAnswerChoice('B', imgRep1Seq1Ex3Img5),
+  new ImageAnswerChoice('C', imgRep1Seq1Ex3Img6),
+];
+export const test1Ex3AnswerChoices3: AnswerChoice[] = [
+  new ImageAnswerChoice('A', imgRep1Seq1Ex3Img7),
+  new ImageAnswerChoice('B', imgRep1Seq1Ex3Img8),
+  new ImageAnswerChoice('C', imgRep1Seq1Ex3Img9),
+];
+export const test1Ex3AnswerChoices4: AnswerChoice[] = [
+  new ImageAnswerChoice('A', imgRep1Seq1Ex3Img10),
+  new ImageAnswerChoice('B', imgRep1Seq1Ex3Img11),
+  new ImageAnswerChoice('C', imgRep1Seq1Ex3Img12),
+];
+export const test1Ex3AnswerChoices5: AnswerChoice[] = [ 
+  new ImageAnswerChoice('A', imgRep1Seq1Ex3Img13),
+  new ImageAnswerChoice('B', imgRep1Seq1Ex3Img14),
+  new ImageAnswerChoice('C', imgRep1Seq1Ex3Img15),
+];
+export const test1Ex3AnswerChoices6: AnswerChoice[] = [
+  new ImageAnswerChoice('A', imgRep1Seq1Ex3Img16),
+  new ImageAnswerChoice('B', imgRep1Seq1Ex3Img17),
+  new ImageAnswerChoice('C', imgRep1Seq1Ex3Img18),
+];
 //Answer choices for reperes 2a
 export const test2AnswerChoices1: AnswerChoice[] = [
   new TextAnswerChoice('A', "Question 1"),
@@ -225,70 +275,149 @@ export const test3AnswerChoices1: AnswerChoice[] = [
 
 //creating some exercises for the sequences 
 export const reperes1Seq1: Exercise[] = [
-//Exercise 1
+  //Exercise 1
   new Exercise(
     "rep1-seq1-ex1A",
-    'listening',
+    "listening",
     "Question 1 Part A:",
     test1Ex1AnswerChoices1,
     ["A"],
-    "Listen to a audio then answer questions by circling or choosing the answer from among the four options.",      
-    audioRep1Q1                               
+    "Listen to a audio then answer questions by circling or choosing the answer from among the four options.",
+    audioRep1Q1
   ),
-  new Exercise("rep1-seq1-ex1B", 'listening', "Question 1 Part B:", test1Ex1AnswerChoices2, ["C"]),
-  new Exercise("rep1-seq1-ex1C", 'listening', "Question 1 Part C:", test1Ex1AnswerChoices3, ["C"]),
-  new Exercise("rep1-seq2-ex1D", 'listening', "Question 1 Part D:", test1Ex1AnswerChoices4, ["A"]),
-  new Exercise("rep1-seq2-ex1E", 'listening', "Question 1 Part E:", test1Ex1AnswerChoices5, ["B"]),
+  new Exercise(
+    "rep1-seq1-ex1B",
+    "listening",
+    "Question 1 Part B:",
+    test1Ex1AnswerChoices2,
+    ["C"]
+  ),
+  new Exercise(
+    "rep1-seq1-ex1C",
+    "listening",
+    "Question 1 Part C:",
+    test1Ex1AnswerChoices3,
+    ["C"]
+  ),
+  new Exercise(
+    "rep1-seq2-ex1D",
+    "listening",
+    "Question 1 Part D:",
+    test1Ex1AnswerChoices4,
+    ["A"]
+  ),
+  new Exercise(
+    "rep1-seq2-ex1E",
+    "listening",
+    "Question 1 Part E:",
+    test1Ex1AnswerChoices5,
+    ["B"]
+  ),
 
-//Exercise 2
+  //Exercise 2
   new Exercise(
     "rep1-seq1-ex2A",
-    'listening',
+    "listening",
     "Question 2 Part A:",
     test1Ex2AnswerChoices1,
-    [ "3", "9", "17" ],
-    "Choose or Circle every types of fonts of the letter dictated by the teacher or when playing the audio.",      
-    audioRep1Q1                               
+    ["3", "9", "17"],
+    "Choose or Circle every types of fonts of the letter dictated by the teacher or when playing the audio.",
+    audioRep1Q1
   ),
 
   new Exercise(
     "rep1-seq1-ex2B",
-    'listening',
+    "listening",
     "Question 2 Part B:",
     test1Ex2AnswerChoices2,
-    [ "1", "10", "14" ],
-    "Choose or Circle every types of fonts of the letter dictated by the teacher or when playing the audio.",      
-    audioRep1Q1                               
+    ["1", "10", "14"],
+    "Choose or Circle every types of fonts of the letter dictated by the teacher or when playing the audio.",
+    audioRep1Q1
   ),
 
   new Exercise(
     "rep1-seq1-ex2C",
-    'listening',
+    "listening",
     "Question 2 Part C:",
     test1Ex2AnswerChoices3,
-    [ "5", "12", "16" ],
-    "Choose or Circle every types of fonts of the letter dictated by the teacher or when playing the audio.",      
-    audioRep1Q1                               
+    ["5", "12", "16"],
+    "Choose or Circle every types of fonts of the letter dictated by the teacher or when playing the audio.",
+    audioRep1Q1
   ),
 
   new Exercise(
     "rep1-seq1-ex2D",
-    'listening',
+    "listening",
     "Question 2 Part D:",
     test1Ex2AnswerChoices4,
-    [ "4", "8", "13" ],
-    "Choose or Circle every types of fonts of the letter dictated by the teacher or when playing the audio.",      
-    audioRep1Q1                               
+    ["4", "8", "13"],
+    "Choose or Circle every types of fonts of the letter dictated by the teacher or when playing the audio.",
+    audioRep1Q1
   ),
 
   new Exercise(
     "rep1-seq1-ex2E",
-    'listening',
+    "listening",
     "Question 2 Part E:",
     test1Ex2AnswerChoices5,
-    [ "3", "9", "17" ],
-    "Choose or Circle every types of fonts of the letter dictated by the teacher or when playing the audio.",      
-    audioRep1Q1                               
+    ["3", "9", "17"],
+    "Choose or Circle every types of fonts of the letter dictated by the teacher or when playing the audio.",
+    audioRep1Q1
+  ),
+  //Exercise 3
+  new Exercise(
+    "rep1-seq1-ex3A",
+    "listening",
+    "Question 3 Part A:",
+    test1Ex3AnswerChoices1,
+    ["B"],
+    "Listen to the audio and choose or circle the correct image that matches the audio played.",
+    audioRep1Q1
+  ),
+  new Exercise(
+    "rep1-seq1-ex3B",
+    "listening",
+    "Question 3 Part B:",
+    test1Ex3AnswerChoices2,
+    ["C"],
+    "Listen to the audio and choose or circle the correct image that matches the audio played.",
+    audioRep1Q1
+  ),
+  new Exercise(
+    "rep1-seq2-ex3C",
+    "listening",
+    "Question 3 Part C:",
+    test1Ex3AnswerChoices3,
+    ["A"],
+    "Listen to the audio and choose or circle the correct image that matches the audio played.",
+    audioRep1Q1
+  ),
+  new Exercise(
+    "rep1-seq2-ex3D",
+    "listening",
+    "Question 3 Part D:",
+    test1Ex3AnswerChoices4,
+    ["B"],
+    "Listen to the audio and choose or circle the correct image that matches the audio played.",
+    audioRep1Q1
+  ),
+  new Exercise(
+    "rep1-seq3-ex3E",
+    "listening",
+    "Question 3 Part E:",
+    test1Ex3AnswerChoices5,
+    ["C"],
+    "Listen to the audio and choose or circle the correct image that matches the audio played.",
+    audioRep1Q1
+  ),
+  new Exercise(
+    "rep1-seq3-ex3F",
+    "listening",
+    "Question 3 Part F:",
+    test1Ex3AnswerChoices6,
+    ["A"],
+    "Listen to the audio and choose or circle the correct image that matches the audio played.",
+    audioRep1Q1
   ),
 ];
 
