@@ -1,0 +1,128 @@
+{
+  "tests": [
+    {
+      "name": "Repere 1",
+      "description": "This test evaluates your understanding of basic listening exercises using image recognition.",
+      "sequences": [
+        {
+          "id": "test1.seq1",
+          "exercises": [
+            {
+              "id": "rep1-seq1-ex1A",
+              "type": "listening",
+              "question": "Question 1 Part A:",
+              "answerChoices": [
+                { "label": "A", "image": "@/assets/images/reperes1/ex1/rep1-seq1-ex1-img1.png" },
+                { "label": "B", "image": "@/assets/images/reperes1/ex1/rep1-seq1-ex1-img2.png" },
+                { "label": "C", "image": "@/assets/images/reperes1/ex1/rep1-seq1-ex1-img3.png" },
+                { "label": "D", "image": "@/assets/images/reperes1/ex1/rep1-seq1-ex1-img4.png" }
+              ],
+              "correctAnswers": ["A"],
+              "instructions": "Listen to a audio then answer questions by circling or choosing the answer from among the four options.",
+              "audio": "../assets/audio/rep1-q1.mp3"
+            },
+            {
+              "id": "rep1-seq1-ex1B",
+              "type": "listening",
+              "question": "Question 1 Part B:",
+              "answerChoices": [
+                { "label": "A", "image": "@/assets/images/reperes1/ex1/rep1-seq1-ex1-img5.png" },
+                { "label": "B", "image": "@/assets/images/reperes1/ex1/rep1-seq1-ex1-img6.png" },
+                { "label": "C", "image": "@/assets/images/reperes1/ex1/rep1-seq1-ex1-img7.png" },
+                { "label": "D", "image": "@/assets/images/reperes1/ex1/rep1-seq1-ex1-img8.png" }
+              ],
+              "correctAnswers": ["C"]
+            },
+            {
+              "id": "rep1-seq1-ex1C",
+              "type": "listening",
+              "question": "Question 1 Part C:",
+              "answerChoices": [
+                { "label": "A", "image": "@/assets/images/reperes1/ex1/rep1-seq1-ex1-img9.png" },
+                { "label": "B", "image": "@/assets/images/reperes1/ex1/rep1-seq1-ex1-img10.png" },
+                { "label": "C", "image": "@/assets/images/reperes1/ex1/rep1-seq1-ex1-img11.png" },
+                { "label": "D", "image": "@/assets/images/reperes1/ex1/rep1-seq1-ex1-img12.png" }
+              ],
+              "correctAnswers": ["C"]
+            },
+            {
+              "id": "rep1-seq1-ex1D",
+              "type": "listening",
+              "question": "Question 1 Part D:",
+              "answerChoices": [
+                { "label": "A", "image": "@/assets/images/reperes1/ex1/rep1-seq1-ex1-img13.png" },
+                { "label": "B", "image": "@/assets/images/reperes1/ex1/rep1-seq1-ex1-img14.png" },
+                { "label": "C", "image": "@/assets/images/reperes1/ex1/rep1-seq1-ex1-img15.png" },
+                { "label": "D", "image": "@/assets/images/reperes1/ex1/rep1-seq1-ex1-img16.png" }
+              ],
+              "correctAnswers": ["B"]
+            },
+            {
+                "id": "rep1-seq1-ex1E",
+                "type": "listening",
+                "question": "Question 1 Part E:",
+                "answerChoices": [
+                    { "label": "A", "image": "@/assets/images/reperes1/ex1/rep1-seq1-ex1-img17.png" },
+                    { "label": "B", "image": "@/assets/images/reperes1/ex1/rep1-seq1-ex1-img18.png" },
+                    { "label": "C", "image": "@/assets/images/reperes1/ex1/rep1-seq1-ex1-img19.png" },
+                    { "label": "D", "image": "@/assets/images/reperes1/ex1/rep1-seq1-ex1-img20.png" }
+                ],
+                "correctAnswers": ["D"]
+            }, 
+            {
+                
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Reperes 2a",
+      "description": "",
+      "sequences": [
+        {
+          "id": "test2.seq1",
+          "exercises": [
+            {
+              "id": "rep2a-seq1-ex1",
+              "type": "reading",
+              "question": "Question 1",
+              "answerChoices": [
+                { "label": "A", "text": "Question 1" },
+                { "label": "B", "text": "Question 1" },
+                { "label": "C", "text": "Question 1" },
+                { "label": "D", "text": "Question 1" }
+              ],
+              "correctAnswers": ["A", "C", "D"]
+            }
+   
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Reperes 3",
+      "description": "",
+      "sequences": [
+        {
+          "id": "test3.seq1",
+          "exercises": [
+            {
+              "id": "rep3-seq1-ex1",
+              "type": "reading",
+              "question": "Question 1",
+              "answerChoices": [
+                { "label": "A", "image": "@/assets/images/reperes1/ex1/rep1-seq1-ex1-img17.png" },
+                { "label": "B", "image": "@/assets/images/reperes1/ex1/rep1-seq1-ex1-img18.png" },
+                { "label": "C", "image": "@/assets/images/reperes1/ex1/rep1-seq1-ex1-img19.png" },
+                { "label": "D", "image": "@/assets/images/reperes1/ex1/rep1-seq1-ex1-img20.png" }
+              ],
+              "correctAnswers": ["A"]
+            }
+        
+          ]
+        }
+      ]
+    }
+  ]
+}
