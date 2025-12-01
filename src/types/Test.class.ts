@@ -9,7 +9,7 @@ type MultiChoiceAnswers = string[];
 type ShortAnswers = string[];
 
 export type AnswerType = MatchingAnswers | MultiChoiceAnswers | ShortAnswers;
-export type ExerciseType = ReadingExercise | ListeningExercise;
+export type ExerciseType = "reading" | "listening" | "matching" | "multipleChoice" | "shortAnswer";
 
 // Define the content of the Test class
 export class Test {
@@ -32,31 +32,33 @@ export class Test {
   }
 
   getAllExercises(): Exercise[] {
-    return this.sequences.flatMap(sequence => sequence.getExercises());
+    return this.sequences.flatMap((sequence) => sequence.getExercises());
   }
 
   getDescription(): string {
     return this.testDescription;
   }
 
-  calculateMark(exercises: Exercise[]): number {
-    let correctAnswerId = 0;
-    let mark = 0;
+  calculateMark(): number {
+    let totalQuestions = 0;
+    let correctAnswers = 0;
 
-    for (const sequence of Test.sequences) {
-      for (const exercise of sequence.exercises) {
-        const studentAnswer = this.answers.find(
-          ans => ans.exerciseId === exercise.questionId
+    for (const sequence of this.sequences) {
+      for (const exercise of sequence.getExercises()) {
+        totalQuestions++;
+        const studentAnswer = this.answers?.find(
+          (ans) => ans.exerciseId === exercise.getQuestionId()
         );
-        if (studentAnswer) {
-          mark++;
-          if (studentAnswer.isCorrect(exercise.answer)) {
-            correctAnswerId++;
-          }
+        if (
+          studentAnswer &&
+          exercise.isCorrect([studentAnswer.getAnswerId()])
+        ) {
+          correctAnswers++;
         }
       }
     }
-    return (correctAnswerId / mark) * 100;
+
+    return totalQuestions === 0 ? 0 : (correctAnswers / totalQuestions) * 100;
   }
 }
 
@@ -116,7 +118,6 @@ export class Exercise {
   private instructionText?: string;   
   private audioUri?: AudioSource;
   
-
   constructor(
     questionId: string, 
     type: ExerciseType,
@@ -182,14 +183,22 @@ export class Sequence {
 }
 
 //StudentAnswer class representing a student's answer to an exercise
-export class StudentAnswer{
+export class StudentAnswer {
+  [x: string]: any;
   private exerciseId: string;
-  private answerId: string;
-  find: any;
-  
-  constructor(exerciseId: string, answerId: string){
+  private answerIds: string[];
+
+  constructor(exerciseId: string, answerIds: string | string[]) {
     this.exerciseId = exerciseId;
-    this.answerId = answerId;
+    this.answerIds = Array.isArray(answerIds) ? answerIds : [answerIds];
+  }
+
+  getExerciseId(): string {
+    return this.exerciseId;
+  }
+
+  getAnswerIds(): string[] {
+    return this.answerIds;
   }
 }
 
