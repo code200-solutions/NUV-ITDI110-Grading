@@ -148,7 +148,8 @@
                   }
                 ],
                 "correctAnswers": ["3", "9", "17"],
-                "audio": "../assets/audio/rep1-q1.mp3"           
+                "audio": "../assets/audio/rep1-q1.mp3",
+                "instructions": "Choose or Circle every types of fonts of the letter dictated by the teacher or when playing the audio."       
             },
             {
               "id": "rep1-seq1-ex2B",
@@ -229,7 +230,8 @@
                   }
                 ],
                 "correctAnswers": ["1", "10", "14"],
-                "audio": "../assets/audio/rep1-q1.mp3"    
+                "audio": "../assets/audio/rep1-q1.mp3",
+                "instructions": "Choose or Circle every types of fonts of the letter dictated by the teacher or when playing the audio."    
             },
             {
               "id": "rep1-seq1-ex2C",
@@ -310,7 +312,8 @@
                   }
                 ],
                 "correctAnswers": ["5", "12", "16"],
-                "audio": "../assets/audio/rep1-q1.mp3"    
+                "audio": "../assets/audio/rep1-q1.mp3",
+                "instructions": "Choose or Circle every types of fonts of the letter dictated by the teacher or when playing the audio."
             },
             {
               "id": "rep1-seq1-ex2D",
@@ -391,7 +394,8 @@
                   }
                 ],
                 "correctAnswers": ["4", "8", "13"],
-                "audio": "../assets/audio/rep1-q1.mp3"
+                "audio": "../assets/audio/rep1-q1.mp3",
+                "instructions": "Choose or Circle every types of fonts of the letter dictated by the teacher or when playing the audio."
             },
             {
               "id": "rep1-seq1-ex2E",
@@ -472,7 +476,8 @@
                   }
                 ],
                 "correctAnswers": ["3", "9", "17"],
-                "audio": "../assets/audio/rep1-q1.mp3"
+                "audio": "../assets/audio/rep1-q1.mp3",
+                "instructions": "Choose or Circle every types of fonts of the letter dictated by the teacher or when playing the audio."
             },
             {
               "id": "rep1-seq1-ex3A",
@@ -484,7 +489,8 @@
                 { "label": "C", "image": "@/assets/images/reperes1/ex3/rep1-seq1-ex3-img3.png" }
               ],
               "correctAnswers":["B"],
-              "audio": "../assets/audio/rep1-q1.mp3"
+              "audio": "../assets/audio/rep1-q1.mp3",
+              "instructions": "Listen to the audio and choose or circle the correct image that matches the audio played."
             },
             {
               "id": "rep1-seq1-ex3B",
@@ -496,7 +502,8 @@
                 { "label": "C", "image": "@/assets/images/reperes1/ex3/rep1-seq1-ex3-img6.png" }
               ],
                "correctAnswers":["C"],
-               "audio": "../assets/audio/rep1-q1.mp3"
+               "audio": "../assets/audio/rep1-q1.mp3",
+               "instructions": "Listen to the audio and choose or circle the correct image that matches the audio played."
             },
             {
               "id": "rep1-seq1-ex3C",
@@ -508,7 +515,8 @@
                 { "label": "C", "image": "@/assets/images/reperes1/ex3/rep1-seq1-ex3-img9.png" }
               ],
                "correctAnswers":["A"],
-               "audio": "../assets/audio/rep1-q1.mp3"
+               "audio": "../assets/audio/rep1-q1.mp3",
+                "instructions": "Listen to the audio and choose or circle the correct image that matches the audio played."
             },
             {
               "id": "rep1-seq1-ex3D",
@@ -520,7 +528,8 @@
                 { "label": "C", "image": "@/assets/images/reperes1/ex3/rep1-seq1-ex3-img12.png" }
               ], 
                "correctAnswers":["B"],
-               "audio": "../assets/audio/rep1-q1.mp3"
+               "audio": "../assets/audio/rep1-q1.mp3",
+               "instructions": "Listen to the audio and choose or circle the correct image that matches the audio played."
             },
             {
               "id": "rep1-seq1-ex3E",
@@ -532,7 +541,8 @@
                 { "label": "C", "image": "@/assets/images/reperes1/ex3/rep1-seq1-ex3-img15.png" }
               ],
                "correctAnswers":["C"],
-               "audio": "../assets/audio/rep1-q1.mp3"
+               "audio": "../assets/audio/rep1-q1.mp3",
+               "instructions": "Listen to the audio and choose or circle the correct image that matches the audio played."
             },
             {
               "id": "rep1-seq1-ex3F",
@@ -544,7 +554,8 @@
                 { "label": "C", "image": "@/assets/images/reperes1/ex3/rep1-seq1-ex3-img18.png" }
               ],
                "correctAnswers":["A"],
-               "audio": "../assets/audio/rep1-q1.mp3"
+               "audio": "../assets/audio/rep1-q1.mp3",
+               "instructions": "Listen to the audio and choose or circle the correct image that matches the audio played."
             }
           ]
         }
