@@ -556,6 +556,230 @@
                "correctAnswers":["A"],
                "audio": "../assets/audio/rep1-q1.mp3",
                "instructions": "Listen to the audio and choose or circle the correct image that matches the audio played."
+            },
+            {
+              "id": "rep1-seq1-ex4A",
+              "type": "listening",
+              "question": "Question 4 part A:",
+              "answerChoices": [
+                { "label": "A", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img1.png" },
+                { "label": "B", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img1.png" },
+                { "label": "C", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img3.png" },
+                { "label": "D", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img4.png" }
+              ],
+               "correctAnswers":["A"],
+               "audio": "../assets/audio/rep1-q1.mp3",
+               "instructions": "Listen to a word in the audio then circle or choose the corresponding image from among 4 options."
+            },
+            {
+              "id": "rep1-seq1-ex4B",
+              "type": "listening",
+              "question": "Question 4 part B:",
+              "answerChoices": [
+                { "label": "A", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img5.png" },
+                { "label": "B", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img6.png" },
+                { "label": "C", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img1.png" },
+                { "label": "D", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img8.png" }
+              ],
+               "correctAnswers":["D"],
+               "audio": "../assets/audio/rep1-q1.mp3",
+               "instructions": "Listen to a word in the audio then circle or choose the corresponding image from among 4 options."
+            },
+            {
+              "id": "rep1-seq1-ex4C",
+              "type": "listening",
+              "question": "Question 4 part C:",
+              "answerChoices": [
+                { "label": "A", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img9.png" },
+                { "label": "B", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img10.png" },
+                { "label": "C", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img11.png" },
+                { "label": "D", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img12.png" }
+              ],
+               "correctAnswers":["B"],
+               "audio": "../assets/audio/rep1-q1.mp3",
+               "instructions": "Listen to a word in the audio then circle or choose the corresponding image from among 4 options."
+            },
+            {
+              "id": "rep1-seq1-ex4D",
+              "type": "listening",
+              "question": "Question 4 part D:",
+              "answerChoices": [
+                { "label": "A", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img13.png" },
+                { "label": "B", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img14.png" },
+                { "label": "C", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img15.png" },
+                { "label": "D", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img16.png" }
+              ],
+               "correctAnswers":["C"],
+               "audio": "../assets/audio/rep1-q1.mp3",
+               "instructions": "Listen to a word in the audio then circle or choose the corresponding image from among 4 options."
+            },
+            {
+              "id": "rep1-seq1-ex4E",
+              "type": "listening",
+              "question": "Question 4 part E:",
+              "answerChoices": [
+                { "label": "A", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img17.png" },
+                { "label": "B", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img18.png" },
+                { "label": "C", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img19.png" },
+                { "label": "D", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img20.png" }
+              ],
+               "correctAnswers":["A"],
+               "audio": "../assets/audio/rep1-q1.mp3",
+               "instructions": "Listen to a word in the audio then circle or choose the corresponding image from among 4 options."
+            },
+            {
+              "id": "rep1-seq1-ex4F",
+              "type": "listening",
+              "question": "Question 4 part F:",
+              "answerChoices": [
+                { "label": "A", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img21.png" },
+                { "label": "B", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img22.png" },
+                { "label": "C", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img23.png" },
+                { "label": "D", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img24.png" }
+              ],
+               "correctAnswers":["D"],
+               "audio": "../assets/audio/rep1-q1.mp3",
+               "instructions": "Listen to a word in the audio then circle or choose the corresponding image from among 4 options."
+            },
+            {
+              "id": "rep1-seq1-ex4G",
+              "type": "listening",
+              "question": "Question 4 part G:",
+              "answerChoices": [
+                { "label": "A", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img25.png" },
+                { "label": "B", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img26.png" },
+                { "label": "C", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img27.png" },
+                { "label": "D", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img28.png" }
+              ],
+               "correctAnswers":["D"],
+               "audio": "../assets/audio/rep1-q1.mp3",
+               "instructions": "Listen to a word in the audio then circle or choose the corresponding image from among 4 options."
+            },
+            {
+              "id": "rep1-seq1-ex4H",
+              "type": "listening",
+              "question": "Question 4 part H:",
+              "answerChoices": [
+                { "label": "A", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img29.png" },
+                { "label": "B", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img30.png" },
+                { "label": "C", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img31.png" },
+                { "label": "D", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img32.png" }
+              ],
+               "correctAnswers":["B"],
+               "audio": "../assets/audio/rep1-q1.mp3",
+               "instructions": "Listen to a word in the audio then circle or choose the corresponding image from among 4 options."
+            },
+            {
+              "id": "rep1-seq1-ex4I",
+              "type": "listening",
+              "question": "Question 4 part I:",
+              "answerChoices": [
+                { "label": "A", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img33.png" },
+                { "label": "B", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img34.png" },
+                { "label": "C", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img35.png" },
+                { "label": "D", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img36.png" }
+              ],
+               "correctAnswers":["C"],
+               "audio": "../assets/audio/rep1-q1.mp3",
+               "instructions": "Listen to a word in the audio then circle or choose the corresponding image from among 4 options."
+            },
+            {
+              "id": "rep1-seq1-ex4J",
+              "type": "listening",
+              "question": "Question 4 part J:",
+              "answerChoices": [
+                { "label": "A", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img37.png" },
+                { "label": "B", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img38.png" },
+                { "label": "C", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img39.png" },
+                { "label": "D", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img40.png" }
+              ],
+               "correctAnswers":["A"],
+               "audio": "../assets/audio/rep1-q1.mp3",
+               "instructions": "Listen to a word in the audio then circle or choose the corresponding image from among 4 options."
+            },
+            {
+              "id": "rep1-seq1-ex4K",
+              "type": "listening",
+              "question": "Question 4 part K:",
+              "answerChoices": [
+                { "label": "A", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img41.png" },
+                { "label": "B", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img42.png" },
+                { "label": "C", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img43.png" },
+                { "label": "D", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img44.png" }
+              ],
+               "correctAnswers":["C"],
+               "audio": "../assets/audio/rep1-q1.mp3",
+               "instructions": "Listen to a word in the audio then circle or choose the corresponding image from among 4 options."
+            },
+            {
+              "id": "rep1-seq1-ex4L",
+              "type": "listening",
+              "question": "Question 4 part L:",
+              "answerChoices": [
+                { "label": "A", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img45.png" },
+                { "label": "B", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img46.png" },
+                { "label": "C", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img47.png" },
+                { "label": "D", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img48.png" }
+              ],
+               "correctAnswers":["D"],
+               "audio": "../assets/audio/rep1-q1.mp3",
+               "instructions": "Listen to a word in the audio then circle or choose the corresponding image from among 4 options."
+            },
+            {
+              "id": "rep1-seq1-ex4M",
+              "type": "listening",
+              "question": "Question 4 part M:",
+              "answerChoices": [
+                { "label": "A", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img49.png" },
+                { "label": "B", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img50.png" },
+                { "label": "C", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img51.png" },
+                { "label": "D", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img52.png" }
+              ],
+               "correctAnswers":["D"],
+               "audio": "../assets/audio/rep1-q1.mp3",
+               "instructions": "Listen to a word in the audio then circle or choose the corresponding image from among 4 options."
+            },
+            {
+              "id": "rep1-seq1-ex4N",
+              "type": "listening",
+              "question": "Question 4 part N:",
+              "answerChoices": [
+                { "label": "A", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img53.png" },
+                { "label": "B", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img54.png" },
+                { "label": "C", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img55.png" },
+                { "label": "D", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img56.png" }
+              ],
+               "correctAnswers":["A"],
+               "audio": "../assets/audio/rep1-q1.mp3",
+               "instructions": "Listen to a word in the audio then circle or choose the corresponding image from among 4 options."
+            },
+            {
+              "id": "rep1-seq1-ex4O",
+              "type": "listening",
+              "question": "Question 4 part O:",
+              "answerChoices": [
+                { "label": "A", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img57.png" },
+                { "label": "B", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img58.png" },
+                { "label": "C", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img59.png" },
+                { "label": "D", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img60.png" }
+              ],
+               "correctAnswers":["B"],
+               "audio": "../assets/audio/rep1-q1.mp3",
+               "instructions": "Listen to a word in the audio then circle or choose the corresponding image from among 4 options."
+            },
+            {
+              "id": "rep1-seq1-ex4P",
+              "type": "listening",
+              "question": "Question 4 part P:",
+              "answerChoices": [
+                { "label": "A", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img61.png" },
+                { "label": "B", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img62.png" },
+                { "label": "C", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img63.png" },
+                { "label": "D", "image": "@/assets/images/reperes1/ex4/rep1-seq2-ex4-img64.png" }
+              ],
+               "correctAnswers":["C"],
+               "audio": "../assets/audio/rep1-q1.mp3",
+               "instructions": "Listen to a word in the audio then circle or choose the corresponding image from among 4 options."
             }
           ]
         }
