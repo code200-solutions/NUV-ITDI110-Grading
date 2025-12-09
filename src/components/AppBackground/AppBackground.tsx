@@ -10,9 +10,9 @@ const AppBackground: React.FC<AppBackgroundProps> = ({ style, height = 220 }) =>
   return (
     <View style={[styles.container, { height }, style]}>
       <LinearGradient
-        colors={['#1976D2', '#7B1FA2']}
-        start={{ x: 0.5, y: 0 }}
-        end={{ x: 0.5, y: 1 }}
+        colors={['#D00DC3', '#1976D2', ]}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 1, y: 0.5 }}
         style={StyleSheet.absoluteFill}
       />
     </View>

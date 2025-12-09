@@ -5,7 +5,7 @@ import { LinearGradient } from "expo-linear-gradient";
 export default function GradientButton({
   title,
   onPress,
-  colors = ["#1976D2", "#7B1FA2"] as const,
+  colors = ["#19D2BC", "#1976D2"] as const,
   className = "",
   textClassName = "",
   disabled = false,
